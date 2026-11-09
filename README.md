@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by jverite, agalleze, dasamuel, damalca.*
+*Personal project by **dasamuel**, developed and maintained on my own.*
 
 # Flyana — learn the basics of aerospace
 
@@ -94,20 +94,11 @@ The course lives in versioned files under [`srcs/backend/seeds/content/`](srcs/b
 
 ---
 
-## Team Information
+## Author
 
-| Login | Role(s) | Responsibilities |
-|---|---|---|
-| **jverite** | Product Owner · Developer | Defines the product vision (exam practice with AI feedback plus a social quiz), prioritises the backlog and validates features. Also built the exercise content pipeline, the LLM grading and the exercise and training screens. |
-| **agalleze** | Project Manager · Developer | Organises the team: task split, branches and pull requests, deadlines. Also built the authentication pages, profile and settings, the friends system and OAuth 2.0. |
-| **dasamuel** | Technical Lead · Developer | Owns the architecture and the technical choices, and reviews critical changes. Also built the WebSocket layer, the chat, security hardening (password policy, terms acceptance) and the legal pages. |
-| **damalca** | Developer | Built the real-time multiplayer game engine: rooms, server-side timer, scoring, disconnection grace period and reconnection. |
+**Flyana** is my personal project: I design, develop and maintain it on my own (architecture, back end, front end, content and infrastructure).
 
-## Project Management
-
-- **Work split by feature and module**: each module (WebSocket, chat, user management, exercises and LLM, game engine, multiplayer front end) lived on its own branch and was merged into `main` through a **GitHub pull request** (PRs #1 to #6).
-- **Tools**: Git and GitHub (branches, pull requests, reviews).
-- **Communication**: a team **Discord** server, for day-to-day questions, coordination and pull request reviews.
+**Origin.** Flyana grew out of a group project I built at 42 with jverite, agalleze and damalca, where I was the technical lead. I took that codebase as a starting point and turned it into a different product: an aerospace course with adaptive quizzes. Some foundations still come from that group work, notably parts of authentication and OAuth 2.0, the LLM grading service, the multiplayer engine and gamification.
 
 ---
 
@@ -116,13 +107,13 @@ The course lives in versioned files under [`srcs/backend/seeds/content/`](srcs/b
 | Layer | Technology | Why |
 |---|---|---|
 | Frontend | **Nuxt 4** (Vue 3, TypeScript) as a static SPA | File-based routing, auto-imported components, a strong ecosystem (i18n, color mode, icons). Built with `nuxt generate` and served by nginx, so no Node server is needed in production. |
-| Styling | **Tailwind CSS 4** + our own design tokens ([`flyana.token.css`](srcs/frontend/app/assets/css/flyana.token.css)) | Utility classes for fast iteration; the tokens (colours, radii, shadows, motion) keep light and dark themes consistent. |
+| Styling | **Tailwind CSS 4** + custom design tokens ([`flyana.token.css`](srcs/frontend/app/assets/css/flyana.token.css)) | Utility classes for fast iteration; the tokens (colours, radii, shadows, motion) keep light and dark themes consistent. |
 | i18n | `@nuxtjs/i18n` (front end), a locale resolver plus translation tables (back end) | Interface **and** content are translated into fr/en/es. |
 | Backend | **FastAPI** (Python 3.14, async) | Native async for WebSockets and LLM streaming, Pydantic validation on every input, OpenAPI docs generated automatically (`/api/docs`). |
 | ORM / migrations | **SQLAlchemy 2** (async, asyncpg) + **Alembic** | Typed models, versioned schema changes (14 migrations). |
 | Database | **PostgreSQL 17** | Relational data with real constraints (unique pairs, CHECKs, cascades), `CITEXT` for case-insensitive emails and usernames, `JSONB` for grader metadata, full-text search with trigram indexes. |
 | Real time | WebSocket (`/api/ws`) through nginx | Presence, chat signals and multiplayer rooms over one socket per tab. |
-| AI | **Ollama** running `gemma4:12b` on a team member's GPU, reached through **Tailscale** | Local model: no answer is sent to a third-party AI provider, and there is no per-call cost. The model was chosen after benchmarking several on the same set of answers. |
+| AI | **Ollama** running `gemma4:12b` on a dedicated GPU machine, reached through **Tailscale** | Local model: no answer is sent to a third-party AI provider, and there is no per-call cost. The model was chosen after benchmarking several on the same set of answers. |
 | Security | Argon2id (pwdlib), PyJWT, Fernet, pyotp, Pillow | Password hashing, session tokens, encrypted TOTP secrets, image re-encoding. |
 | Infrastructure | Docker Compose, **nginx** (TLS termination, reverse proxy, static files), Docker secrets | One command to run; HTTPS only; database credentials never in environment variables. |
 
@@ -245,27 +236,27 @@ erDiagram
 
 ## Features List
 
-| Feature | Description | Member(s) |
-|---|---|---|
-| Sign-up / login / logout | Email and password with validation on both sides, strong-password rules, mandatory terms acceptance, rate limiting | agalleze, dasamuel, jverite |
-| Sessions | HttpOnly cookies, silent refresh, token rotation and reuse detection, CSRF protection | jverite, dasamuel |
-| OAuth 2.0 | GitHub, Google, 42; only verified emails are linked to an existing account | agalleze, jverite |
-| 2FA | QR code setup, 10 backup codes, verification at login, disabling | agalleze, dasamuel |
-| Profile and settings | Edit display name, bio and language; avatar upload (re-encoded to WebP) with a generated default avatar | agalleze, dasamuel |
-| Friends | Search users, requests, accept, remove, block; online status | agalleze, dasamuel |
-| Chat | One-to-one messages in real time, history with pagination, unread badges, read receipts, typing indicator | dasamuel |
-| Real-time layer | One WebSocket per tab: presence broadcast to friends, ping/pong, automatic reconnection with backoff | dasamuel, damalca |
-| Exercises | Browse by exam, level and exercise; written answers | jverite |
-| AI grading | Structured LLM verdict, streamed explanation, anti-injection vetoes, attempts limit, token budget, self-assessment fallback | jverite |
-| Training sessions | Timed series of exercises with a recap | jverite |
-| Multiplayer quiz (engine) | Rooms, ready check, server timer, scoring with speed bonus, forfeit, reconnection, persistence of every match | damalca |
-| Multiplayer quiz (interface) | Create or join a room, lobby, rounds, live standings, result screen | dasamuel, damalca |
-| Content | 157 questions (127 written, 30 quiz-only) with their answer choices in 3 languages, TOML files, loader with validation | jverite |
-| Design system | Tokens, 15 reusable `Ui*` components, light and dark themes | jverite, agalleze, dasamuel |
-| i18n | fr / en / es for interface and content | dasamuel, jverite, agalleze |
-| Gamification | XP and levels, daily streak, achievements, dashboard progress bar, unlock notifications | agalleze |
-| Legal pages | Privacy Policy and Terms of Service, linked in the footer | dasamuel |
-| Infrastructure | Docker Compose, nginx TLS, Docker secrets, Makefile, Podman and SELinux support | jverite, agalleze, dasamuel |
+| Feature | Description |
+|---|---|
+| Sign-up / login / logout | Email and password with validation on both sides, strong-password rules, mandatory terms acceptance, rate limiting |
+| Sessions | HttpOnly cookies, silent refresh, token rotation and reuse detection, CSRF protection |
+| OAuth 2.0 | GitHub, Google, 42; only verified emails are linked to an existing account |
+| 2FA | QR code setup, 10 backup codes, verification at login, disabling |
+| Profile and settings | Edit display name, bio and language; avatar upload (re-encoded to WebP) with a generated default avatar |
+| Friends | Search users, requests, accept, remove, block; online status |
+| Chat | One-to-one messages in real time, history with pagination, unread badges, read receipts, typing indicator |
+| Real-time layer | One WebSocket per tab: presence broadcast to friends, ping/pong, automatic reconnection with backoff |
+| Exercises | Browse by exam, level and exercise; written answers |
+| AI grading | Structured LLM verdict, streamed explanation, anti-injection vetoes, attempts limit, token budget, self-assessment fallback |
+| Training sessions | Timed series of exercises with a recap |
+| Multiplayer quiz (engine) | Rooms, ready check, server timer, scoring with speed bonus, forfeit, reconnection, persistence of every match |
+| Multiplayer quiz (interface) | Create or join a room, lobby, rounds, live standings, result screen |
+| Content | 157 questions (127 written, 30 quiz-only) with their answer choices in 3 languages, TOML files, loader with validation |
+| Design system | Tokens, 15 reusable `Ui*` components, light and dark themes |
+| i18n | fr / en / es for interface and content |
+| Gamification | XP and levels, daily streak, achievements, dashboard progress bar, unlock notifications |
+| Legal pages | Privacy Policy and Terms of Service, linked in the footer |
+| Infrastructure | Docker Compose, nginx TLS, Docker secrets, Makefile, Podman and SELinux support |
 
 ---
 
@@ -273,24 +264,24 @@ erDiagram
 
 **Total claimed: 23 points** (8 Major × 2 + 7 Minor × 1). Required: 14.
 
-| # | Module | Type | Pts | Member(s) |
-|---|---|---|---|---|
-| 1 | Use a framework for both the frontend and backend | Major | 2 | all |
-| 2 | Real-time features using WebSockets | Major | 2 | dasamuel, damalca |
-| 3 | Allow users to interact with other users (chat, profile, friends) | Major | 2 | dasamuel, agalleze |
-| 4 | Standard user management and authentication | Major | 2 | agalleze, dasamuel |
-| 5 | Complete LLM system interface | Major | 2 | jverite |
-| 6 | Complete web-based game | Major | 2 | damalca, dasamuel |
-| 7 | Remote players | Major | 2 | damalca |
-| 8 | Multiplayer game (more than two players) | Major | 2 | damalca, dasamuel |
-| 9 | Use an ORM for the database | Minor | 1 | jverite, agalleze |
-| 10 | Support for multiple languages (3) | Minor | 1 | dasamuel, jverite |
-| 11 | Custom-made design system (≥ 10 components) | Minor | 1 | jverite, agalleze, dasamuel |
-| 12 | Complete 2FA system | Minor | 1 | agalleze, dasamuel |
-| 13 | Remote authentication with OAuth 2.0 | Minor | 1 | agalleze, jverite |
-| 14 | Support for additional browsers (Firefox, Edge, Safari) | Minor | 1 | dasamuel |
-| 15 | Gamification system | Minor | 1 | agalleze |
-| | **Total** | | **23** | |
+| # | Module | Type | Pts |
+|---|---|---|---|
+| 1 | Use a framework for both the frontend and backend | Major | 2 |
+| 2 | Real-time features using WebSockets | Major | 2 |
+| 3 | Allow users to interact with other users (chat, profile, friends) | Major | 2 |
+| 4 | Standard user management and authentication | Major | 2 |
+| 5 | Complete LLM system interface | Major | 2 |
+| 6 | Complete web-based game | Major | 2 |
+| 7 | Remote players | Major | 2 |
+| 8 | Multiplayer game (more than two players) | Major | 2 |
+| 9 | Use an ORM for the database | Minor | 1 |
+| 10 | Support for multiple languages (3) | Minor | 1 |
+| 11 | Custom-made design system (≥ 10 components) | Minor | 1 |
+| 12 | Complete 2FA system | Minor | 1 |
+| 13 | Remote authentication with OAuth 2.0 | Minor | 1 |
+| 14 | Support for additional browsers (Firefox, Edge, Safari) | Minor | 1 |
+| 15 | Gamification system | Minor | 1 |
+| | **Total** | | **23** |
 
 ### Justification and implementation
 
@@ -319,7 +310,7 @@ erDiagram
 
 **10. Multiple languages (Minor).** fr, en and es, with 464 keys each, a switcher in the header and the sidebar, browser detection and a cookie. **The exercises themselves** are translated, with a fallback to English. The API answers in English, so the interface never shows its error messages as they are: each one is mapped to a translated message ([`utils/http.ts`](srcs/frontend/app/utils/http.ts) `apiErrorKey`). *Where:* [`i18n/locales/`](srcs/frontend/i18n/locales/), [`app/i18n.py`](srcs/backend/app/i18n.py).
 
-**11. Design system (Minor).** Our own tokens (palette, typography IBM Plex Sans / Mono, radii, shadows, motion), a Lucide icon set, and 15 reusable components: `UiButton`, `UiInput`, `UiTextarea`, `UiSelect`, `UiCard`, `UiCallout`, `UiTag`, `UiChip`, `UiAvatar`, `UiPresenceDot`, `UiProgress`, `UiStat`, `UiBreadcrumb`, `UiCodeText`, `UiToaster`. *Where:* [`components/ui/`](srcs/frontend/app/components/ui/), [`flyana.token.css`](srcs/frontend/app/assets/css/flyana.token.css).
+**11. Design system (Minor).** Custom tokens (palette, typography IBM Plex Sans / Mono, radii, shadows, motion), a Lucide icon set, and 15 reusable components: `UiButton`, `UiInput`, `UiTextarea`, `UiSelect`, `UiCard`, `UiCallout`, `UiTag`, `UiChip`, `UiAvatar`, `UiPresenceDot`, `UiProgress`, `UiStat`, `UiBreadcrumb`, `UiCodeText`, `UiToaster`. *Where:* [`components/ui/`](srcs/frontend/app/components/ui/), [`flyana.token.css`](srcs/frontend/app/assets/css/flyana.token.css).
 
 **12. 2FA (Minor).** TOTP with a QR code; the secret is encrypted at rest with Fernet. Activation gives 10 single-use backup codes (hashed). Login with 2FA is a two-step flow: the password alone opens no session. 2FA can be disabled with password and code. *Where:* [`auth.py`](srcs/backend/app/api/v1/auth.py) `/2fa/*`, [`settings.vue`](srcs/frontend/app/pages/settings.vue), [`login.vue`](srcs/frontend/app/pages/login.vue).
 
@@ -350,38 +341,6 @@ Visual feedback: an XP progress bar towards the next level and a streak badge on
 
 ---
 
-## Individual Contributions
-
-### jverite — Product Owner, Developer
-- **Content pipeline**: versioned TOML content, loader with validation, 157 questions in three languages, and the read-only question and topic API with search.
-- **LLM grading** end to end: model benchmark, prompts, JSON verdict, code vetoes, NDJSON streaming, limits and budget, self-assessment fallback, and the Tailscale container to reach the GPU.
-- **Front end**: exercise browsing (exam carousel, levels), the grader shown as a conversation, timed training sessions.
-- **Infrastructure and docs**: Docker, Fernet key fix, backend documentation, migration chain repairs.
-- **Challenges**: some models flagged an injection correctly but still accepted the answer, so the final verdict is decided in code rather than trusted from the model. The team also had two unrelated Git histories to merge into one.
-
-### agalleze — Project Manager, Developer
-- Initial project skeleton; authentication pages (login, sign-up) connected to the API; profile and settings; friends management (requests, accept, decline, search from the profile page); avatar and username in the sidebar.
-- Front-end validation of display name and password.
-- **OAuth 2.0** backend logic for Google, GitHub and 42.
-- **Challenges**: a provider without keys used to send users to the provider's own error page with no way back, so unconfigured providers now redirect to the login page with an error.
-
-### dasamuel — Technical Lead, Developer
-- **Real-time backend** (`ws.py`, `ConnectionHub`) and its front end (`useRealtime`, presence, connection status).
-- **Chat module**, front and back: conversations, history, read receipts, typing, unread badges.
-- User management front end (auth, profile, settings) and session refresh.
-- Multiplayer front end: setup, lobby, rounds, standings, result.
-- **Browser compatibility** (Firefox, Edge, Safari): build target, unsupported-browser fallback, cross-engine CSS fixes.
-- Security hardening: stricter password policy on both sides, mandatory terms acceptance (migration and API), Privacy Policy and Terms of Service pages and footer.
-- **Challenges**: an access token that expired every 15 min logged users out, so a single-flight refresh on 401 was added. A dependency import (`ofetch`) did not resolve under pnpm's strict layout, so errors are now read by shape.
-
-### damalca — Developer
-- **Multiplayer game engine**: rooms and codes, joining, ready check, server-side 20 s timer, scoring, standings, end of match.
-- **Disconnections**: grace period, forfeit, reconnection with state resynchronisation, room clean-up.
-- Checks for games with two players and more, room visibility and details, persistence of matches.
-- **Challenges**: one player's controls were being disabled by another player's actions, which was fixed by keying all state per player. The timer had to stay authoritative when answers and the deadline arrive at the same moment.
-
----
-
 ## Resources
 
 ### Documentation
@@ -400,7 +359,7 @@ Visual feedback: an XP progress bar towards the next level and a streak badge on
   - explain unfamiliar libraries and errors (SQLAlchemy async, pnpm layout, Podman/SELinux);
   - review code and audit the project against the subject and the evaluation sheet (security tests, responsive and console checks);
 
-  Every suggestion was read, tested and discussed within the team before being kept. Each member can explain the code they are credited with above.
+  Every suggestion was read and tested before being kept, and I can explain every part of the code.
 
 ---
 
