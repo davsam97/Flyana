@@ -1,0 +1,11 @@
+node_modules
+.nuxt
+.output
+.nitro
+.cache
+dist
+pnpm-lock.yaml
+
+# Les tokens du design system sont alignés à la main (échelles oklch à 2
+# décimales) ; Prettier tronque les zéros non significatifs et casse la lecture.
+*.css

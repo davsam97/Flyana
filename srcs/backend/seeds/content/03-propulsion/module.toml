@@ -1,0 +1,348 @@
+# Module 3: propulsion. Numbers recomputed by `python -m seeds.check_numbers`.
+
+[[lessons]]
+slug = "propulsion-thrust"
+topic = "propulsion"
+position = 0
+title = { fr = "La poussée : action et réaction", en = "Thrust: action and reaction" }
+body = { fr = "lessons/01-thrust.fr.md", en = "lessons/01-thrust.en.md" }
+
+[[lessons]]
+slug = "propulsion-jet-engines"
+topic = "propulsion"
+position = 1
+title = { fr = "Les moteurs d'avion", en = "Aircraft engines" }
+body = { fr = "lessons/02-jet-engines.fr.md", en = "lessons/02-jet-engines.en.md" }
+
+[[lessons]]
+slug = "propulsion-rockets"
+topic = "propulsion"
+position = 2
+title = { fr = "Moteurs-fusées et équation de Tsiolkovski", en = "Rocket engines and the Tsiolkovsky equation" }
+body = { fr = "lessons/03-rockets.fr.md", en = "lessons/03-rockets.en.md" }
+
+# --- Easy ---
+
+[[questions]]
+slug = "propulsion-rocket-in-vacuum"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Thrust Equations Summary", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/thrust-equations-summary/" }
+[questions.translations.fr]
+title = "Une fusée dans le vide"
+stem = "Pourquoi un moteur-fusée fonctionne-t-il dans le vide de l'espace ?"
+explanation = "La fusée emporte son carburant **et son oxydant**, et pousse sur ses propres gaz d'échappement (troisième loi de Newton). Elle n'a besoin d'aucun air, ni pour brûler ni pour « prendre appui ». Le vide l'aide même : la poussée y est plus grande qu'au sol."
+[questions.translations.en]
+title = "A rocket in a vacuum"
+stem = "Why does a rocket engine work in the vacuum of space?"
+explanation = "The rocket carries its fuel **and its oxidiser**, and pushes on its own exhaust gases (Newton's third law). It needs no air, neither to burn nor to \"push against\". The vacuum even helps: thrust is higher there than at sea level."
+[[questions.choices]]
+text = { fr = "Elle prend appui sur les traces d'air restantes", en = "It pushes against the traces of air left" }
+[[questions.choices]]
+correct = true
+text = { fr = "Elle emporte son oxydant et pousse sur ses propres gaz éjectés", en = "It carries its oxidiser and pushes on its own ejected gases" }
+[[questions.choices]]
+text = { fr = "Elle utilise l'attraction de la Lune", en = "It uses the Moon's pull" }
+[[questions.choices]]
+text = { fr = "Elle ne fonctionne pas dans le vide, elle plane", en = "It does not work in a vacuum, it coasts" }
+
+[[questions]]
+slug = "propulsion-isp-meaning"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Specific Impulse", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/specific-impulse/" }
+[questions.translations.fr]
+title = "L'impulsion spécifique"
+stem = "Que signifie une impulsion spécifique plus élevée ?"
+explanation = "L'impulsion spécifique $I_{sp} = F / (\\dot m\\,g_0)$ mesure la poussée obtenue par kilogramme d'ergols consommé par seconde. Plus elle est élevée, plus le moteur est **efficace** : les gaz sortent plus vite ($v_e = I_{sp}\\,g_0$). Elle ne dit rien de la poussée totale : un moteur ionique a une $I_{sp}$ énorme et une poussée minuscule."
+[questions.translations.en]
+title = "Specific impulse"
+stem = "What does a higher specific impulse mean?"
+explanation = "Specific impulse $I_{sp} = F / (\\dot m\\,g_0)$ measures the thrust obtained per kilogram of propellant used each second. The higher it is, the more **efficient** the engine: the gases leave faster ($v_e = I_{sp}\\,g_0$). It says nothing about total thrust: an ion engine has a huge $I_{sp}$ and a tiny thrust."
+[[questions.choices]]
+text = { fr = "Une poussée totale plus grande", en = "A larger total thrust" }
+[[questions.choices]]
+text = { fr = "Un moteur plus léger", en = "A lighter engine" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une meilleure efficacité : plus de poussée par kilogramme d'ergols consommé", en = "Better efficiency: more thrust per kilogram of propellant used" }
+[[questions.choices]]
+text = { fr = "Une durée de combustion plus courte", en = "A shorter burn time" }
+
+[[questions]]
+slug = "propulsion-air-breathing"
+topic = "propulsion"
+kind = "multi_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Turbojet Engines and Ramjet Propulsion", url = "https://www.grc.nasa.gov/www/k-12/airplane/aturbj.html" }
+[questions.translations.fr]
+title = "Les moteurs aérobies"
+stem = "Lesquels de ces moteurs ont besoin de l'oxygène de l'air pour fonctionner ?"
+explanation = "Le turboréacteur, le turbofan et le statoréacteur sont des moteurs **aérobies** : ils brûlent leur carburant avec l'oxygène de l'air aspiré. Le moteur-fusée emporte son oxydant, et le propulseur ionique ne brûle rien : il accélère des ions par un champ électrique."
+[questions.translations.en]
+title = "Air-breathing engines"
+stem = "Which of these engines need oxygen from the air to work?"
+explanation = "The turbojet, the turbofan and the ramjet are **air-breathing**: they burn their fuel with the oxygen of the air they take in. The rocket engine carries its oxidiser, and the ion thruster burns nothing: it accelerates ions with an electric field."
+[[questions.choices]]
+correct = true
+text = { fr = "Le turboréacteur", en = "The turbojet" }
+[[questions.choices]]
+text = { fr = "Le moteur-fusée", en = "The rocket engine" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le turbofan", en = "The turbofan" }
+[[questions.choices]]
+text = { fr = "Le propulseur ionique", en = "The ion thruster" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le statoréacteur", en = "The ramjet" }
+
+[[questions]]
+slug = "propulsion-nozzle-role"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Nozzle Design", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/nozzle-design/" }
+[questions.translations.fr]
+title = "La tuyère de Laval"
+stem = "À quoi sert la tuyère convergente-divergente d'un moteur-fusée ?"
+explanation = "La tuyère convertit la pression et la chaleur des gaz en vitesse : l'écoulement atteint Mach 1 au col, puis accélère encore dans le divergent jusqu'à des vitesses supersoniques. Plus les gaz sortent vite, plus la poussée par kilogramme est grande."
+[questions.translations.en]
+title = "The de Laval nozzle"
+stem = "What is the converging-diverging nozzle of a rocket engine for?"
+explanation = "The nozzle turns the gases' pressure and heat into speed: the flow reaches Mach 1 at the throat, then keeps accelerating in the diverging part to supersonic speeds. The faster the gases leave, the more thrust per kilogram."
+[[questions.choices]]
+correct = true
+text = { fr = "Accélérer les gaz jusqu'à une vitesse supersonique", en = "To accelerate the gases to supersonic speed" }
+[[questions.choices]]
+text = { fr = "Refroidir la chambre de combustion", en = "To cool the combustion chamber" }
+[[questions.choices]]
+text = { fr = "Mélanger le carburant et l'oxydant", en = "To mix fuel and oxidiser" }
+[[questions.choices]]
+text = { fr = "Ralentir les gaz pour réduire le bruit", en = "To slow the gases down to reduce noise" }
+
+[[questions]]
+slug = "propulsion-why-stages"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Booster Staging", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/stage/" }
+[questions.translations.fr]
+title = "Pourquoi des étages"
+stem = "Pourquoi les lanceurs sont-ils divisés en étages ?"
+explanation = "Un étage vide n'est plus que de la masse morte. En le larguant, la suite du vol n'a plus à l'accélérer : chaque étage repart avec un bon rapport de masse $m_0/m_f$, ce qui augmente le delta-v total (équation de Tsiolkovski)."
+[questions.translations.en]
+title = "Why stages"
+stem = "Why are launchers split into stages?"
+explanation = "An empty stage is just dead mass. Dropping it means the rest of the flight no longer has to accelerate it: each stage starts afresh with a good mass ratio $m_0/m_f$, which raises the total delta-v (Tsiolkovsky equation)."
+[[questions.choices]]
+text = { fr = "Pour pouvoir changer de carburant en cas de panne", en = "To switch fuel in case of failure" }
+[[questions.choices]]
+text = { fr = "Parce qu'un seul moteur ne peut pas fonctionner plus d'une minute", en = "Because a single engine cannot run for more than a minute" }
+[[questions.choices]]
+correct = true
+text = { fr = "Pour se débarrasser des réservoirs vides et des moteurs devenus inutiles", en = "To get rid of empty tanks and engines no longer needed" }
+[[questions.choices]]
+text = { fr = "Pour faciliter le transport jusqu'au pas de tir", en = "To make transport to the launch pad easier" }
+
+# --- Medium ---
+
+[[questions]]
+slug = "propulsion-exhaust-velocity"
+topic = "propulsion"
+kind = "numeric"
+difficulty = 1200
+answer = 2942
+tolerance = 0.02
+unit = "m/s"
+source = { label = "NASA Glenn, Specific Impulse", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/specific-impulse/" }
+[questions.translations.fr]
+title = "De l'Isp à la vitesse d'éjection"
+stem = "Un moteur a une impulsion spécifique de 300 s. Quelle est sa vitesse d'éjection équivalente $v_e = I_{sp}\\,g_0$, en m/s ?"
+explanation = "$v_e = 300 \\times 9{,}80665 \\approx 2\\,942$ m/s. C'est l'ordre de grandeur d'un moteur kérosène et oxygène liquide ; un moteur à hydrogène atteint 4 400 m/s environ."
+[questions.translations.en]
+title = "From Isp to exhaust velocity"
+stem = "An engine has a specific impulse of 300 s. What is its equivalent exhaust velocity $v_e = I_{sp}\\,g_0$, in m/s?"
+explanation = "$v_e = 300 \\times 9.80665 \\approx 2{,}942$ m/s. That is typical of a kerosene and liquid oxygen engine; a hydrogen engine reaches about 4,400 m/s."
+
+[[questions]]
+slug = "propulsion-tsiolkovsky-basic"
+topic = "propulsion"
+kind = "numeric"
+difficulty = 1200
+answer = 4078
+tolerance = 0.02
+unit = "m/s"
+source = { label = "NASA Glenn, Ideal Rocket Equation", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/" }
+[questions.translations.fr]
+title = "Appliquer Tsiolkovski"
+stem = "Un étage a une impulsion spécifique de 300 s et un rapport de masse $m_0/m_f = 4$. Quel delta-v fournit-il, en m/s ?"
+explanation = "$\\Delta v = I_{sp}\\,g_0 \\ln(m_0/m_f) = 300 \\times 9{,}80665 \\times \\ln 4 \\approx 4\\,078$ m/s. C'est à peine la moitié de ce qu'il faut pour atteindre l'orbite basse : d'où les étages."
+[questions.translations.en]
+title = "Applying Tsiolkovsky"
+stem = "A stage has a specific impulse of 300 s and a mass ratio $m_0/m_f = 4$. What delta-v does it provide, in m/s?"
+explanation = "$\\Delta v = I_{sp}\\,g_0 \\ln(m_0/m_f) = 300 \\times 9.80665 \\times \\ln 4 \\approx 4{,}078$ m/s. That is barely half of what reaching low orbit takes: hence stages."
+
+[[questions]]
+slug = "propulsion-turbofan-efficiency"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "NASA Glenn, Turbofan Thrust", url = "https://www.grc.nasa.gov/www/k-12/airplane/turbfan.html" }
+[questions.translations.fr]
+title = "La sobriété du turbofan"
+stem = "Pourquoi un turbofan à grand taux de dilution est-il plus économe qu'un turboréacteur pur pour un avion de ligne ?"
+explanation = "Pour une même poussée $\\dot m\\,\\Delta v$, le turbofan accélère **beaucoup d'air un peu**. L'énergie cinétique perdue dans le jet croît comme le carré de sa vitesse : un jet lent et massif gaspille moins d'énergie. Le rendement propulsif est meilleur, la consommation et le bruit plus faibles."
+[questions.translations.en]
+title = "Why turbofans are thrifty"
+stem = "Why is a high-bypass turbofan more economical than a pure turbojet for an airliner?"
+explanation = "For the same thrust $\\dot m\\,\\Delta v$, the turbofan accelerates **a lot of air a little**. The kinetic energy lost in the jet grows with the square of its speed: a slow, massive jet wastes less energy. Propulsive efficiency is better, fuel burn and noise lower."
+[[questions.choices]]
+text = { fr = "Parce qu'il brûle un carburant plus énergétique", en = "Because it burns a more energetic fuel" }
+[[questions.choices]]
+text = { fr = "Parce que sa turbine tourne plus lentement", en = "Because its turbine spins more slowly" }
+[[questions.choices]]
+text = { fr = "Parce qu'il n'a pas de chambre de combustion", en = "Because it has no combustion chamber" }
+[[questions.choices]]
+correct = true
+text = { fr = "Parce qu'il accélère beaucoup d'air un peu, ce qui gaspille moins d'énergie", en = "Because it accelerates a lot of air a little, which wastes less energy" }
+
+[[questions]]
+slug = "propulsion-propellant-facts"
+topic = "propulsion"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "G. P. Sutton, O. Biblarz, Rocket Propulsion Elements, Wiley, ch. on liquid and solid propellants" }
+[questions.translations.fr]
+title = "Les ergols"
+stem = "Quelles affirmations sur les ergols de fusée sont vraies ?"
+explanation = "L'hydrogène et l'oxygène liquides donnent l'impulsion spécifique la plus élevée des ergols chimiques courants (430 à 460 s). Un moteur à propergol solide, une fois allumé, ne peut en général plus être éteint. Les ergols hypergoliques s'enflamment au simple contact. En revanche, l'hydrogène liquide est très peu dense (environ 71 kg/m³, dix fois moins que le kérosène), d'où ses énormes réservoirs."
+[questions.translations.en]
+title = "Propellants"
+stem = "Which statements about rocket propellants are true?"
+explanation = "Liquid hydrogen and oxygen give the highest specific impulse of common chemical propellants (430 to 460 s). A solid motor, once lit, generally cannot be shut down. Hypergolic propellants ignite on mere contact. On the other hand, liquid hydrogen is very light (about 71 kg/m³, ten times less than kerosene), hence its huge tanks."
+[[questions.choices]]
+correct = true
+text = { fr = "Le couple hydrogène et oxygène liquides offre la meilleure Isp des ergols chimiques courants", en = "Liquid hydrogen and oxygen give the best Isp of common chemical propellants" }
+[[questions.choices]]
+text = { fr = "L'hydrogène liquide est plus dense que le kérosène", en = "Liquid hydrogen is denser than kerosene" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un moteur à propergol solide ne peut en général pas être éteint une fois allumé", en = "A solid motor generally cannot be shut down once lit" }
+[[questions.choices]]
+correct = true
+text = { fr = "Les ergols hypergoliques s'enflamment au contact l'un de l'autre", en = "Hypergolic propellants ignite on contact with each other" }
+[[questions.choices]]
+text = { fr = "Les moteurs ioniques peuvent faire décoller un lanceur", en = "Ion engines can lift a launcher off the ground" }
+
+[[questions]]
+slug = "propulsion-ramjet-start"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "NASA Glenn, Ramjet Propulsion", url = "https://www.grc.nasa.gov/www/k-12/airplane/ramjet.html" }
+[questions.translations.fr]
+title = "Le statoréacteur à l'arrêt"
+stem = "Pourquoi un statoréacteur ne peut-il pas faire décoller un avion à l'arrêt ?"
+explanation = "Le statoréacteur n'a ni compresseur ni turbine : il comprime l'air en le freinant dans son entrée d'air, ce qui n'est efficace qu'à grande vitesse. À l'arrêt, aucun air n'entre comprimé, il ne produit pas de poussée. Un autre moteur doit d'abord l'amener à grande vitesse."
+[questions.translations.en]
+title = "The ramjet at rest"
+stem = "Why can a ramjet not get an aircraft moving from rest?"
+explanation = "The ramjet has no compressor and no turbine: it compresses air by slowing it in its inlet, which only works at high speed. At rest, no compressed air comes in, so it produces no thrust. Another engine must first bring it up to high speed."
+[[questions.choices]]
+correct = true
+text = { fr = "Il n'a pas de compresseur : il a besoin de la vitesse pour comprimer l'air", en = "It has no compressor: it needs speed to compress the air" }
+[[questions.choices]]
+text = { fr = "Il emporte trop peu de carburant", en = "It carries too little fuel" }
+[[questions.choices]]
+text = { fr = "Il ne fonctionne que dans le vide", en = "It only works in a vacuum" }
+[[questions.choices]]
+text = { fr = "Sa turbine est trop lourde", en = "Its turbine is too heavy" }
+
+# --- Hard ---
+
+[[questions]]
+slug = "propulsion-single-stage-fraction"
+topic = "propulsion"
+kind = "numeric"
+difficulty = 1400
+answer = 11.88
+tolerance = 0.03
+unit = "%"
+source = { label = "NASA Glenn, Ideal Rocket Equation", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/" }
+[questions.translations.fr]
+title = "Un seul étage jusqu'à l'orbite"
+stem = "Une fusée mono-étage à hydrogène ($I_{sp} = 450$ s) doit fournir 9 400 m/s de delta-v. Quel pourcentage de sa masse au décollage peut rester à l'arrivée (structure, moteurs et charge utile), en % ?"
+explanation = "$m_0/m_f = e^{9\\,400 / (450 \\times 9{,}80665)} = e^{2{,}13} \\approx 8{,}42$, donc $m_f/m_0 \\approx 1/8{,}42 \\approx 11{,}9\\,\\%$. Réservoirs, moteurs, structure **et** charge utile doivent tenir dans moins de 12 % de la masse : c'est pourquoi on étage les lanceurs."
+[questions.translations.en]
+title = "One stage to orbit"
+stem = "A single-stage hydrogen rocket ($I_{sp} = 450$ s) must provide 9,400 m/s of delta-v. What percentage of its lift-off mass can remain at the end (structure, engines and payload), in %?"
+explanation = "$m_0/m_f = e^{9{,}400 / (450 \\times 9.80665)} = e^{2.13} \\approx 8.42$, so $m_f/m_0 \\approx 1/8.42 \\approx 11.9\\,\\%$. Tanks, engines, structure **and** payload must fit in less than 12 % of the mass: that is why launchers are staged."
+
+[[questions]]
+slug = "propulsion-thrust-from-flow"
+topic = "propulsion"
+kind = "numeric"
+difficulty = 1400
+answer = 750
+tolerance = 0.02
+unit = "kN"
+source = { label = "NASA Glenn, Thrust Equations Summary", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/thrust-equations-summary/" }
+[questions.translations.fr]
+title = "Poussée et débit"
+stem = "Un moteur-fusée à tuyère adaptée ($p_e = p_a$) éjecte 250 kg/s de gaz à 3 000 m/s. Quelle poussée produit-il, en kN ?"
+explanation = "Avec une tuyère adaptée, le terme de pression s'annule et $F = \\dot m\\,v_e = 250 \\times 3\\,000 = 750\\,000$ N, soit 750 kN. Son impulsion spécifique vaut $3\\,000 / 9{,}81 \\approx 306$ s."
+[questions.translations.en]
+title = "Thrust and mass flow"
+stem = "A rocket engine with a matched nozzle ($p_e = p_a$) ejects 250 kg/s of gas at 3,000 m/s. What thrust does it produce, in kN?"
+explanation = "With a matched nozzle the pressure term vanishes and $F = \\dot m\\,v_e = 250 \\times 3{,}000 = 750{,}000$ N, i.e. 750 kN. Its specific impulse is $3{,}000 / 9.81 \\approx 306$ s."
+
+[[questions]]
+slug = "propulsion-vacuum-isp"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "NASA Glenn, Thrust Equations Summary", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/thrust-equations-summary/" }
+[questions.translations.fr]
+title = "Plus de poussée dans le vide"
+stem = "Pourquoi un même moteur-fusée a-t-il une impulsion spécifique plus élevée dans le vide qu'au niveau de la mer ?"
+explanation = "Dans $F = \\dot m\\,v_e + (p_e - p_a)A_e$, la pression ambiante $p_a$ retranche de la poussée. Au sol, $p_a \\approx 1$ bar ; dans le vide, $p_a = 0$ et le terme de pression devient positif. À débit égal, la poussée, donc l'$I_{sp}$, est plus grande."
+[questions.translations.en]
+title = "More thrust in a vacuum"
+stem = "Why does the same rocket engine have a higher specific impulse in a vacuum than at sea level?"
+explanation = "In $F = \\dot m\\,v_e + (p_e - p_a)A_e$, ambient pressure $p_a$ takes away from thrust. At sea level $p_a \\approx 1$ bar; in a vacuum $p_a = 0$ and the pressure term turns positive. At the same mass flow, thrust, and so $I_{sp}$, is higher."
+[[questions.choices]]
+text = { fr = "Parce que les ergols sont plus froids dans l'espace", en = "Because the propellants are colder in space" }
+[[questions.choices]]
+correct = true
+text = { fr = "Parce que la pression ambiante, nulle dans le vide, ne s'oppose plus au jet", en = "Because ambient pressure, zero in a vacuum, no longer opposes the jet" }
+[[questions.choices]]
+text = { fr = "Parce que la gravité est plus faible en orbite", en = "Because gravity is weaker in orbit" }
+[[questions.choices]]
+text = { fr = "Parce que le moteur consomme davantage dans le vide", en = "Because the engine burns more propellant in a vacuum" }
+
+[[questions]]
+slug = "propulsion-isp-or-mass-ratio"
+topic = "propulsion"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "NASA Glenn, Ideal Rocket Equation", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/" }
+[questions.translations.fr]
+title = "Isp ou rapport de masse ?"
+stem = "Un étage a $I_{sp} = 300$ s et $m_0/m_f = 4$. Qu'est-ce qui augmente le plus son delta-v : doubler l'impulsion spécifique, ou doubler le rapport de masse ?"
+explanation = "$\\Delta v$ est proportionnel à $I_{sp}$ mais seulement au **logarithme** du rapport de masse. Doubler l'$I_{sp}$ fait passer $\\Delta v$ de 4 080 à 8 160 m/s ; doubler le rapport de masse (de 4 à 8) ne le porte qu'à $300 \\times 9{,}81 \\times \\ln 8 \\approx 6\\,120$ m/s."
+[questions.translations.en]
+title = "Isp or mass ratio?"
+stem = "A stage has $I_{sp} = 300$ s and $m_0/m_f = 4$. Which raises its delta-v more: doubling the specific impulse, or doubling the mass ratio?"
+explanation = "$\\Delta v$ is proportional to $I_{sp}$ but only to the **logarithm** of the mass ratio. Doubling $I_{sp}$ takes $\\Delta v$ from 4,080 to 8,160 m/s; doubling the mass ratio (from 4 to 8) only brings it to $300 \\times 9.81 \\times \\ln 8 \\approx 6{,}120$ m/s."
+[[questions.choices]]
+correct = true
+text = { fr = "Doubler l'impulsion spécifique", en = "Doubling the specific impulse" }
+[[questions.choices]]
+text = { fr = "Doubler le rapport de masse", en = "Doubling the mass ratio" }
+[[questions.choices]]
+text = { fr = "Les deux donnent exactement le même gain", en = "Both give exactly the same gain" }
+[[questions.choices]]
+text = { fr = "Ni l'un ni l'autre ne change le delta-v", en = "Neither changes the delta-v" }

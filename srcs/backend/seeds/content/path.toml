@@ -1,0 +1,120 @@
+# The Flyana course: one learning path through seven modules, from the
+# simplest to the most advanced. Each module keeps its lessons and its
+# questions in its own folder, named after its position and slug.
+
+[[paths]]
+slug = "aerospace-basics"
+level = "beginner"
+
+[paths.translations.fr]
+title = "Les bases de l'aérospatial"
+description = "Comment un avion vole, comment une fusée atteint l'orbite et comment un satellite y reste."
+
+[paths.translations.en]
+title = "Aerospace basics"
+description = "How an aircraft flies, how a rocket reaches orbit and how a satellite stays there."
+
+[[paths.modules]]
+topic = "aerodynamics"
+
+[[paths.modules]]
+topic = "flight-mechanics"
+
+[[paths.modules]]
+topic = "propulsion"
+
+[[paths.modules]]
+topic = "orbital-mechanics"
+
+[[paths.modules]]
+topic = "space-systems"
+
+[[paths.modules]]
+topic = "avionics"
+
+[[paths.modules]]
+topic = "history"
+
+[[topics]]
+slug = "aerodynamics"
+position = 1
+
+[topics.translations.fr]
+name = "Atmosphère et aérodynamique"
+description = "L'air autour de l'aile : portance, traînée, profil d'aile et nombre de Mach."
+
+[topics.translations.en]
+name = "Atmosphere and aerodynamics"
+description = "The air around the wing: lift, drag, airfoils and the Mach number."
+
+[[topics]]
+slug = "flight-mechanics"
+position = 2
+
+[topics.translations.fr]
+name = "Mécanique du vol"
+description = "Les forces sur un avion, sa stabilité et ses gouvernes."
+
+[topics.translations.en]
+name = "Flight mechanics"
+description = "The forces on an aircraft, its stability and its control surfaces."
+
+[[topics]]
+slug = "propulsion"
+position = 3
+
+[topics.translations.fr]
+name = "Propulsion"
+description = "Turboréacteurs et moteurs-fusées : poussée, impulsion spécifique et équation de Tsiolkovski."
+
+[topics.translations.en]
+name = "Propulsion"
+description = "Jet engines and rocket engines: thrust, specific impulse and the Tsiolkovsky equation."
+
+[[topics]]
+slug = "orbital-mechanics"
+position = 4
+
+[topics.translations.fr]
+name = "Mécanique orbitale"
+description = "Lois de Kepler, vitesse orbitale, orbites LEO et GEO, transfert de Hohmann et delta-v."
+
+[topics.translations.en]
+name = "Orbital mechanics"
+description = "Kepler's laws, orbital speed, LEO and GEO, the Hohmann transfer and delta-v."
+
+[[topics]]
+slug = "space-systems"
+position = 5
+
+[topics.translations.fr]
+name = "Systèmes spatiaux"
+description = "Les sous-systèmes d'un satellite et l'environnement spatial qu'il doit supporter."
+
+[topics.translations.en]
+name = "Space systems"
+description = "The subsystems of a satellite and the space environment it has to withstand."
+
+[[topics]]
+slug = "avionics"
+position = 6
+
+[topics.translations.fr]
+name = "Avionique et embarqué"
+description = "Capteurs, centrale inertielle, bus de données, temps réel et certification du logiciel."
+
+[topics.translations.en]
+name = "Avionics and embedded systems"
+description = "Sensors, inertial units, data buses, real time and software certification."
+
+[[topics]]
+slug = "history"
+position = 7
+
+[topics.translations.fr]
+name = "Histoire et acteurs"
+description = "Les grandes missions, les agences et les lanceurs."
+
+[topics.translations.en]
+name = "History and players"
+description = "The landmark missions, the agencies and the launchers."

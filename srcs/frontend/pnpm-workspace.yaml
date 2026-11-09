@@ -1,0 +1,7 @@
+# Depuis pnpm 10, les scripts d'installation des dépendances sont bloqués par
+# défaut (protection supply-chain). Cette liste blanche autorise ceux dont on a
+# besoin : chacun compile/lie un binaire natif pour la plateforme courante.
+allowBuilds:
+  esbuild: true
+  # Résolveur d'imports natif d'eslint-plugin-import-x, tiré par @nuxt/eslint.
+  unrs-resolver: true

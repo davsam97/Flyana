@@ -1,0 +1,91 @@
+/* Flyana colour and shadow tokens, oklch. Dark by default, `data-theme="light"` on <html> for light. */
+
+:root,
+[data-theme='dark'] {
+  /* Accents */
+
+  /* French Guiana: lagoon turquoise for actions, equatorial sky blue for
+     information, launch-flame orange for streaks, XP and podiums */
+  --accent: oklch(0.76 0.12 185);
+  --accent-hover: oklch(0.83 0.10 185);
+  --accent-press: oklch(0.68 0.12 185);
+  --accent-soft: oklch(0.76 0.12 185 / 0.14);
+  --accent-2: oklch(0.74 0.11 245);
+  --accent-2-soft: oklch(0.74 0.11 245 / 0.14);
+  --accent-3: oklch(0.74 0.16 55);
+  --accent-3-soft: oklch(0.74 0.16 55 / 0.14);
+
+  /* Sémantiques */
+
+  --success: oklch(0.74 0.16 140);
+  --success-soft: oklch(0.74 0.16 140 / 0.14);
+  --warning: oklch(0.80 0.13 80);
+  --warning-soft: oklch(0.80 0.13 80 / 0.16);
+  --danger: oklch(0.66 0.17 25);
+  --danger-soft: oklch(0.66 0.17 25 / 0.14);
+
+  /* Neutres « nuit tropicale », teintés vert-bleu — thème sombre (contraste « Lisibilité AA ») */
+
+  --surface-page: oklch(0.16 0.014 200);
+  --surface-card: oklch(0.205 0.017 200);
+  --surface-raised: oklch(0.25 0.018 200);
+  --surface-hover: oklch(0.30 0.020 200);
+  --surface-code: oklch(0.18 0.016 200);
+  --border-subtle: oklch(0.44 0.022 200);
+  --border-strong: oklch(0.52 0.024 200);
+  --text-body: oklch(0.985 0.006 200);
+  --text-muted: oklch(0.88 0.013 200);
+  --text-subtle: oklch(0.76 0.016 200);
+  --text-inv: oklch(0.17 0.015 200);
+
+  --on-accent: var(--text-inv);
+  --focus-ring: oklch(0.76 0.12 185 / 0.55);
+
+  /* Ombres — sombre */
+  --flyana-shadow-sm: 0 1px 2px oklch(0.10 0.02 200 / 0.35);
+  --flyana-shadow-md: 0 4px 12px oklch(0.10 0.02 200 / 0.40);
+  --flyana-shadow-lg: 0 12px 32px oklch(0.08 0.02 200 / 0.50);
+  --flyana-shadow-focus: 0 0 0 3px var(--focus-ring);
+  --glow-accent: 0 0 0 1px oklch(0.76 0.12 185 / 0.4), 0 6px 20px oklch(0.76 0.12 185 / 0.25);
+  --ring-inset: inset 0 0 0 1px var(--border-subtle);
+  --avatar-ring: 0 0 0 2px var(--surface-page), 0 0 0 4px var(--accent);
+}
+
+[data-theme='light'] {
+  --surface-page: oklch(0.985 0.004 190);
+  --surface-card: oklch(1 0 0);
+  --surface-raised: oklch(0.975 0.006 190);
+  --surface-hover: oklch(0.945 0.008 190);
+  --surface-code: oklch(0.965 0.006 190);
+  --border-subtle: oklch(0.91 0.008 190);
+  --border-strong: oklch(0.84 0.012 190);
+  --text-body: oklch(0.24 0.02 190);
+  --text-muted: oklch(0.42 0.02 190);
+  --text-subtle: oklch(0.545 0.018 190);
+  --text-inv: oklch(0.99 0 0);
+
+  /* Accents darkened for the light background: each hue targets ≥5:1 against
+     --surface-page and --surface-card, and carries white text. */
+  --accent: oklch(0.50 0.09 185);
+  --accent-hover: oklch(0.44 0.085 185);
+  --accent-press: oklch(0.39 0.075 185);
+  --accent-soft: oklch(0.50 0.09 185 / 0.12);
+  --accent-2: oklch(0.51 0.12 250);
+  --accent-2-soft: oklch(0.51 0.12 250 / 0.12);
+  --accent-3: oklch(0.54 0.15 50);
+  --accent-3-soft: oklch(0.54 0.15 50 / 0.12);
+
+  --success: oklch(0.50 0.13 145);
+  --success-soft: oklch(0.50 0.13 145 / 0.12);
+  --warning: oklch(0.535 0.112 80);
+  --warning-soft: oklch(0.535 0.112 80 / 0.14);
+  --danger: oklch(0.55 0.17 25);
+  --danger-soft: oklch(0.55 0.17 25 / 0.12);
+
+  --focus-ring: oklch(0.50 0.09 185 / 0.60);
+
+  --flyana-shadow-sm: 0 1px 2px oklch(0.5 0.02 190 / 0.10);
+  --flyana-shadow-md: 0 4px 14px oklch(0.5 0.02 190 / 0.12);
+  --flyana-shadow-lg: 0 14px 36px oklch(0.5 0.02 190 / 0.16);
+  --glow-accent: 0 0 0 1px oklch(0.50 0.09 185 / 0.30), 0 6px 20px oklch(0.50 0.09 185 / 0.18);
+}

@@ -1,0 +1,348 @@
+# Module 5: space systems. Numbers recomputed by `python -m seeds.check_numbers`.
+
+[[lessons]]
+slug = "spacecraft-anatomy"
+topic = "space-systems"
+position = 0
+title = { fr = "L'anatomie d'un satellite", en = "Anatomy of a satellite" }
+body = { fr = "lessons/01-anatomy.fr.md", en = "lessons/01-anatomy.en.md" }
+
+[[lessons]]
+slug = "spacecraft-power-thermal"
+topic = "space-systems"
+position = 1
+title = { fr = "Énergie et contrôle thermique", en = "Power and thermal control" }
+body = { fr = "lessons/02-power-thermal.fr.md", en = "lessons/02-power-thermal.en.md" }
+
+[[lessons]]
+slug = "spacecraft-attitude-comms-environment"
+topic = "space-systems"
+position = 2
+title = { fr = "Attitude, télécoms et environnement spatial", en = "Attitude, communications and the space environment" }
+body = { fr = "lessons/03-attitude-comms-environment.fr.md", en = "lessons/03-attitude-comms-environment.en.md" }
+
+# --- Easy ---
+
+[[questions]]
+slug = "spacecraft-batteries-role"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA, State-of-the-Art of Small Spacecraft Technology, ch. 3: Power", url = "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/" }
+[questions.translations.fr]
+title = "Pourquoi des batteries ?"
+stem = "Un satellite a des panneaux solaires. À quoi lui servent ses batteries ?"
+explanation = "Quand le satellite passe dans l'ombre de la Terre (une **éclipse**), ses panneaux ne produisent plus rien. Les batteries, rechargées au soleil, alimentent alors tout le satellite. Elles couvrent aussi les pics de consommation."
+[questions.translations.en]
+title = "Why batteries?"
+stem = "A satellite has solar arrays. What are its batteries for?"
+explanation = "When the satellite passes into the Earth's shadow (an **eclipse**), its arrays produce nothing. The batteries, recharged in sunlight, then power the whole satellite. They also cover peaks in consumption."
+[[questions.choices]]
+text = { fr = "À démarrer le moteur au lancement", en = "To start the engine at launch" }
+[[questions.choices]]
+correct = true
+text = { fr = "À alimenter le satellite pendant les éclipses, quand les panneaux sont à l'ombre", en = "To power the satellite during eclipses, when the arrays are in shadow" }
+[[questions.choices]]
+text = { fr = "À rien : elles ne servent que de lest", en = "Nothing: they are only ballast" }
+[[questions.choices]]
+text = { fr = "À chauffer les panneaux solaires", en = "To heat the solar arrays" }
+
+[[questions]]
+slug = "spacecraft-heat-in-vacuum"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA, State-of-the-Art of Small Spacecraft Technology, ch. 7: Thermal Control", url = "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/" }
+[questions.translations.fr]
+title = "Évacuer la chaleur dans le vide"
+stem = "Comment un satellite peut-il évacuer sa chaleur vers l'extérieur ?"
+explanation = "Dans le vide, il n'y a pas d'air : ni convection ni conduction vers l'extérieur. Le satellite ne peut perdre de la chaleur que par **rayonnement**, d'où ses radiateurs tournés vers l'espace froid."
+[questions.translations.en]
+title = "Getting rid of heat in a vacuum"
+stem = "How can a satellite get rid of its heat to the outside?"
+explanation = "In a vacuum there is no air: no convection and no conduction to the outside. The satellite can only lose heat by **radiation**, hence its radiators facing cold space."
+[[questions.choices]]
+text = { fr = "Par convection, grâce à l'air froid de l'espace", en = "By convection, thanks to the cold air of space" }
+[[questions.choices]]
+text = { fr = "En rejetant de l'eau chaude", en = "By dumping hot water" }
+[[questions.choices]]
+text = { fr = "Par conduction vers l'espace", en = "By conduction into space" }
+[[questions.choices]]
+correct = true
+text = { fr = "Uniquement par rayonnement", en = "Only by radiation" }
+
+[[questions]]
+slug = "spacecraft-adcs-parts"
+topic = "space-systems"
+kind = "multi_choice"
+difficulty = 1000
+source = { label = "NASA, State-of-the-Art of Small Spacecraft Technology, ch. 5: Guidance, Navigation and Control", url = "https://www.nasa.gov/smallsat-institute/sst-soa/guidance-navigation-and-control/" }
+[questions.translations.fr]
+title = "Le contrôle d'attitude"
+stem = "Lesquels de ces équipements font partie du système de contrôle d'attitude ?"
+explanation = "Le senseur stellaire mesure l'orientation, les roues de réaction et les magnéto-coupleurs la corrigent. Les panneaux solaires et les batteries appartiennent au sous-système d'énergie."
+[questions.translations.en]
+title = "Attitude control"
+stem = "Which of these units belong to the attitude control system?"
+explanation = "The star tracker measures orientation, reaction wheels and magnetorquers correct it. Solar arrays and batteries belong to the power subsystem."
+[[questions.choices]]
+correct = true
+text = { fr = "Une roue de réaction", en = "A reaction wheel" }
+[[questions.choices]]
+text = { fr = "Un panneau solaire", en = "A solar array" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un senseur stellaire", en = "A star tracker" }
+[[questions.choices]]
+text = { fr = "Une batterie lithium-ion", en = "A lithium-ion battery" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un magnéto-coupleur", en = "A magnetorquer" }
+
+[[questions]]
+slug = "spacecraft-payload"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA JPL, Basics of Space Flight, ch. 11: Onboard Systems", url = "https://science.nasa.gov/learn/basics-of-space-flight/chapter11-1/" }
+[questions.translations.fr]
+title = "Plateforme et charge utile"
+stem = "Sur un satellite d'observation de la Terre, qu'est-ce que la charge utile ?"
+explanation = "La **charge utile** est ce pour quoi le satellite existe : ici, l'instrument d'imagerie. La plateforme (énergie, thermique, attitude, télécoms, calculateur) est là pour la faire fonctionner."
+[questions.translations.en]
+title = "Platform and payload"
+stem = "On an Earth observation satellite, what is the payload?"
+explanation = "The **payload** is what the satellite exists for: here, the imaging instrument. The platform (power, thermal, attitude, communications, computer) is there to make it work."
+[[questions.choices]]
+correct = true
+text = { fr = "L'instrument d'imagerie", en = "The imaging instrument" }
+[[questions.choices]]
+text = { fr = "Les ergols du moteur", en = "The engine's propellant" }
+[[questions.choices]]
+text = { fr = "La structure du satellite", en = "The satellite's structure" }
+[[questions.choices]]
+text = { fr = "La batterie", en = "The battery" }
+
+[[questions]]
+slug = "spacecraft-van-allen"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Science, Van Allen Probes", url = "https://science.nasa.gov/mission/van-allen-probes/" }
+[questions.translations.fr]
+title = "Les ceintures de Van Allen"
+stem = "Que sont les ceintures de Van Allen ?"
+explanation = "Ce sont des zones en forme d'anneau où des particules chargées, surtout des protons et des électrons, sont **piégées par le champ magnétique terrestre**. Leurs radiations abîment l'électronique et les cellules solaires des satellites qui les traversent."
+[questions.translations.en]
+title = "The Van Allen belts"
+stem = "What are the Van Allen belts?"
+explanation = "They are ring-shaped regions where charged particles, mostly protons and electrons, are **trapped by the Earth's magnetic field**. Their radiation damages the electronics and solar cells of satellites passing through."
+[[questions.choices]]
+text = { fr = "Des anneaux de débris spatiaux autour de la Terre", en = "Rings of space debris around the Earth" }
+[[questions.choices]]
+text = { fr = "Les couches de l'atmosphère où se forment les aurores", en = "The atmospheric layers where auroras form" }
+[[questions.choices]]
+correct = true
+text = { fr = "Des zones de particules chargées piégées par le champ magnétique terrestre", en = "Regions of charged particles trapped by the Earth's magnetic field" }
+[[questions.choices]]
+text = { fr = "Les orbites réservées aux satellites géostationnaires", en = "The orbits reserved for geostationary satellites" }
+
+# --- Medium ---
+
+[[questions]]
+slug = "spacecraft-array-power"
+topic = "space-systems"
+kind = "numeric"
+difficulty = 1200
+answer = 4083
+tolerance = 0.02
+unit = "W"
+source = { label = "NASA, State-of-the-Art of Small Spacecraft Technology, ch. 3: Power", url = "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/" }
+[questions.translations.fr]
+title = "La puissance d'un panneau solaire"
+stem = "Un panneau solaire de 10 m², de rendement 30 %, est face au Soleil près de la Terre (1 361 W/m²). Quelle puissance électrique produit-il, en watts ?"
+explanation = "$P = 10 \\times 0{,}30 \\times 1\\,361 \\approx 4\\,083$ W en début de vie. L'inclinaison du Soleil (facteur $\\cos\\theta$) et le vieillissement par les radiations la réduisent ensuite."
+[questions.translations.en]
+title = "The power of a solar array"
+stem = "A 10 m² solar array with 30 % efficiency faces the Sun near the Earth (1,361 W/m²). What electrical power does it produce, in watts?"
+explanation = "$P = 10 \\times 0.30 \\times 1{,}361 \\approx 4{,}083$ W at beginning of life. The Sun's angle (factor $\\cos\\theta$) and ageing by radiation then reduce it."
+
+[[questions]]
+slug = "spacecraft-geo-delay"
+topic = "space-systems"
+kind = "numeric"
+difficulty = 1200
+answer = 239
+tolerance = 0.03
+unit = "ms"
+source = { label = "NASA JPL, Basics of Space Flight, ch. 10: Telecommunications", url = "https://science.nasa.gov/learn/basics-of-space-flight/chapter10-1/" }
+[questions.translations.fr]
+title = "Le délai d'un satellite géostationnaire"
+stem = "Un signal part du sol, monte vers un satellite géostationnaire à 35 786 km à la verticale, puis redescend vers le sol. Combien de temps met-il, à la vitesse de la lumière, en millisecondes ?"
+explanation = "$2 \\times 35\\,786\\,000 / 299\\,792\\,458 \\approx 0{,}239$ s, soit 239 ms, et davantage pour des stations qui ne sont pas sous le satellite. Une question et sa réponse par satellite géostationnaire prennent donc près d'une demi-seconde."
+[questions.translations.en]
+title = "The delay of a geostationary satellite"
+stem = "A signal leaves the ground, goes up to a geostationary satellite 35,786 km straight overhead, then back down to the ground. How long does it take at the speed of light, in milliseconds?"
+explanation = "$2 \\times 35{,}786{,}000 / 299{,}792{,}458 \\approx 0.239$ s, i.e. 239 ms, and more for stations not directly beneath the satellite. A question and its answer over a geostationary satellite thus take nearly half a second."
+
+[[questions]]
+slug = "spacecraft-leo-eclipse"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "J. R. Wertz, W. J. Larson, Space Mission Analysis and Design, Microcosm, ch. on power (eclipse and battery sizing)" }
+[questions.translations.fr]
+title = "Les éclipses en orbite basse"
+stem = "À 400 km, un satellite passe jusqu'à 36 minutes dans l'ombre à chaque tour de 92 minutes. Quelle conséquence pour son sous-système d'énergie ?"
+explanation = "Les batteries doivent tenir tout l'éclipse, et les panneaux doivent produire en une soixantaine de minutes de jour à la fois la consommation et la recharge. Les batteries subissent aussi un cycle de charge par tour, environ 16 par jour : leur durée de vie en cycles devient un critère clé."
+[questions.translations.en]
+title = "Eclipses in low orbit"
+stem = "At 400 km, a satellite spends up to 36 minutes in shadow on each 92-minute lap. What does that mean for its power subsystem?"
+explanation = "The batteries must last through the whole eclipse, and in about sixty minutes of daylight the arrays must cover both consumption and recharging. The batteries also go through one cycle per lap, about 16 a day: their cycle life becomes a key criterion."
+[[questions.choices]]
+text = { fr = "Rien : les panneaux produisent aussi dans l'ombre", en = "Nothing: the arrays also work in shadow" }
+[[questions.choices]]
+correct = true
+text = { fr = "Les panneaux doivent produire, pendant le jour, de quoi consommer et recharger les batteries", en = "During daylight the arrays must produce enough to run the satellite and recharge the batteries" }
+[[questions.choices]]
+text = { fr = "Le satellite doit s'éteindre complètement à chaque éclipse", en = "The satellite must switch off completely at each eclipse" }
+[[questions.choices]]
+text = { fr = "Il faut rallumer le moteur à chaque éclipse", en = "The engine must fire at each eclipse" }
+
+[[questions]]
+slug = "spacecraft-radiation-effects"
+topic = "space-systems"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "ESA, Space Weather", url = "https://www.esa.int/Space_Safety/Space_weather" }
+[questions.translations.fr]
+title = "Les effets des radiations"
+stem = "Quels effets les radiations spatiales ont-elles sur un satellite ?"
+explanation = "Une particule énergétique peut inverser un bit en mémoire (*single event upset*). L'exposition prolongée dégrade l'électronique (la dose cumulée) et le rendement des cellules solaires. La convection et la corrosion par l'humidité n'existent pas dans le vide."
+[questions.translations.en]
+title = "The effects of radiation"
+stem = "What effects does space radiation have on a satellite?"
+explanation = "An energetic particle can flip a bit in memory (a single event upset). Prolonged exposure degrades electronics (the total dose) and the efficiency of solar cells. Convection and corrosion by moisture do not exist in a vacuum."
+[[questions.choices]]
+correct = true
+text = { fr = "Des inversions de bits dans les mémoires", en = "Bit flips in memories" }
+[[questions.choices]]
+text = { fr = "Une surchauffe par convection", en = "Overheating by convection" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une dégradation progressive de l'électronique", en = "Gradual degradation of electronics" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une baisse du rendement des cellules solaires", en = "Lower solar cell efficiency" }
+[[questions.choices]]
+text = { fr = "La corrosion par l'humidité", en = "Corrosion by moisture" }
+
+[[questions]]
+slug = "spacecraft-wheel-saturation"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "NASA, State-of-the-Art of Small Spacecraft Technology, ch. 5: Guidance, Navigation and Control", url = "https://www.nasa.gov/smallsat-institute/sst-soa/guidance-navigation-and-control/" }
+[questions.translations.fr]
+title = "Une roue de réaction saturée"
+stem = "Une roue de réaction a atteint sa vitesse maximale à force de compenser une perturbation constante. Que fait-on ?"
+explanation = "On la **désature** : un magnéto-coupleur (en orbite basse) ou des propulseurs exercent un couple extérieur qui permet de ralentir la roue sans que le satellite ne tourne. Sans couple extérieur, le moment cinétique total du satellite ne peut pas changer."
+[questions.translations.en]
+title = "A saturated reaction wheel"
+stem = "A reaction wheel has reached its maximum speed by countering a steady disturbance. What is done?"
+explanation = "It is **unloaded**: a magnetorquer (in low orbit) or thrusters apply an external torque that lets the wheel slow down without the satellite turning. Without an external torque, the satellite's total angular momentum cannot change."
+[[questions.choices]]
+text = { fr = "On l'arrête d'un coup, sans autre précaution", en = "It is stopped at once, with no other precaution" }
+[[questions.choices]]
+text = { fr = "On la remplace en orbite", en = "It is replaced in orbit" }
+[[questions.choices]]
+correct = true
+text = { fr = "On la ralentit en appliquant un couple extérieur, par magnéto-coupleurs ou propulseurs", en = "It is slowed while an external torque is applied, with magnetorquers or thrusters" }
+[[questions.choices]]
+text = { fr = "On oriente les panneaux solaires vers la Terre", en = "The solar arrays are turned towards the Earth" }
+
+# --- Hard ---
+
+[[questions]]
+slug = "spacecraft-radiator-power"
+topic = "space-systems"
+kind = "numeric"
+difficulty = 1400
+answer = 390
+tolerance = 0.03
+unit = "W"
+source = { label = "NASA, State-of-the-Art of Small Spacecraft Technology, ch. 7: Thermal Control", url = "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/" }
+[questions.translations.fr]
+title = "La puissance d'un radiateur"
+stem = "Un radiateur de 1 m², d'émissivité 0,85, est à 300 K et voit l'espace froid. Quelle puissance rayonne-t-il, avec $\\sigma = 5{,}67 \\times 10^{-8}$ W/(m²·K⁴), en watts ?"
+explanation = "$P = \\varepsilon\\,\\sigma\\,A\\,T^4 = 0{,}85 \\times 5{,}67 \\times 10^{-8} \\times 1 \\times 300^4 \\approx 390$ W. La puissance croît comme $T^4$ : un radiateur à 330 K évacuerait près de 46 % de plus."
+[questions.translations.en]
+title = "The power of a radiator"
+stem = "A 1 m² radiator with emissivity 0.85 is at 300 K and sees cold space. What power does it radiate, with $\\sigma = 5.67 \\times 10^{-8}$ W/(m²·K⁴), in watts?"
+explanation = "$P = \\varepsilon\\,\\sigma\\,A\\,T^4 = 0.85 \\times 5.67 \\times 10^{-8} \\times 1 \\times 300^4 \\approx 390$ W. Power grows as $T^4$: a radiator at 330 K would shed nearly 46 % more."
+
+[[questions]]
+slug = "spacecraft-leo-eclipse-duration"
+topic = "space-systems"
+kind = "numeric"
+difficulty = 1400
+answer = 36
+tolerance = 0.05
+unit = "min"
+source = { label = "J. R. Wertz, W. J. Larson, Space Mission Analysis and Design, Microcosm, ch. on orbit geometry (eclipse duration)" }
+[questions.translations.fr]
+title = "La durée d'une éclipse"
+stem = "Un satellite tourne à 400 km ($r = 6\\,771$ km, période 92,4 min) dans le plan qui contient le Soleil. En assimilant l'ombre de la Terre à un cylindre de rayon 6 371 km, combien de temps dure l'éclipse, en minutes ?"
+explanation = "L'ombre couvre l'arc de demi-angle $\\arcsin(6\\,371 / 6\\,771) \\approx 70{,}2°$, soit $140{,}4°$ sur 360°, c'est-à-dire 39 % de l'orbite : $0{,}39 \\times 92{,}4 \\approx 36$ minutes. C'est le cas le plus défavorable ; selon l'orientation de l'orbite par rapport au Soleil, l'éclipse est plus courte, voire absente."
+[questions.translations.en]
+title = "How long an eclipse lasts"
+stem = "A satellite orbits at 400 km ($r = 6{,}771$ km, period 92.4 min) in the plane containing the Sun. Treating the Earth's shadow as a cylinder of radius 6,371 km, how long does the eclipse last, in minutes?"
+explanation = "The shadow covers the arc of half-angle $\\arcsin(6{,}371 / 6{,}771) \\approx 70.2°$, i.e. $140.4°$ out of 360°, or 39 % of the orbit: $0.39 \\times 92.4 \\approx 36$ minutes. That is the worst case; depending on how the orbit faces the Sun, the eclipse is shorter or absent."
+
+[[questions]]
+slug = "spacecraft-link-distance"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "NASA JPL, Basics of Space Flight, ch. 10: Telecommunications", url = "https://science.nasa.gov/learn/basics-of-space-flight/chapter10-1/" }
+[questions.translations.fr]
+title = "Distance et bilan de liaison"
+stem = "Une sonde s'éloigne et sa distance au sol double. Que devient la puissance du signal reçu au sol, toutes choses égales par ailleurs ?"
+explanation = "Le signal s'étale sur une sphère dont la surface croît comme $d^2$ : la puissance reçue décroît comme $1/d^2$. Doubler la distance la **divise par quatre**, soit une perte de 6 dB. Pour garder la liaison, on réduit le débit ou on agrandit les antennes."
+[questions.translations.en]
+title = "Distance and the link budget"
+stem = "A probe moves away and its distance to the ground doubles. What happens to the power of the signal received on the ground, all else being equal?"
+explanation = "The signal spreads over a sphere whose area grows as $d^2$: received power falls as $1/d^2$. Doubling the distance **divides it by four**, a 6 dB loss. To keep the link, the data rate is lowered or the antennas enlarged."
+[[questions.choices]]
+text = { fr = "Elle est divisée par deux", en = "It is halved" }
+[[questions.choices]]
+correct = true
+text = { fr = "Elle est divisée par quatre", en = "It is divided by four" }
+[[questions.choices]]
+text = { fr = "Elle ne change pas dans le vide", en = "It does not change in a vacuum" }
+[[questions.choices]]
+text = { fr = "Elle est divisée par huit", en = "It is divided by eight" }
+
+[[questions]]
+slug = "spacecraft-geo-eclipse-season"
+topic = "space-systems"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "J. R. Wertz, W. J. Larson, Space Mission Analysis and Design, Microcosm, ch. on orbit geometry (eclipse seasons)" }
+[questions.translations.fr]
+title = "Les saisons d'éclipses en GEO"
+stem = "Pourquoi un satellite géostationnaire ne subit-il des éclipses qu'autour des équinoxes ?"
+explanation = "L'orbite géostationnaire est dans le plan de l'équateur. La plupart de l'année, le Soleil est au-dessus ou au-dessous de ce plan, et l'ombre de la Terre passe à côté de l'orbite. Ce n'est qu'autour des équinoxes, quand le Soleil traverse le plan équatorial, que le satellite passe chaque nuit dans l'ombre, jusqu'à environ 72 minutes."
+[questions.translations.en]
+title = "Eclipse seasons in GEO"
+stem = "Why does a geostationary satellite only go through eclipses around the equinoxes?"
+explanation = "The geostationary orbit lies in the equatorial plane. Most of the year, the Sun is above or below that plane, and the Earth's shadow misses the orbit. Only around the equinoxes, when the Sun crosses the equatorial plane, does the satellite pass into the shadow every night, for up to about 72 minutes."
+[[questions.choices]]
+correct = true
+text = { fr = "Parce que c'est seulement alors que le Soleil est dans le plan de l'équateur, où se trouve l'orbite", en = "Because only then is the Sun in the equatorial plane, where the orbit lies" }
+[[questions.choices]]
+text = { fr = "Parce que la Terre est plus proche du Soleil aux équinoxes", en = "Because the Earth is closer to the Sun at the equinoxes" }
+[[questions.choices]]
+text = { fr = "Parce que la Lune cache le Soleil à ces dates", en = "Because the Moon hides the Sun on those dates" }
+[[questions.choices]]
+text = { fr = "Parce que l'orbite géostationnaire change d'altitude au fil de l'année", en = "Because the geostationary orbit changes altitude over the year" }

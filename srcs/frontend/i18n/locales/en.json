@@ -1,0 +1,618 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "course": "Course",
+    "profil": "Profile",
+    "settings": "Settings",
+    "messages": "Messages",
+    "friends": "Friends",
+    "logout": "Log out",
+    "multiplayer": "Multiplayer",
+    "leaderboard": "Leaderboard",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "landing": {
+    "badge": "Aerospace basics · bound for Kourou",
+    "title": "Understand how we fly, all the way to orbit.",
+    "subtitle": "Flyana explains how an aircraft stays up, how a rocket reaches orbit and how a satellite stays there. Clear courses, then a quiz that adapts to your level.",
+    "ctaPrimary": "Start for free",
+    "ctaSecondary": "I already have an account",
+    "pitch": {
+      "courses": {
+        "title": "Courses that really explain",
+        "body": "Seven modules, from lift to orbital mechanics: every notion is built step by step, with its formulas and orders of magnitude."
+      },
+      "adaptive": {
+        "title": "A quiz that adapts to you",
+        "body": "After each course, a check quiz picks questions at your level. The module is passed at 80 % correct answers."
+      },
+      "progress": {
+        "title": "Move at your own pace",
+        "body": "Earn XP, keep your streak and unlock a badge at every stage of the flight."
+      }
+    },
+    "scene": {
+      "alt": "A launcher lifts off at dawn from the Guianese coast, above the rainforest, and leans towards the Atlantic.",
+      "caption": "Kourou, French Guiana: 5° from the equator, the Earth's rotation gives rockets launched east, over the ocean, a 463 m/s head start."
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Three steps per module",
+      "read": {
+        "title": "Read the course",
+        "body": "A structured course, from the simplest to the most advanced, with diagrams, formulas and worked numbers."
+      },
+      "check": {
+        "title": "Take the check quiz",
+        "body": "Questions adjust to your answers: never too easy, never discouraging."
+      },
+      "validate": {
+        "title": "Pass the module",
+        "body": "80 % correct and the module is passed. Every correction is explained and sourced."
+      }
+    },
+    "sample": {
+      "title": "What it looks like",
+      "subtitle": "Each question comes after the course that explains it, and each correction tells you why.",
+      "eyebrow": "Module 4 · Orbital mechanics",
+      "question": "How fast does a satellite move on a circular orbit 400 km up, like the ISS?",
+      "choices": {
+        "a": "≈ 3.1 km/s",
+        "b": "≈ 7.7 km/s",
+        "c": "≈ 11.2 km/s",
+        "d": "≈ 29.8 km/s"
+      },
+      "correct": "Right answer",
+      "explanation": "On a circular orbit, v = √(μ / r). With μ = 3.986 × 10¹⁴ m³/s² for the Earth and r = 6,371 + 400 = 6,771 km, v ≈ 7.67 km/s. 3.1 km/s is the speed on a geostationary orbit, 11.2 km/s the escape velocity at the surface, 29.8 km/s the Earth's speed around the Sun.",
+      "source": "Source: NASA JPL, Basics of Space Flight"
+    }
+  },
+  "dashboard": {
+    "greeting": "Welcome back,",
+    "streak": "{n}-day streak",
+    "level": "Level {n}",
+    "xp": "{current} / {max} XP",
+    "xpToNext": "Only {n} XP until level {level}.",
+    "statsSolved": "Questions solved",
+    "statsToReview": "To review",
+    "achievements": "Achievements",
+    "achievementsCount": "{n} / {total} unlocked",
+    "locked": "Locked",
+    "rules": {
+      "title": "How do I earn XP?",
+      "quizCorrect": "+{n} XP: right answer in a check quiz (once per question)",
+      "modulePassed": "+{n} XP: module passed for the first time",
+      "perLevel": "{n} XP per level. Each question pays XP only once.",
+      "streak": "Your streak grows on every day you are active, and resets if you skip a day."
+    },
+    "continueTitle": "Pick up the course",
+    "continueBody": "Next step: {name}.",
+    "continueAction": "Continue",
+    "allPassed": "Every module is passed. Well done, you are in orbit!",
+    "modulesPassed": "{n} / {total} modules passed"
+  },
+  "achievements": {
+    "first_steps": {
+      "name": "First steps",
+      "desc": "Earn your first XP"
+    },
+    "level_5": {
+      "name": "Level 5",
+      "desc": "Reach level 5"
+    },
+    "level_10": {
+      "name": "Level 10",
+      "desc": "Reach level 10"
+    },
+    "streak_3": {
+      "name": "On a roll",
+      "desc": "3 days in a row"
+    },
+    "streak_7": {
+      "name": "Perfect week",
+      "desc": "7 days in a row"
+    },
+    "liftoff": {
+      "name": "Lift-off",
+      "desc": "Read your first lesson"
+    },
+    "max_q": {
+      "name": "Max Q",
+      "desc": "Pass your first module"
+    },
+    "meco": {
+      "name": "MECO",
+      "desc": "Pass half of the modules"
+    },
+    "orbit": {
+      "name": "Orbit insertion",
+      "desc": "Pass every module of the course"
+    }
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "Every student ranked by total XP.",
+    "you": "You",
+    "yourRank": "Your rank: #{n}",
+    "noXp": "Earn your first XP to enter the leaderboard.",
+    "empty": "Nobody has earned XP yet.",
+    "level": "Lv. {n}",
+    "loadError": "Could not load the leaderboard."
+  },
+  "course": {
+    "loadFailed": "This page could not be loaded. Try again in a moment.",
+    "breadcrumb": "Breadcrumb",
+    "moduleNumber": "Module {n}",
+    "lessonNumber": "Lesson {n}",
+    "passed": "Passed",
+    "modulesPassed": "{n} / {total} modules passed",
+    "lessons": "The course",
+    "lessonsRead": "{n} / {total} lessons read",
+    "read": "Read",
+    "noLessons": "The course of this module is coming soon.",
+    "startReading": "Start the course",
+    "continueReading": "Continue reading",
+    "previousLesson": "Previous lesson",
+    "nextLesson": "Next lesson",
+    "toQuiz": "Take the check quiz",
+    "quizTitle": "Check quiz",
+    "quizBody": "{n} questions picked for your level. The module is passed at 80 % correct answers.",
+    "quizzes": "no quiz taken | 1 quiz taken | {n} quizzes taken",
+    "bestScore": "Best score: {n} %",
+    "noQuestions": "The questions of this module are coming soon.",
+    "startQuiz": "Start the quiz",
+    "resumeQuiz": "Resume the quiz",
+    "restartQuiz": "Start over",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    }
+  },
+  "quiz": {
+    "progress": "Question {n} of {total}",
+    "hintSingle": "One right answer",
+    "hintMulti": "Several right answers possible: tick them all",
+    "hintNumeric": "Numeric answer, in {unit}",
+    "yourValue": "Your value",
+    "notANumber": "Type a number, for example 7.67 or 3.986e14.",
+    "check": "Check",
+    "right": "Right answer!",
+    "wrong": "Not quite",
+    "rightChoice": "Right answer",
+    "wrongChoice": "Wrong answer",
+    "expected": "Expected value:",
+    "source": "Source:",
+    "next": "Next question",
+    "seeResult": "See the result",
+    "passedTitle": "Module passed!",
+    "failedTitle": "Not passed yet",
+    "score": "{correct} right answers out of {total} ({n} %)",
+    "passRule": "{n} % right answers pass the module.",
+    "xpGained": "+{n} XP",
+    "retry": "Take another quiz",
+    "backToModule": "Back to the module"
+  },
+  "simulator": {
+    "tsiolkovsky": {
+      "title": "Delta-v calculator",
+      "engine": "Engine type",
+      "presets": {
+        "solid": "Solid",
+        "kerosene": "Kerosene",
+        "hydrogen": "Hydrogen",
+        "ion": "Ion"
+      },
+      "isp": "Specific impulse: {n} s",
+      "propellant": "Propellant mass: {n} t",
+      "dry": "Dry mass (structure, engines, payload): {n} t",
+      "result": "Δv = {v} km/s",
+      "enough": "Enough to reach low orbit (about 9.4 km/s, losses included) with a single stage!",
+      "notEnough": "{n} % of the 9.4 km/s low orbit needs: another stage would be required.",
+      "ratio": "Mass ratio: {n}"
+    },
+    "hohmann": {
+      "title": "Hohmann transfer",
+      "low": "Starting orbit: {n} km up",
+      "high": "Target orbit: {n} km up",
+      "total": "Total",
+      "duration": "Duration",
+      "figure": "Hohmann transfer from {low} km to {high} km altitude",
+      "legend": "Light blue: the starting orbit; grey: the target orbit; dashed orange: the transfer half-ellipse. The two dots mark the two burns. Mean Earth radius: 6,371 km."
+    }
+  },
+  "auth": {
+    "login": "Log in",
+    "signUp": "Create an account",
+    "signIn": "Sign in",
+    "createAccount": "Create your account",
+    "email": "Email address",
+    "username": "Username",
+    "password": "Password",
+    "passwordConfirm": "Confirm password",
+    "forgotPassword": "Forgot your password?",
+    "requestNewPassword": "Request a new password",
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Pick up where you left off.",
+    "signupTitle": "Create an account",
+    "signupSubtitle": "Start revising in seconds.",
+    "forgotTitle": "Forgot your password?",
+    "forgotSubtitle": "Enter your login and we'll send you a new password.",
+    "login42": "42 Login",
+    "login42Placeholder": "jdoe",
+    "emailPlaceholder": "firstname{'@'}student.42.fr",
+    "passwordPlaceholder": "••••••••",
+    "or": "or",
+    "providers": {
+      "github": "GitHub",
+      "google": "Google",
+      "intra42": "Intra 42",
+      "continueWith": "Continue with {provider}",
+      "signUpWith": "Sign up with {provider}"
+    },
+    "errors": {
+      "passwordTooShort": "Password must be at least 10 characters long",
+      "passwordMismatch": "Passwords do not match",
+      "invalidLogin": "Wrong email or password.",
+      "tooMany": "Too many attempts, try again later.",
+      "generic": "Something went wrong, try again.",
+      "emailTaken": "That email is already registered.",
+      "nameTaken": "That username is taken.",
+      "invalidInput": "Check the fields and try again.",
+      "passwordWeak": "This password is too common, choose another.",
+      "passwordIsEmail": "The password must be different from the email.",
+      "passwordNeedsLower": "The password needs a lowercase letter.",
+      "passwordNeedsUpper": "The password needs an uppercase letter.",
+      "passwordNeedsDigit": "The password needs a digit.",
+      "passwordNeedsSpecial": "The password needs a special character (e.g. ! ? # -).",
+      "invalidCode": "Invalid code, try again.",
+      "mfaExpired": "Verification took too long, sign in again.",
+      "invalidEmail": "Enter a valid email address.",
+      "displayNameInvalid": "3 to 24 characters: letters, digits, _ or - only."
+    },
+    "signingIn": "Signing in…",
+    "creating": "Creating…",
+    "verify": "Verify",
+    "totpPrompt": "Enter the 6-digit code from your authenticator app.",
+    "totpCode": "Authentication code",
+    "acceptTerms": "I accept the {terms} and have read the {privacy}.",
+    "oauthTerms": "By continuing with GitHub, Google or 42, you accept the {terms} and acknowledge the {privacy}.",
+    "termsLink": "terms of service",
+    "privacyLink": "privacy policy",
+    "passwordHint": "At least 10 characters, with an uppercase letter, a lowercase letter, a digit and a special character."
+  },
+  "chat": {
+    "send": "Send",
+    "placeholder": "Write your message",
+    "read": "Read",
+    "loadOlder": "Load earlier messages",
+    "empty": "No messages yet with {name}.",
+    "typing": "{name} is typing…",
+    "noConversations": "No conversations yet.",
+    "pickConversation": "Select a conversation to start chatting.",
+    "sendBlocked": "You can't message this user.",
+    "sendFailed": "Message not sent, try again.",
+    "back": "Conversations"
+  },
+  "user": {
+    "level": "Lvl {n}."
+  },
+  "realtime": {
+    "idle": "Offline",
+    "connecting": "Connecting…",
+    "online": "Realtime on",
+    "offline": "Reconnecting…"
+  },
+  "presence": {
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "friends": {
+    "find": "Find people",
+    "searchPlaceholder": "Search by username…",
+    "add": "Add friend",
+    "alreadyLinked": "Linked",
+    "noResults": "No users found.",
+    "incoming": "Friend requests",
+    "outgoing": "Sent requests",
+    "accept": "Accept",
+    "decline": "Decline",
+    "cancel": "Cancel",
+    "pending": "Pending",
+    "yourFriends": "Your friends",
+    "none": "No friends yet.",
+    "message": "Message",
+    "remove": "Remove",
+    "block": "Block",
+    "errConflict": "Already done or not allowed.",
+    "errGeneric": "Action failed, try again."
+  },
+  "profile": {
+    "notFound": "This profile does not exist.",
+    "joined": "Joined {date}",
+    "noBio": "No bio yet.",
+    "friends": "Friends",
+    "unblock": "Unblock",
+    "edit": "Edit",
+    "viewPublic": "View my public profile",
+    "language": "Language"
+  },
+  "settings": {
+    "avatar": "Avatar",
+    "chooseImage": "Choose an image",
+    "uploading": "Uploading…",
+    "avatarRejected": "Image rejected (max 2 MB, PNG/JPEG/WebP).",
+    "profile": "Profile",
+    "bio": "Bio",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Changes saved.",
+    "saveError": "Could not save your changes.",
+    "twoFa": "Two-factor authentication",
+    "twoFaHint": "Protect your account with a time-based code.",
+    "twoFaOn": "Two-factor authentication is on.",
+    "twoFaOff": "Off",
+    "twoFaEnable": "Enable",
+    "twoFaScan": "Scan this QR code, then enter the code it shows.",
+    "twoFaConfirm": "Confirm",
+    "twoFaDone": "Two-factor authentication enabled.",
+    "twoFaDisable": "Disable",
+    "twoFaBadCode": "Invalid code.",
+    "backupCodes": "Save these backup codes somewhere safe:",
+    "session": "Session",
+    "logout": "Log out",
+    "deleteTitle": "Delete account",
+    "deleteHint": "Permanently delete your account and all of your data.",
+    "deleteAccount": "Delete my account",
+    "deleteWarning": "This cannot be undone: your profile, progress, achievements, friends, messages and match history will be erased for good.",
+    "deleteConfirmLabel": "To confirm, type your username: {name}",
+    "deleteForever": "Delete permanently",
+    "deleting": "Deleting…",
+    "deleteCancel": "Cancel",
+    "deleteError": "Could not delete the account."
+  },
+  "multiplayer": {
+    "you": "you",
+    "leave": "Leave match",
+    "dismiss": "Dismiss",
+    "standings": "Standings",
+    "phase": {
+      "lobby": "Waiting room",
+      "playing": "Match in progress",
+      "finished": "Match over",
+      "setup": "Setup"
+    },
+    "offline": {
+      "title": "Connection lost",
+      "body": "Realtime is down. Your seat is kept for 60 seconds: reconnect to resume the match.",
+      "retry": "Reconnect"
+    },
+    "create": {
+      "title": "Create a match",
+      "intro": "Open a room and share its code with your friends.",
+      "size": "Maximum players",
+      "players": "{n} players",
+      "questionCount": "Number of questions",
+      "questions": "{n} questions",
+      "submit": "Create room",
+      "levels": "Levels played",
+      "levelsHint": "With no choice made, questions come from every level.",
+      "levelsLoading": "Loading the levels…",
+      "levelsFailed": "The levels could not be loaded: the match will take questions from every level.",
+      "selectedCount": "{n} questions available"
+    },
+    "join": {
+      "title": "Join a match",
+      "intro": "Got a code from a friend? Enter it here.",
+      "code": "Room code",
+      "submit": "Join"
+    },
+    "lobby": {
+      "code": "Room code",
+      "copy": "Copy code",
+      "copied": "Copied",
+      "share": "Share this code: each player enters it under “Join a match”.",
+      "needTwo": "At least two players are needed to start.",
+      "autoStart": "The match starts as soon as everyone is ready ({ready} / {total}).",
+      "players": "Players",
+      "emptySeat": "Open seat",
+      "ready": "Ready",
+      "notReady": "Not ready",
+      "imReady": "I'm ready",
+      "unready": "Not ready anymore",
+      "reconnecting": "Reconnecting…",
+      "questions": "{n} questions",
+      "allLevels": "Every level"
+    },
+    "round": {
+      "waiting": "Answer sent. Waiting for the other players ({n} / {total}).",
+      "hasAnswered": "Has answered",
+      "loading": "Next question…",
+      "correct": "Right answer.",
+      "wrong": "Wrong answer.",
+      "missed": "Time is up: no answer."
+    },
+    "result": {
+      "title": "Match over",
+      "won": "Victory!",
+      "winner": "{name} wins the match.",
+      "forfeit": "The other players left: victory by forfeit.",
+      "rank": "Your rank",
+      "score": "Your points",
+      "again": "New match"
+    },
+    "rules": {
+      "title": "Rules",
+      "same": "Every player gets the same question at the same time.",
+      "timer": "Each question lasts 20 seconds.",
+      "speed": "A right answer earns 10 points, plus a bonus for the fastest to find it: +5 for the 1st, +3 for the 2nd, +1 for the 3rd.",
+      "wrong": "A wrong or missing answer earns 0 points.",
+      "win": "Highest score after the last question wins. Being disconnected for over 60 seconds counts as a forfeit."
+    },
+    "errors": {
+      "generic": "Something went wrong. Try again.",
+      "MATCH_NOT_FOUND": "No match matches this code.",
+      "MATCH_ALREADY_STARTED": "This match has already started.",
+      "MATCH_FULL": "This match is full.",
+      "NO_QUESTIONS_AVAILABLE": "No questions available to start a match.",
+      "INVALID_MAX_PLAYERS": "Invalid number of players.",
+      "INVALID_MATCH_ID": "Invalid room code.",
+      "NOT_IN_MATCH": "You are not part of this match.",
+      "INVALID_STATE": "This action is not possible at this point of the match.",
+      "INVALID_QUESTION": "Invalid question received from the server.",
+      "INVALID_CHOICE": "Invalid answer."
+    },
+    "recap": {
+      "title": "Match detail",
+      "round": "Question {n}",
+      "correctAnswer": "Right answer",
+      "yourAnswer": "Your answer",
+      "answered": "{seconds} s · {points} pts",
+      "noAnswer": "No answer",
+      "loading": "Loading the detail…",
+      "failed": "The match detail could not be loaded."
+    },
+    "roundProgress": "Question {n} of {total}",
+    "timeLeft": "Time left"
+  },
+  "legal": {
+    "footer": {
+      "privacy": "Privacy",
+      "terms": "Terms of service",
+      "project": "42 student project · ft_transcendence"
+    },
+    "updated": "Last updated: November 9, 2026",
+    "back": "Back",
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "This page explains what data Flyana collects, why, how long it is kept and what your rights are. We only collect what the platform needs to work.",
+      "sections": {
+        "controller": {
+          "title": "Who we are",
+          "body": "Flyana is a platform for learning the basics of aerospace, built by a team of students as part of the ft_transcendence project at 42. It is neither a commercial service nor an official 42 service. The project team is responsible for the data processing described here."
+        },
+        "data": {
+          "title": "Data we collect",
+          "body": "• Account: email address, username, password (never stored in plain text, only hashed with Argon2), avatar, bio, preferred language.\n• Sign-in with GitHub, Google or the 42 intra: your account ID at that provider and the email address it sends us. We never receive your password for that provider.\n• Activity: the lessons you have read, your answers to check quizzes, your scores, your progress per module and your estimated level in each module.\n• Social: your friends list, blocked users and private messages.\n• Security: session tokens (stored hashed), your two-factor secret if you enable it (encrypted), last activity time and the IP address tied to some sensitive actions in the security log."
+        },
+        "purposes": {
+          "title": "Why we use it",
+          "body": "• To create and secure your account, sign you in and, if you want, enable two-factor authentication.\n• To grade your answers, adapt the questions to your level, track your progress and show your statistics.\n• To run chat, friends and online presence.\n• To protect the platform from abuse (attempt limits, security log).\nThis processing relies on providing the service you ask for when you create an account, and on our legitimate interest in keeping the platform secure. We do no advertising and no commercial profiling."
+        },
+        "cookies": {
+          "title": "Cookies and local storage",
+          "body": "Flyana only uses strictly necessary cookies, with no advertising trackers or analytics:\n• access_token and refresh_token: keep you signed in (unreadable by JavaScript).\n• csrf_token: protects forms against forged requests.\n• mfa_token and OAuth state: last a few minutes, during a two-step or provider sign-in.\n• flyana_locale: remembers your language.\nYour light or dark theme choice is kept in your browser local storage. Since these are essential, they do not require consent."
+        },
+        "sharing": {
+          "title": "Sharing",
+          "body": "We never sell or rent your data. Your username, avatar, bio, online presence and public results are visible to other signed-in users. Your private messages are only visible to you and the person you talk to. If you sign in with GitHub, Google or 42, that provider knows you signed in to Flyana, under its own privacy policy."
+        },
+        "retention": {
+          "title": "Retention",
+          "body": "Your data is kept as long as your account exists. Sessions expire automatically and revoked tokens can no longer be used. When your account is deleted, your personal data is erased, except security log entries which may be kept for a few months to investigate abuse."
+        },
+        "security": {
+          "title": "Security",
+          "body": "All traffic goes over HTTPS. Passwords and tokens are hashed, the two-factor secret is encrypted, and two-factor authentication is available in settings. No system is flawless, so please use a unique password."
+        },
+        "rights": {
+          "title": "Your rights",
+          "body": "Under the GDPR, you can access, correct, export or delete your data, and object to its processing. You can edit your profile directly in settings. For anything else, including deleting your account, contact the project team: we reply within one month. You can also file a complaint with the CNIL, the French data protection authority (cnil.fr)."
+        },
+        "changes": {
+          "title": "Changes",
+          "body": "If this policy changes significantly, the date at the top of the page will be updated and we will let you know on the platform."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of service",
+      "intro": "These terms govern the use of Flyana. By creating an account, you accept them. If you disagree, do not use the platform.",
+      "sections": {
+        "service": {
+          "title": "The service",
+          "body": "Flyana is a free platform for learning the basics of aerospace: courses, adaptive check quizzes, progress, leaderboard, chat and friends. It is a student project built as part of ft_transcendence and is not an official 42 service."
+        },
+        "account": {
+          "title": "Your account",
+          "body": "You must provide a valid email address and pick a username that does not impersonate someone else. You are responsible for keeping your password secret and for everything done with your account. An account is personal: do not share it. We recommend enabling two-factor authentication."
+        },
+        "conduct": {
+          "title": "Code of conduct",
+          "body": "You must not:\n• harass, insult, threaten or discriminate against other users, in chat, usernames, bios or avatars;\n• post illegal, hateful or pornographic content, or spam;\n• cheat in quizzes or tamper with rankings;\n• try to access other people’s accounts, bypass protections, attack or overload the platform, or scrape it automatically.\nYou can block any user who bothers you."
+        },
+        "content": {
+          "title": "Your content",
+          "body": "You keep ownership of what you post (answers, messages, avatar, bio). You only allow us to store and display it to run the service. You guarantee you have the right to post it, including any image used as an avatar."
+        },
+        "accuracy": {
+          "title": "Educational content",
+          "body": "Courses and questions are written with care and sourced, but they may contain errors or simplifications. They replace neither formal teaching nor reference technical documentation. Scores and badges earned on Flyana have no official value."
+        },
+        "availability": {
+          "title": "Availability",
+          "body": "The service is provided as is, with no guarantee of availability or long-term data retention. It may be interrupted, changed or shut down at any time, for example for maintenance or when the project ends."
+        },
+        "termination": {
+          "title": "Suspension and closure",
+          "body": "We may remove content or suspend an account that breaks these terms. You can stop using Flyana at any time and ask for your account to be deleted, as described in the privacy policy."
+        },
+        "liability": {
+          "title": "Liability",
+          "body": "To the extent permitted by law, the project team is not liable for indirect damage arising from use of the platform, nor for content posted by users."
+        },
+        "changes": {
+          "title": "Changes and governing law",
+          "body": "These terms may change: the date at the top of the page shows the latest version, and continuing to use Flyana after a change means you accept it. They are governed by French law."
+        }
+      }
+    }
+  },
+  "toast": {
+    "close": "Close notification",
+    "achievementUnlocked": "Achievement unlocked!"
+  },
+  "form": {
+    "required": "This field is required.",
+    "invalidFormat": "This value is not in the expected format."
+  },
+  "apiErrors": {
+    "nameTaken": "This username is already taken.",
+    "invalidCode": "Invalid code.",
+    "twoFaSetupFirst": "Start the 2FA setup first.",
+    "twoFaAlreadyEnabled": "2FA is already enabled.",
+    "twoFaNotEnabled": "2FA is not enabled.",
+    "invalidPassword": "Incorrect password.",
+    "tooMany": "Too many attempts. Try again in a moment.",
+    "invalidRequest": "This action is not possible on this account.",
+    "unavailable": "This action is not available with this user.",
+    "requestExists": "A request already exists between you.",
+    "alreadyHandled": "This request has already been handled.",
+    "blocked": "This relationship is blocked.",
+    "notFound": "Not found.",
+    "invalidRecipient": "Invalid recipient.",
+    "slowDown": "You are sending too many messages. Slow down a little.",
+    "imageUnreadable": "Unreadable image.",
+    "imageTooLarge": "Image too large.",
+    "fileTooHeavy": "File too heavy (2 MB maximum).",
+    "imageFormat": "Format not allowed: PNG, JPEG or WebP only.",
+    "invalidInput": "Some values are invalid.",
+    "confirmationMismatch": "The username you typed does not match.",
+    "leaveMatchFirst": "Leave your multiplayer match before deleting your account."
+  },
+  "roles": {
+    "guest": "Guest",
+    "student": "Student",
+    "author": "Author",
+    "moderator": "Moderator",
+    "admin": "Administrator"
+  }
+}

@@ -1,0 +1,340 @@
+# Module 4: orbital mechanics. Numbers recomputed by `python -m seeds.check_numbers`,
+# with mu = 3.986004418e14 m³/s² and a mean Earth radius of 6,371 km.
+
+[[lessons]]
+slug = "orbits-kepler"
+topic = "orbital-mechanics"
+position = 0
+title = { fr = "Gravitation et lois de Kepler", en = "Gravitation and Kepler's laws" }
+body = { fr = "lessons/01-kepler.fr.md", en = "lessons/01-kepler.en.md" }
+
+[[lessons]]
+slug = "orbits-earth-orbits"
+topic = "orbital-mechanics"
+position = 1
+title = { fr = "Vitesse orbitale et orbites terrestres", en = "Orbital speed and Earth orbits" }
+body = { fr = "lessons/02-orbits.fr.md", en = "lessons/02-orbits.en.md" }
+
+[[lessons]]
+slug = "orbits-manoeuvres"
+topic = "orbital-mechanics"
+position = 2
+title = { fr = "Manœuvrer : delta-v et transfert de Hohmann", en = "Manoeuvring: delta-v and the Hohmann transfer" }
+body = { fr = "lessons/03-manoeuvres.fr.md", en = "lessons/03-manoeuvres.en.md" }
+
+# --- Easy ---
+
+[[questions]]
+slug = "orbits-kepler-first-law"
+topic = "orbital-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Science, Orbits and Kepler's Laws", url = "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/" }
+[questions.translations.fr]
+title = "La première loi de Kepler"
+stem = "Selon la première loi de Kepler, quelle forme a l'orbite d'un satellite autour de la Terre ?"
+explanation = "Une orbite est une **ellipse** dont le centre de la Terre occupe un foyer, pas le centre. Le cercle n'est qu'un cas particulier d'ellipse, où les deux foyers sont confondus."
+[questions.translations.en]
+title = "Kepler's first law"
+stem = "According to Kepler's first law, what shape is a satellite's orbit around the Earth?"
+explanation = "An orbit is an **ellipse** with the Earth's centre at one focus, not at the centre. A circle is only a special case of an ellipse, where both foci coincide."
+[[questions.choices]]
+text = { fr = "Toujours un cercle centré sur la Terre", en = "Always a circle centred on the Earth" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une ellipse dont la Terre occupe un foyer", en = "An ellipse with the Earth at one focus" }
+[[questions.choices]]
+text = { fr = "Une ellipse centrée sur la Terre", en = "An ellipse centred on the Earth" }
+[[questions.choices]]
+text = { fr = "Une spirale qui se resserre", en = "A tightening spiral" }
+
+[[questions]]
+slug = "orbits-fastest-at-perigee"
+topic = "orbital-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Science, Orbits and Kepler's Laws", url = "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/" }
+[questions.translations.fr]
+title = "Où va-t-on le plus vite ?"
+stem = "Sur une orbite elliptique, où le satellite va-t-il le plus vite ?"
+explanation = "D'après la loi des aires (deuxième loi de Kepler), le rayon Terre-satellite balaie des aires égales en des temps égaux : près de la Terre, le satellite doit parcourir plus de chemin dans le même temps. Il va donc le plus vite au **périgée**, le point le plus proche."
+[questions.translations.en]
+title = "Where is it fastest?"
+stem = "On an elliptical orbit, where does the satellite move fastest?"
+explanation = "By the law of areas (Kepler's second law), the Earth-satellite line sweeps out equal areas in equal times: near the Earth, the satellite must cover more path in the same time. So it moves fastest at **perigee**, the nearest point."
+[[questions.choices]]
+text = { fr = "À l'apogée", en = "At apogee" }
+[[questions.choices]]
+text = { fr = "Partout à la même vitesse", en = "At the same speed everywhere" }
+[[questions.choices]]
+correct = true
+text = { fr = "Au périgée", en = "At perigee" }
+[[questions.choices]]
+text = { fr = "À mi-chemin entre périgée et apogée", en = "Halfway between perigee and apogee" }
+
+[[questions]]
+slug = "orbits-geostationary"
+topic = "orbital-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "ESA, Types of orbits", url = "https://www.esa.int/Enabling_Support/Space_Transportation/Types_of_orbits" }
+[questions.translations.fr]
+title = "L'orbite géostationnaire"
+stem = "Pourquoi un satellite géostationnaire semble-t-il immobile dans le ciel ?"
+explanation = "Sur une orbite circulaire dans le plan de l'équateur, à 35 786 km d'altitude, la période vaut un jour sidéral (23 h 56 min). Le satellite tourne au même rythme que la Terre : vu du sol, il ne bouge pas, et une antenne fixe peut le viser."
+[questions.translations.en]
+title = "The geostationary orbit"
+stem = "Why does a geostationary satellite seem fixed in the sky?"
+explanation = "On a circular orbit in the equatorial plane, 35,786 km up, the period is one sidereal day (23 h 56 min). The satellite turns in step with the Earth: seen from the ground it does not move, and a fixed antenna can point at it."
+[[questions.choices]]
+text = { fr = "Il est trop loin pour que son mouvement soit visible", en = "It is too far away for its motion to be visible" }
+[[questions.choices]]
+text = { fr = "Ses moteurs le maintiennent à l'arrêt au-dessus d'un point", en = "Its engines hold it still above one point" }
+[[questions.choices]]
+correct = true
+text = { fr = "Il fait le tour de la Terre en un jour sidéral, au-dessus de l'équateur, comme la Terre tourne", en = "It circles the Earth in one sidereal day, above the equator, as the Earth turns" }
+[[questions.choices]]
+text = { fr = "Il est en orbite autour du Soleil, pas de la Terre", en = "It orbits the Sun, not the Earth" }
+
+[[questions]]
+slug = "orbits-weightlessness"
+topic = "orbital-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA JPL, Basics of Space Flight, ch. 3: Gravity and Mechanics", url = "https://science.nasa.gov/learn/basics-of-space-flight/chapter3-1/" }
+[questions.translations.fr]
+title = "L'apesanteur dans l'ISS"
+stem = "Pourquoi les astronautes flottent-ils à bord de l'ISS, à 400 km d'altitude ?"
+explanation = "À 400 km, la gravité vaut encore environ 90 % de sa valeur au sol. Les astronautes flottent parce qu'eux et la station sont en **chute libre** ensemble autour de la Terre : rien ne les plaque contre le plancher."
+[questions.translations.en]
+title = "Weightlessness on the ISS"
+stem = "Why do astronauts float aboard the ISS, 400 km up?"
+explanation = "At 400 km, gravity is still about 90 % of its ground value. The astronauts float because they and the station are in **free fall** together around the Earth: nothing presses them against the floor."
+[[questions.choices]]
+text = { fr = "Il n'y a plus de gravité à cette altitude", en = "There is no gravity at that altitude" }
+[[questions.choices]]
+correct = true
+text = { fr = "Eux et la station sont en chute libre ensemble", en = "They and the station are in free fall together" }
+[[questions.choices]]
+text = { fr = "La Lune compense la gravité terrestre", en = "The Moon cancels the Earth's gravity" }
+[[questions.choices]]
+text = { fr = "La station est pressurisée", en = "The station is pressurised" }
+
+[[questions]]
+slug = "orbits-leo-missions"
+topic = "orbital-mechanics"
+kind = "multi_choice"
+difficulty = 1000
+source = { label = "NASA Earth Observatory, Catalog of Earth Satellite Orbits", url = "https://earthobservatory.nasa.gov/features/OrbitsCatalog" }
+[questions.translations.fr]
+title = "Qui vole en orbite basse ?"
+stem = "Lesquels de ces engins sont en orbite basse (LEO) ?"
+explanation = "L'ISS (~400 km), le télescope Hubble (un peu plus de 500 km) et les satellites d'observation héliosynchrones sont en orbite basse. Les satellites Galileo sont en orbite moyenne (~23 200 km) et Meteosat en orbite géostationnaire (35 786 km)."
+[questions.translations.en]
+title = "Who flies in low orbit?"
+stem = "Which of these spacecraft are in low Earth orbit (LEO)?"
+explanation = "The ISS (~400 km), the Hubble telescope (a little over 500 km) and sun-synchronous observation satellites are in low orbit. Galileo satellites are in medium orbit (~23,200 km) and Meteosat in geostationary orbit (35,786 km)."
+[[questions.choices]]
+correct = true
+text = { fr = "La Station spatiale internationale", en = "The International Space Station" }
+[[questions.choices]]
+text = { fr = "Les satellites de navigation Galileo", en = "The Galileo navigation satellites" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le télescope spatial Hubble", en = "The Hubble Space Telescope" }
+[[questions.choices]]
+text = { fr = "Les satellites météo Meteosat", en = "The Meteosat weather satellites" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un satellite d'observation héliosynchrone", en = "A sun-synchronous observation satellite" }
+
+# --- Medium ---
+
+[[questions]]
+slug = "orbits-iss-speed"
+topic = "orbital-mechanics"
+kind = "numeric"
+difficulty = 1200
+answer = 7.67
+tolerance = 0.02
+unit = "km/s"
+source = { label = "NASA JPL, Basics of Space Flight, ch. 5: Planetary Orbits", url = "https://science.nasa.gov/learn/basics-of-space-flight/chapter5-1/" }
+[questions.translations.fr]
+title = "La vitesse de l'ISS"
+stem = "Avec $\\mu = 3{,}986 \\times 10^{14}$ m³/s² et un rayon terrestre de 6 371 km, quelle est la vitesse sur une orbite circulaire à 400 km d'altitude, en km/s ?"
+explanation = "$r = 6\\,371 + 400 = 6\\,771$ km, donc $v = \\sqrt{\\mu / r} = \\sqrt{3{,}986 \\times 10^{14} / 6{,}771 \\times 10^{6}} \\approx 7\\,670$ m/s, soit 7,67 km/s. Attention à mesurer $r$ depuis le **centre** de la Terre."
+[questions.translations.en]
+title = "The speed of the ISS"
+stem = "With $\\mu = 3.986 \\times 10^{14}$ m³/s² and an Earth radius of 6,371 km, what is the speed on a circular orbit 400 km up, in km/s?"
+explanation = "$r = 6{,}371 + 400 = 6{,}771$ km, so $v = \\sqrt{\\mu / r} = \\sqrt{3.986 \\times 10^{14} / 6.771 \\times 10^{6}} \\approx 7{,}670$ m/s, i.e. 7.67 km/s. Mind measuring $r$ from the Earth's **centre**."
+
+[[questions]]
+slug = "orbits-iss-period"
+topic = "orbital-mechanics"
+kind = "numeric"
+difficulty = 1200
+answer = 92.4
+tolerance = 0.02
+unit = "min"
+source = { label = "NASA Science, Orbits and Kepler's Laws", url = "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/" }
+[questions.translations.fr]
+title = "La période de l'ISS"
+stem = "Quelle est la période d'une orbite circulaire à 400 km d'altitude ($r = 6\\,771$ km), avec $T = 2\\pi\\sqrt{r^3/\\mu}$, en minutes ?"
+explanation = "$T = 2\\pi\\sqrt{(6{,}771 \\times 10^6)^3 / 3{,}986 \\times 10^{14}} \\approx 5\\,545$ s, soit environ 92,4 minutes : l'ISS fait près de 16 fois le tour de la Terre par jour."
+[questions.translations.en]
+title = "The period of the ISS"
+stem = "What is the period of a circular orbit 400 km up ($r = 6{,}771$ km), with $T = 2\\pi\\sqrt{r^3/\\mu}$, in minutes?"
+explanation = "$T = 2\\pi\\sqrt{(6.771 \\times 10^6)^3 / 3.986 \\times 10^{14}} \\approx 5{,}545$ s, about 92.4 minutes: the ISS circles the Earth nearly 16 times a day."
+
+[[questions]]
+slug = "orbits-kepler-third-law"
+topic = "orbital-mechanics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "NASA Science, Orbits and Kepler's Laws", url = "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/" }
+[questions.translations.fr]
+title = "La troisième loi de Kepler"
+stem = "On double le demi-grand axe d'une orbite. Par combien sa période est-elle multipliée ?"
+explanation = "$T \\propto a^{3/2}$ : doubler $a$ multiplie la période par $2^{3/2} = 2\\sqrt{2} \\approx 2{,}83$. Une orbite plus haute est donc à la fois plus longue et parcourue plus lentement."
+[questions.translations.en]
+title = "Kepler's third law"
+stem = "The semi-major axis of an orbit is doubled. By how much is its period multiplied?"
+explanation = "$T \\propto a^{3/2}$: doubling $a$ multiplies the period by $2^{3/2} = 2\\sqrt{2} \\approx 2.83$. A higher orbit is both longer and flown more slowly."
+[[questions.choices]]
+text = { fr = "Par 2", en = "By 2" }
+[[questions.choices]]
+text = { fr = "Par 4", en = "By 4" }
+[[questions.choices]]
+text = { fr = "Par 8", en = "By 8" }
+[[questions.choices]]
+correct = true
+text = { fr = "Par environ 2,83", en = "By about 2.83" }
+
+[[questions]]
+slug = "orbits-launch-east"
+topic = "orbital-mechanics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "NASA JPL, Basics of Space Flight, ch. 14: Launch", url = "https://science.nasa.gov/learn/basics-of-space-flight/chapter14-1/" }
+[questions.translations.fr]
+title = "Lancer vers l'est"
+stem = "Pourquoi la plupart des fusées sont-elles lancées vers l'est, et de préférence près de l'équateur ?"
+explanation = "La Terre tourne vers l'est. Un lanceur tiré vers l'est part déjà avec la vitesse de la surface : 465 m/s à l'équateur, 463 m/s à Kourou. Près de l'équateur, ce gain est maximal et l'orbite géostationnaire, d'inclinaison nulle, demande moins de changement de plan."
+[questions.translations.en]
+title = "Launching east"
+stem = "Why are most rockets launched eastward, preferably near the equator?"
+explanation = "The Earth spins eastward. A launcher fired east starts with the speed of the surface: 465 m/s at the equator, 463 m/s at Kourou. Near the equator that gain is largest, and the geostationary orbit, with zero inclination, needs less plane change."
+[[questions.choices]]
+correct = true
+text = { fr = "Pour profiter de la vitesse de rotation de la Terre, maximale à l'équateur", en = "To use the Earth's rotation speed, largest at the equator" }
+[[questions.choices]]
+text = { fr = "Parce que la gravité est plus forte à l'équateur", en = "Because gravity is stronger at the equator" }
+[[questions.choices]]
+text = { fr = "Pour éviter les vents d'ouest en altitude", en = "To avoid westerly winds aloft" }
+[[questions.choices]]
+text = { fr = "Parce que l'atmosphère est plus mince à l'est", en = "Because the atmosphere is thinner to the east" }
+
+[[questions]]
+slug = "orbits-true-statements"
+topic = "orbital-mechanics"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "H. D. Curtis, Orbital Mechanics for Engineering Students, Elsevier, ch. 2 (energy and vis-viva)" }
+[questions.translations.fr]
+title = "Vrai ou faux en orbite"
+stem = "Quelles affirmations sont vraies ?"
+explanation = "La vitesse de libération vaut $\\sqrt{2}$ fois la vitesse circulaire à la même distance, et la période ne dépend que du demi-grand axe (troisième loi de Kepler). La masse du satellite n'intervient pas : un satellite lourd va à la même vitesse qu'un léger. Et plus l'orbite est haute, plus la vitesse est **faible**."
+[questions.translations.en]
+title = "True or false in orbit"
+stem = "Which statements are true?"
+explanation = "Escape velocity is $\\sqrt{2}$ times the circular speed at the same distance, and the period depends only on the semi-major axis (Kepler's third law). The satellite's mass plays no part: a heavy satellite moves as fast as a light one. And the higher the orbit, the **lower** the speed."
+[[questions.choices]]
+correct = true
+text = { fr = "La vitesse de libération vaut √2 fois la vitesse circulaire à la même distance", en = "Escape velocity is √2 times the circular speed at the same distance" }
+[[questions.choices]]
+text = { fr = "Un satellite plus lourd doit aller plus vite sur la même orbite", en = "A heavier satellite must go faster on the same orbit" }
+[[questions.choices]]
+correct = true
+text = { fr = "La période ne dépend que du demi-grand axe", en = "The period depends only on the semi-major axis" }
+[[questions.choices]]
+text = { fr = "Plus l'orbite est haute, plus le satellite va vite", en = "The higher the orbit, the faster the satellite" }
+
+# --- Hard ---
+
+[[questions]]
+slug = "orbits-hohmann-total"
+topic = "orbital-mechanics"
+kind = "numeric"
+difficulty = 1400
+answer = 3.857
+tolerance = 0.03
+unit = "km/s"
+source = { label = "H. D. Curtis, Orbital Mechanics for Engineering Students, Elsevier, ch. 6 (Hohmann transfer)" }
+[questions.translations.fr]
+title = "Le coût d'un transfert de Hohmann"
+stem = "Quel delta-v total faut-il pour un transfert de Hohmann d'une orbite circulaire à 400 km ($r_1 = 6\\,771$ km) vers l'orbite géostationnaire ($r_2 = 42\\,164$ km), sans changement de plan, en km/s ?"
+explanation = "$a = (r_1 + r_2)/2 = 24\\,468$ km. Au périgée, la vis-viva donne 10,07 km/s contre 7,67 km/s sur l'orbite basse : $\\Delta v_1 \\approx 2{,}40$ km/s. À l'apogée, 1,62 km/s contre 3,07 km/s sur l'orbite géostationnaire : $\\Delta v_2 \\approx 1{,}46$ km/s. Total : environ 3,86 km/s."
+[questions.translations.en]
+title = "The cost of a Hohmann transfer"
+stem = "What total delta-v does a Hohmann transfer take from a circular orbit at 400 km ($r_1 = 6{,}771$ km) to the geostationary orbit ($r_2 = 42{,}164$ km), with no plane change, in km/s?"
+explanation = "$a = (r_1 + r_2)/2 = 24{,}468$ km. At perigee, vis-viva gives 10.07 km/s against 7.67 km/s on the low orbit: $\\Delta v_1 \\approx 2.40$ km/s. At apogee, 1.62 km/s against 3.07 km/s on the geostationary orbit: $\\Delta v_2 \\approx 1.46$ km/s. Total: about 3.86 km/s."
+
+[[questions]]
+slug = "orbits-hohmann-time"
+topic = "orbital-mechanics"
+kind = "numeric"
+difficulty = 1400
+answer = 5.29
+tolerance = 0.03
+unit = "h"
+source = { label = "H. D. Curtis, Orbital Mechanics for Engineering Students, Elsevier, ch. 6 (Hohmann transfer)" }
+[questions.translations.fr]
+title = "La durée du transfert"
+stem = "Combien de temps dure ce transfert de Hohmann vers l'orbite géostationnaire, demi-grand axe $a = 24\\,468$ km, en heures ?"
+explanation = "Le transfert parcourt une demi-ellipse : $t = \\pi\\sqrt{a^3/\\mu} = \\pi\\sqrt{(2{,}4468 \\times 10^7)^3 / 3{,}986 \\times 10^{14}} \\approx 19\\,040$ s, soit environ 5,3 heures."
+[questions.translations.en]
+title = "The transfer time"
+stem = "How long does this Hohmann transfer to the geostationary orbit take, with semi-major axis $a = 24{,}468$ km, in hours?"
+explanation = "The transfer covers half an ellipse: $t = \\pi\\sqrt{a^3/\\mu} = \\pi\\sqrt{(2.4468 \\times 10^7)^3 / 3.986 \\times 10^{14}} \\approx 19{,}040$ s, about 5.3 hours."
+
+[[questions]]
+slug = "orbits-plane-change-cost"
+topic = "orbital-mechanics"
+kind = "numeric"
+difficulty = 1400
+answer = 1.337
+tolerance = 0.03
+unit = "km/s"
+source = { label = "H. D. Curtis, Orbital Mechanics for Engineering Students, Elsevier, ch. 6 (plane change manoeuvres)" }
+[questions.translations.fr]
+title = "Changer d'inclinaison"
+stem = "Quel delta-v faut-il pour changer de 10° l'inclinaison d'une orbite circulaire parcourue à 7,67 km/s, avec $\\Delta v = 2v\\sin(\\Delta i/2)$, en km/s ?"
+explanation = "$\\Delta v = 2 \\times 7{,}67 \\times \\sin 5° \\approx 1{,}34$ km/s, presque autant qu'un transfert vers une orbite bien plus haute. On change donc de plan là où la vitesse est la plus faible."
+[questions.translations.en]
+title = "Changing inclination"
+stem = "What delta-v does it take to change by 10° the inclination of a circular orbit flown at 7.67 km/s, with $\\Delta v = 2v\\sin(\\Delta i/2)$, in km/s?"
+explanation = "$\\Delta v = 2 \\times 7.67 \\times \\sin 5° \\approx 1.34$ km/s, almost as much as a transfer to a far higher orbit. So the plane is changed where the speed is lowest."
+
+[[questions]]
+slug = "orbits-where-to-change-plane"
+topic = "orbital-mechanics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "H. D. Curtis, Orbital Mechanics for Engineering Students, Elsevier, ch. 6 (plane change manoeuvres)" }
+[questions.translations.fr]
+title = "Où changer de plan ?"
+stem = "Un satellite sur orbite de transfert géostationnaire doit annuler son inclinaison. Où est-il le plus économique de le faire ?"
+explanation = "Le coût $2v\\sin(\\Delta i/2)$ est proportionnel à la vitesse. On fait donc le changement de plan à l'**apogée**, où le satellite va le plus lentement (environ 1,6 km/s), en le combinant avec l'impulsion de circularisation. Au périgée, la même manœuvre coûterait six fois plus."
+[questions.translations.en]
+title = "Where to change plane?"
+stem = "A satellite on a geostationary transfer orbit must cancel its inclination. Where is it cheapest to do so?"
+explanation = "The cost $2v\\sin(\\Delta i/2)$ is proportional to speed. So the plane change is made at **apogee**, where the satellite moves slowest (about 1.6 km/s), combined with the circularisation burn. At perigee, the same manoeuvre would cost six times more."
+[[questions.choices]]
+text = { fr = "Au périgée, où la vitesse est la plus grande", en = "At perigee, where speed is highest" }
+[[questions.choices]]
+text = { fr = "N'importe où, le coût est le même", en = "Anywhere, the cost is the same" }
+[[questions.choices]]
+correct = true
+text = { fr = "À l'apogée, où la vitesse est la plus faible", en = "At apogee, where speed is lowest" }
+[[questions.choices]]
+text = { fr = "Juste après le décollage, dans l'atmosphère", en = "Right after lift-off, in the atmosphere" }

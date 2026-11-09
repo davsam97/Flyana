@@ -1,0 +1,102 @@
+name: flyana
+
+secrets:
+  POSTGRES_USER:
+    file: ../secrets/POSTGRES_USER
+  POSTGRES_PASSWORD:
+    file: ../secrets/POSTGRES_PASSWORD
+  # Only read when the `tailscale` profile is on, which the Makefile does when
+  # this file exists: a clone without a key still starts, the grader falls back
+  # to self-assessment
+  TS_AUTHKEY:
+    file: ../secrets/TS_AUTHKEY
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  pgdata:
+  media:
+  certs:
+
+services:
+  db:
+    image: docker.io/library/postgres:17-alpine
+    restart: unless-stopped
+    secrets: [POSTGRES_USER, POSTGRES_PASSWORD]
+    environment:
+      POSTGRES_USER_FILE: /run/secrets/POSTGRES_USER
+      POSTGRES_PASSWORD_FILE: /run/secrets/POSTGRES_PASSWORD
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$(cat /run/secrets/POSTGRES_USER)\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks: [backend]
+    logging:
+      driver: json-file
+
+  api:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    env_file: .env
+    secrets: [POSTGRES_USER, POSTGRES_PASSWORD]
+    environment:
+      POSTGRES_USER_FILE: /run/secrets/POSTGRES_USER
+      POSTGRES_PASSWORD_FILE: /run/secrets/POSTGRES_PASSWORD
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+    - media:/srv/media
+    networks: [backend, frontend]
+    logging:
+      driver: json-file
+
+  web:
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+      target: runtime
+    restart: unless-stopped
+    depends_on: [api]
+    ports:
+      # Rootless Podman (school machines) cannot bind a port below 1024
+      - "8443:443"
+    environment:
+      SERVER_NAME: ${SERVER_NAME:-localhost}
+    volumes:
+    - certs:/etc/nginx/certs
+    - media:/srv/media:ro
+    networks: [frontend]
+    logging:
+      driver: json-file
+
+  # The grader's model runs on a GPU machine of the tailnet. This container
+  # joins the tailnet and exposes an HTTP proxy on the backend network: the API
+  # sends its model calls, and only them, through it (LLM_PROXY_URL)
+  tailscale:
+    image: docker.io/tailscale/tailscale:v1.102.4
+    profiles: [tailscale]
+    restart: unless-stopped
+    secrets: [TS_AUTHKEY]
+    environment:
+      TS_AUTHKEY: file:/run/secrets/TS_AUTHKEY
+      # Userspace networking needs no /dev/net/tun and no NET_ADMIN, so it runs
+      # under rootless Podman at school as well as under Docker
+      TS_USERSPACE: "true"
+      TS_OUTBOUND_HTTP_PROXY_LISTEN: ":1055"
+      TS_HOSTNAME: maia
+      # The tailnet policy lets tag:maia reach the model port and nothing else
+      TS_EXTRA_ARGS: --advertise-tags=tag:maia
+    networks: [backend]
+    logging:
+      driver: json-file
+
+

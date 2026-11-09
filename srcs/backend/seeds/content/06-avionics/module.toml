@@ -1,0 +1,355 @@
+# Module 6: avionics and embedded systems. Numbers recomputed by
+# `python -m seeds.check_numbers`.
+
+[[lessons]]
+slug = "avionics-sensors"
+topic = "avionics"
+position = 0
+title = { fr = "Capteurs et navigation", en = "Sensors and navigation" }
+body = { fr = "lessons/01-sensors.fr.md", en = "lessons/01-sensors.en.md" }
+
+[[lessons]]
+slug = "avionics-buses"
+topic = "avionics"
+position = 1
+title = { fr = "Les bus de données", en = "Data buses" }
+body = { fr = "lessons/02-buses.fr.md", en = "lessons/02-buses.en.md" }
+
+[[lessons]]
+slug = "avionics-real-time-safety"
+topic = "avionics"
+position = 2
+title = { fr = "Temps réel, sûreté et DO-178C", en = "Real time, safety and DO-178C" }
+body = { fr = "lessons/03-real-time-safety.fr.md", en = "lessons/03-real-time-safety.en.md" }
+
+# --- Easy ---
+
+[[questions]]
+slug = "avionics-imu-contents"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "R. P. G. Collinson, Introduction to Avionics Systems, Springer, ch. on inertial sensors and navigation" }
+[questions.translations.fr]
+title = "La centrale inertielle"
+stem = "Que contient une unité de mesure inertielle (IMU) ?"
+explanation = "Une IMU contient trois **accéléromètres** et trois **gyromètres**, selon trois axes. En intégrant leurs mesures, la centrale inertielle calcule vitesse, position et attitude sans aucun signal extérieur."
+[questions.translations.en]
+title = "The inertial unit"
+stem = "What does an inertial measurement unit (IMU) contain?"
+explanation = "An IMU holds three **accelerometers** and three **gyroscopes**, along three axes. By integrating their measurements, the inertial system computes velocity, position and attitude with no outside signal."
+[[questions.choices]]
+text = { fr = "Un récepteur GPS et une boussole", en = "A GPS receiver and a compass" }
+[[questions.choices]]
+correct = true
+text = { fr = "Des accéléromètres et des gyromètres", en = "Accelerometers and gyroscopes" }
+[[questions.choices]]
+text = { fr = "Un tube de Pitot et une prise statique", en = "A pitot tube and a static port" }
+[[questions.choices]]
+text = { fr = "Un radar et une caméra", en = "A radar and a camera" }
+
+[[questions]]
+slug = "avionics-pitot"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Pitot-Static Tube", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/pitot-static-tube-speedometer/" }
+[questions.translations.fr]
+title = "Le tube de Pitot"
+stem = "Avec la prise statique, que permet de mesurer le tube de Pitot ?"
+explanation = "Le Pitot mesure la pression totale, la prise statique la pression ambiante. Leur différence est la pression dynamique $\\tfrac{1}{2}\\rho V^2$, d'où l'on tire la **vitesse air**. La prise statique seule donne l'altitude pression."
+[questions.translations.en]
+title = "The pitot tube"
+stem = "Together with the static port, what does the pitot tube measure?"
+explanation = "The pitot measures total pressure, the static port ambient pressure. Their difference is the dynamic pressure $\\tfrac{1}{2}\\rho V^2$, from which the **airspeed** is derived. The static port alone gives the pressure altitude."
+[[questions.choices]]
+text = { fr = "La vitesse sol", en = "Ground speed" }
+[[questions.choices]]
+text = { fr = "Le cap magnétique", en = "Magnetic heading" }
+[[questions.choices]]
+correct = true
+text = { fr = "La vitesse par rapport à l'air", en = "Speed relative to the air" }
+[[questions.choices]]
+text = { fr = "La température du moteur", en = "Engine temperature" }
+
+[[questions]]
+slug = "avionics-arinc429-direction"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "ARINC Specification 429, Digital Information Transfer System (DITS)" }
+[questions.translations.fr]
+title = "ARINC 429"
+stem = "Quelle est la particularité d'un bus ARINC 429 ?"
+explanation = "Un bus ARINC 429 est **unidirectionnel** : un seul émetteur parle, jusqu'à 20 récepteurs écoutent. Pour que deux équipements dialoguent, il faut deux bus. C'est simple et robuste, mais gourmand en câbles."
+[questions.translations.en]
+title = "ARINC 429"
+stem = "What is special about an ARINC 429 bus?"
+explanation = "An ARINC 429 bus is **one-way**: a single transmitter talks, up to 20 receivers listen. For two units to converse, two buses are needed. Simple and robust, but cable-hungry."
+[[questions.choices]]
+correct = true
+text = { fr = "Un seul émetteur, plusieurs récepteurs : il est à sens unique", en = "One transmitter, several receivers: it is one-way" }
+[[questions.choices]]
+text = { fr = "Tous les équipements parlent quand ils veulent", en = "Every unit talks whenever it wants" }
+[[questions.choices]]
+text = { fr = "Il fonctionne uniquement par fibre optique", en = "It only works over optical fibre" }
+[[questions.choices]]
+text = { fr = "Il atteint 1 Gbit/s", en = "It reaches 1 Gbit/s" }
+
+[[questions]]
+slug = "avionics-real-time-meaning"
+topic = "avionics"
+kind = "multi_choice"
+difficulty = 1000
+source = { label = "R. P. G. Collinson, Introduction to Avionics Systems, Springer, ch. on avionics systems integration" }
+[questions.translations.fr]
+title = "Qu'est-ce que le temps réel ?"
+stem = "Qu'exige-t-on d'un système temps réel dur, comme des commandes de vol ?"
+explanation = "Un système temps réel doit donner un résultat **juste et avant son échéance**, avec un temps de réponse **prévisible** (déterministe). Aller « le plus vite possible » ne suffit pas : il faut pouvoir prouver le pire cas. Un processeur récent n'est ni nécessaire ni suffisant."
+[questions.translations.en]
+title = "What is real time?"
+stem = "What is required of a hard real-time system, such as flight controls?"
+explanation = "A real-time system must deliver a **correct result before its deadline**, with a **predictable** (deterministic) response time. Going \"as fast as possible\" is not enough: the worst case must be provable. A recent processor is neither needed nor sufficient."
+[[questions.choices]]
+correct = true
+text = { fr = "Un résultat juste, rendu avant son échéance", en = "A correct result, delivered before its deadline" }
+[[questions.choices]]
+text = { fr = "Aller le plus vite possible, sans garantie", en = "Going as fast as possible, with no guarantee" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un temps de réponse prévisible dans le pire cas", en = "A predictable worst-case response time" }
+[[questions.choices]]
+text = { fr = "Un processeur de dernière génération", en = "A latest-generation processor" }
+
+[[questions]]
+slug = "avionics-do178c-scope"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "RTCA DO-178C / EUROCAE ED-12C, Software Considerations in Airborne Systems and Equipment Certification, 2011" }
+[questions.translations.fr]
+title = "La DO-178C"
+stem = "De quoi traite la norme DO-178C ?"
+explanation = "La DO-178C fixe les objectifs à atteindre pour certifier le **logiciel embarqué** des aéronefs : exigences, conception, code, tests, traçabilité. Son exigence dépend du niveau d'assurance (DAL), de A, catastrophique, à E. Le matériel électronique complexe relève de la DO-254."
+[questions.translations.en]
+title = "DO-178C"
+stem = "What does the DO-178C standard deal with?"
+explanation = "DO-178C sets the objectives for certifying aircraft **airborne software**: requirements, design, code, tests, traceability. How demanding it is depends on the assurance level (DAL), from A, catastrophic, to E. Complex electronic hardware falls under DO-254."
+[[questions.choices]]
+text = { fr = "La résistance des ailes", en = "The strength of wings" }
+[[questions.choices]]
+text = { fr = "Le bruit des moteurs", en = "Engine noise" }
+[[questions.choices]]
+text = { fr = "Les licences des pilotes", en = "Pilot licences" }
+[[questions.choices]]
+correct = true
+text = { fr = "La certification du logiciel embarqué", en = "The certification of airborne software" }
+
+# --- Medium ---
+
+[[questions]]
+slug = "avionics-arinc429-word-time"
+topic = "avionics"
+kind = "numeric"
+difficulty = 1200
+answer = 0.32
+tolerance = 0.02
+unit = "ms"
+source = { label = "ARINC Specification 429, Digital Information Transfer System (DITS)" }
+[questions.translations.fr]
+title = "La durée d'un mot ARINC 429"
+stem = "Combien de temps faut-il pour transmettre un mot ARINC 429 de 32 bits à 100 kbit/s, en millisecondes ?"
+explanation = "$32 / 100\\,000 = 0{,}32 \\times 10^{-3}$ s, soit 0,32 ms. Avec l'intervalle obligatoire de 4 bits entre deux mots, le bus transporte au plus environ 2 800 mots par seconde."
+[questions.translations.en]
+title = "The length of an ARINC 429 word"
+stem = "How long does it take to send a 32-bit ARINC 429 word at 100 kbit/s, in milliseconds?"
+explanation = "$32 / 100{,}000 = 0.32 \\times 10^{-3}$ s, i.e. 0.32 ms. With the mandatory 4-bit gap between words, the bus carries at most about 2,800 words per second."
+
+[[questions]]
+slug = "avionics-ins-drift"
+topic = "avionics"
+kind = "numeric"
+difficulty = 1200
+answer = 5.556
+tolerance = 0.03
+unit = "km"
+source = { label = "R. P. G. Collinson, Introduction to Avionics Systems, Springer, ch. on inertial navigation" }
+[questions.translations.fr]
+title = "La dérive d'une centrale inertielle"
+stem = "Une centrale inertielle dérive d'un mille nautique par heure (1 NM = 1,852 km). Quelle erreur de position peut-elle accumuler en 3 heures sans recalage, en km ?"
+explanation = "$3 \\times 1{,}852 \\approx 5{,}6$ km. C'est pourquoi on recale l'INS par GNSS : l'erreur de la centrale grandit avec le temps, celle du GNSS non."
+[questions.translations.en]
+title = "Inertial drift"
+stem = "An inertial system drifts by one nautical mile per hour (1 NM = 1.852 km). What position error can it build up in 3 hours without an update, in km?"
+explanation = "$3 \\times 1.852 \\approx 5.6$ km. That is why the INS is updated by GNSS: the inertial error grows with time, the GNSS error does not."
+
+[[questions]]
+slug = "avionics-can-arbitration"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "ISO 11898-1, Road vehicles — Controller area network (CAN), data link layer" }
+[questions.translations.fr]
+title = "L'arbitrage CAN"
+stem = "Deux nœuds d'un bus CAN commencent à émettre au même instant. Que se passe-t-il ?"
+explanation = "L'arbitrage se fait bit à bit sur l'identifiant : un bit « dominant » (0) l'emporte sur un bit « récessif » (1). Le message d'**identifiant le plus faible**, donc le plus prioritaire, passe sans être abîmé ; l'autre nœud détecte qu'il a perdu, se tait et réessaie plus tard."
+[questions.translations.en]
+title = "CAN arbitration"
+stem = "Two nodes on a CAN bus start transmitting at the same instant. What happens?"
+explanation = "Arbitration runs bit by bit over the identifier: a \"dominant\" bit (0) overrides a \"recessive\" one (1). The message with the **lowest identifier**, hence the highest priority, goes through intact; the other node notices it lost, falls silent and retries later."
+[[questions.choices]]
+text = { fr = "Les deux messages sont détruits et perdus", en = "Both messages are destroyed and lost" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le message d'identifiant le plus faible passe intact, l'autre réessaie", en = "The message with the lowest identifier goes through intact, the other retries" }
+[[questions.choices]]
+text = { fr = "Le contrôleur de bus choisit au hasard", en = "The bus controller picks one at random" }
+[[questions.choices]]
+text = { fr = "Le message le plus long passe en premier", en = "The longest message goes first" }
+
+[[questions]]
+slug = "avionics-mil1553-facts"
+topic = "avionics"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "MIL-STD-1553B, Digital Time Division Command/Response Multiplex Data Bus, US Department of Defense" }
+[questions.translations.fr]
+title = "MIL-STD-1553"
+stem = "Quelles affirmations sur le bus MIL-STD-1553 sont vraies ?"
+explanation = "Le 1553 fonctionne à 1 Mbit/s. Un contrôleur de bus unique envoie les commandes, et seul le terminal interrogé répond : aucune collision, donc un fonctionnement déterministe. Le bus est doublé pour la redondance. Les terminaux ne parlent jamais de leur propre initiative."
+[questions.translations.en]
+title = "MIL-STD-1553"
+stem = "Which statements about the MIL-STD-1553 bus are true?"
+explanation = "1553 runs at 1 Mbit/s. A single bus controller sends the commands, and only the terminal addressed answers: no collisions, so deterministic behaviour. The bus is duplicated for redundancy. Terminals never talk on their own initiative."
+[[questions.choices]]
+correct = true
+text = { fr = "Son débit est de 1 Mbit/s", en = "Its data rate is 1 Mbit/s" }
+[[questions.choices]]
+text = { fr = "Chaque terminal émet dès qu'il a une donnée", en = "Each terminal transmits as soon as it has data" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un contrôleur de bus commande, les terminaux distants répondent", en = "A bus controller commands, remote terminals answer" }
+[[questions.choices]]
+text = { fr = "Il n'existe qu'en fibre optique", en = "It only exists over optical fibre" }
+
+[[questions]]
+slug = "avionics-hybrid-navigation"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "R. P. G. Collinson, Introduction to Avionics Systems, Springer, ch. on navigation systems (GNSS/INS integration)" }
+[questions.translations.fr]
+title = "Pourquoi hybrider INS et GNSS"
+stem = "Pourquoi combine-t-on une centrale inertielle et un récepteur GNSS ?"
+explanation = "L'INS est autonome, rapide et impossible à brouiller, mais son erreur **dérive** avec le temps. Le GNSS donne une erreur **bornée** mais à cadence plus faible, et peut être masqué ou brouillé. Un filtre de Kalman combine les deux pour garder le meilleur de chacun."
+[questions.translations.en]
+title = "Why hybridise INS and GNSS"
+stem = "Why are an inertial system and a GNSS receiver combined?"
+explanation = "The INS is self-contained, fast and unjammable, but its error **drifts** with time. GNSS gives a **bounded** error but at a lower rate, and can be masked or jammed. A Kalman filter combines both to keep the best of each."
+[[questions.choices]]
+text = { fr = "Parce que le GNSS ne donne pas la position", en = "Because GNSS does not give position" }
+[[questions.choices]]
+text = { fr = "Pour diviser par deux la consommation électrique", en = "To halve power consumption" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le GNSS corrige la dérive de l'INS, l'INS assure la continuité si le GNSS est perdu", en = "GNSS corrects the INS drift, the INS keeps going if GNSS is lost" }
+[[questions.choices]]
+text = { fr = "Parce que l'INS ne fonctionne qu'au sol", en = "Because the INS only works on the ground" }
+
+# --- Hard ---
+
+[[questions]]
+slug = "avionics-dal-a"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "RTCA DO-178C / EUROCAE ED-12C, Software Considerations in Airborne Systems and Equipment Certification, 2011" }
+[questions.translations.fr]
+title = "Le niveau DAL A"
+stem = "Un logiciel de commandes de vol est classé DAL A selon la DO-178C. Qu'est-ce que cela implique ?"
+explanation = "Le niveau A correspond à une défaillance **catastrophique**, pouvant entraîner la perte de l'avion. C'est le niveau le plus exigeant : il impose notamment une couverture structurelle **MC/DC** par les tests, avec vérification indépendante. Le niveau E est celui des logiciels sans effet sur la sécurité."
+[questions.translations.en]
+title = "Level DAL A"
+stem = "Flight control software is rated DAL A under DO-178C. What does that imply?"
+explanation = "Level A matches a **catastrophic** failure, which may cause the loss of the aircraft. It is the most demanding level: among other things it requires **MC/DC** structural coverage by testing, with independent verification. Level E is for software with no safety effect."
+[[questions.choices]]
+correct = true
+text = { fr = "Sa défaillance serait catastrophique ; il exige notamment une couverture MC/DC", en = "Its failure would be catastrophic; it requires MC/DC coverage among other things" }
+[[questions.choices]]
+text = { fr = "Il est sans effet sur la sécurité et n'a aucun objectif", en = "It has no safety effect and no objectives" }
+[[questions.choices]]
+text = { fr = "Il peut être testé uniquement en vol", en = "It may be tested only in flight" }
+[[questions.choices]]
+text = { fr = "Il doit être écrit en assembleur", en = "It must be written in assembly" }
+
+[[questions]]
+slug = "avionics-ariane-501"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "ESA, Ariane 501 - Presentation of Inquiry Board report, 1996", url = "https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report" }
+[questions.translations.fr]
+title = "L'échec d'Ariane 501"
+stem = "Quelle a été la cause de l'échec du premier vol d'Ariane 5, en 1996 ?"
+explanation = "Le logiciel des centrales inertielles, repris d'Ariane 4, convertissait une valeur flottante 64 bits en entier 16 bits. Sur la trajectoire d'Ariane 5, la valeur a dépassé la capacité de l'entier ; l'exception n'était pas traitée. La centrale de secours, au logiciel **identique**, a échoué de la même façon, et le calculateur de bord a pris le diagnostic pour des données de vol."
+[questions.translations.en]
+title = "The Ariane 501 failure"
+stem = "What caused the failure of Ariane 5's first flight, in 1996?"
+explanation = "The inertial reference software, reused from Ariane 4, converted a 64-bit floating-point value into a 16-bit integer. On Ariane 5's trajectory the value overflowed the integer; the exception was not handled. The backup unit, running **identical** software, failed the same way, and the on-board computer took the diagnostic for flight data."
+[[questions.choices]]
+text = { fr = "Une fuite d'hydrogène dans l'étage principal", en = "A hydrogen leak in the core stage" }
+[[questions.choices]]
+text = { fr = "La foudre pendant le décollage", en = "Lightning during lift-off" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un dépassement de capacité dans le logiciel des centrales inertielles, repris d'Ariane 4", en = "An overflow in the inertial reference software reused from Ariane 4" }
+[[questions.choices]]
+text = { fr = "Une panne d'un propulseur d'appoint à poudre", en = "A failure of a solid booster" }
+
+[[questions]]
+slug = "avionics-dissimilar-redundancy"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "R. P. G. Collinson, Introduction to Avionics Systems, Springer, ch. on fly-by-wire flight control (redundancy and dissimilarity)" }
+[questions.translations.fr]
+title = "La redondance dissemblable"
+stem = "Pourquoi certaines commandes de vol utilisent-elles des calculateurs de conceptions différentes, plutôt que plusieurs exemplaires identiques ?"
+explanation = "Des exemplaires identiques tombent en panne **ensemble** face à une même erreur de conception, surtout logicielle : c'est une défaillance de **mode commun**, comme pour Ariane 501. Des calculateurs dissemblables, conçus et programmés différemment, ont peu de chances de partager la même erreur."
+[questions.translations.en]
+title = "Dissimilar redundancy"
+stem = "Why do some flight control systems use computers of different designs, rather than several identical copies?"
+explanation = "Identical copies fail **together** when faced with the same design error, in software above all: a **common-mode** failure, as with Ariane 501. Dissimilar computers, designed and programmed differently, are unlikely to share the same error."
+[[questions.choices]]
+text = { fr = "Pour réduire le coût d'achat", en = "To lower the purchase cost" }
+[[questions.choices]]
+correct = true
+text = { fr = "Pour qu'une même erreur de conception ne les fasse pas tous défaillir en même temps", en = "So that one design error cannot make them all fail at once" }
+[[questions.choices]]
+text = { fr = "Pour augmenter la vitesse de calcul", en = "To increase computing speed" }
+[[questions.choices]]
+text = { fr = "Parce que la réglementation interdit deux calculateurs identiques", en = "Because regulations forbid two identical computers" }
+
+[[questions]]
+slug = "avionics-rate-monotonic"
+topic = "avionics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "C. L. Liu, J. W. Layland, Scheduling Algorithms for Multiprogramming in a Hard-Real-Time Environment, Journal of the ACM, 1973" }
+[questions.translations.fr]
+title = "L'ordonnancement rate monotonic"
+stem = "Un calculateur exécute une tâche de pilotage toutes les 10 ms et une tâche de navigation toutes les 100 ms. Selon la règle rate monotonic, laquelle reçoit la priorité la plus haute ?"
+explanation = "La règle rate monotonic donne la priorité la plus haute à la tâche de **période la plus courte** : ici la tâche de pilotage, à 10 ms. Liu et Layland ont montré en 1973 qu'aucune autre affectation de priorités fixes n'ordonnance mieux un ensemble de tâches périodiques."
+[questions.translations.en]
+title = "Rate monotonic scheduling"
+stem = "A computer runs a control task every 10 ms and a navigation task every 100 ms. Under the rate monotonic rule, which gets the higher priority?"
+explanation = "The rate monotonic rule gives the highest priority to the task with the **shortest period**: here the control task, at 10 ms. Liu and Layland showed in 1973 that no other fixed-priority assignment schedules a set of periodic tasks better."
+[[questions.choices]]
+correct = true
+text = { fr = "La tâche de pilotage, de période 10 ms", en = "The control task, with a 10 ms period" }
+[[questions.choices]]
+text = { fr = "La tâche de navigation, de période 100 ms", en = "The navigation task, with a 100 ms period" }
+[[questions.choices]]
+text = { fr = "La tâche la plus longue à exécuter", en = "The task that takes longest to run" }
+[[questions.choices]]
+text = { fr = "Les deux à égalité", en = "Both equally" }

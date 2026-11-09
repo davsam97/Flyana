@@ -1,0 +1,373 @@
+# Module 1: atmosphere and aerodynamics. Every number is recomputed by
+# `python -m seeds.check_numbers`. Difficulty: 1000 easy, 1200 medium,
+# 1400 hard. The order of the choices is the order shown, so the right one
+# moves from question to question.
+
+[[lessons]]
+slug = "aero-atmosphere"
+topic = "aerodynamics"
+position = 0
+title = { fr = "L'atmosphère, un fluide qui change avec l'altitude", en = "The atmosphere, a fluid that changes with altitude" }
+body = { fr = "lessons/01-atmosphere.fr.md", en = "lessons/01-atmosphere.en.md" }
+
+[[lessons]]
+slug = "aero-lift-and-drag"
+topic = "aerodynamics"
+position = 1
+title = { fr = "Portance et traînée", en = "Lift and drag" }
+body = { fr = "lessons/02-lift-and-drag.fr.md", en = "lessons/02-lift-and-drag.en.md" }
+
+[[lessons]]
+slug = "aero-airfoils-and-speed"
+topic = "aerodynamics"
+position = 2
+title = { fr = "Profils d'aile et régimes de vitesse", en = "Airfoils and speed regimes" }
+body = { fr = "lessons/03-airfoils-and-speed.fr.md", en = "lessons/03-airfoils-and-speed.en.md" }
+
+# --- Easy ---
+
+[[questions]]
+slug = "aero-isa-sea-level"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "ISO 2533:1975, Standard Atmosphere ; NASA Glenn, Earth Atmosphere Model", url = "https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html" }
+[questions.translations.fr]
+title = "L'atmosphère standard au sol"
+stem = "Quelles conditions l'atmosphère standard internationale (ISA) fixe-t-elle au niveau de la mer ?"
+explanation = "L'ISA fixe au niveau de la mer 15 °C (288,15 K), 1013,25 hPa et une masse volumique de 1,225 kg/m³. Ces valeurs de référence permettent de comparer performances et instruments, même si l'air réel s'en écarte chaque jour."
+[questions.translations.en]
+title = "The standard atmosphere at sea level"
+stem = "What conditions does the International Standard Atmosphere (ISA) set at sea level?"
+explanation = "ISA sets 15 °C (288.15 K), 1013.25 hPa and a density of 1.225 kg/m³ at sea level. These reference values let us compare performance and instruments, even though real air departs from them every day."
+[[questions.choices]]
+text = { fr = "0 °C et 1000 hPa", en = "0 °C and 1000 hPa" }
+[[questions.choices]]
+correct = true
+text = { fr = "15 °C et 1013,25 hPa", en = "15 °C and 1013.25 hPa" }
+[[questions.choices]]
+text = { fr = "20 °C et 1013,25 hPa", en = "20 °C and 1013.25 hPa" }
+[[questions.choices]]
+text = { fr = "15 °C et 760 hPa", en = "15 °C and 760 hPa" }
+
+[[questions]]
+slug = "aero-mach-definition"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Mach Number", url = "https://www.grc.nasa.gov/www/k-12/airplane/mach.html" }
+[questions.translations.fr]
+title = "Le nombre de Mach"
+stem = "Que compare le nombre de Mach ?"
+explanation = "$M = V/a$ : la vitesse de l'avion par rapport à l'air, divisée par la vitesse du son **dans l'air où il vole**. Comme $a$ dépend de la température, Mach 1 ne correspond pas à la même vitesse au sol (340 m/s) et à 11 km (295 m/s)."
+[questions.translations.en]
+title = "The Mach number"
+stem = "What does the Mach number compare?"
+explanation = "$M = V/a$: the aircraft's speed relative to the air, divided by the speed of sound **in the air it flies through**. Since $a$ depends on temperature, Mach 1 is not the same speed at sea level (340 m/s) and at 11 km (295 m/s)."
+[[questions.choices]]
+text = { fr = "La vitesse de l'avion à la vitesse de la lumière", en = "The aircraft's speed with the speed of light" }
+[[questions.choices]]
+text = { fr = "La vitesse de l'avion à 1 000 km/h", en = "The aircraft's speed with 1,000 km/h" }
+[[questions.choices]]
+correct = true
+text = { fr = "La vitesse de l'avion à la vitesse du son dans l'air local", en = "The aircraft's speed with the speed of sound in the surrounding air" }
+[[questions.choices]]
+text = { fr = "La vitesse au sol à la vitesse du vent", en = "The ground speed with the wind speed" }
+
+[[questions]]
+slug = "aero-lift-speed-squared"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, The Lift Equation", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift-equation/" }
+[questions.translations.fr]
+title = "Portance et vitesse"
+stem = "Toutes choses égales par ailleurs, un avion double sa vitesse. Par combien sa portance est-elle multipliée ?"
+explanation = "Dans $L = \\tfrac{1}{2}\\rho V^2 S C_L$, la vitesse apparaît au carré : $2^2 = 4$. C'est pourquoi un avion rapide n'a besoin que d'un petit angle d'attaque, et un avion lent d'un grand."
+[questions.translations.en]
+title = "Lift and speed"
+stem = "All else being equal, an aircraft doubles its speed. By how much is its lift multiplied?"
+explanation = "In $L = \\tfrac{1}{2}\\rho V^2 S C_L$, speed appears squared: $2^2 = 4$. That is why a fast aircraft needs only a small angle of attack, and a slow one a large angle."
+[[questions.choices]]
+text = { fr = "Par 2", en = "By 2" }
+[[questions.choices]]
+correct = true
+text = { fr = "Par 4", en = "By 4" }
+[[questions.choices]]
+text = { fr = "Par 8", en = "By 8" }
+[[questions.choices]]
+text = { fr = "Elle ne change pas", en = "It does not change" }
+
+[[questions]]
+slug = "aero-lift-equation-terms"
+topic = "aerodynamics"
+kind = "multi_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, The Lift Equation", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift-equation/" }
+[questions.translations.fr]
+title = "Les termes de l'équation de portance"
+stem = "Quelles grandeurs apparaissent dans l'équation de la portance $L = \\tfrac{1}{2}\\rho V^2 S C_L$ ?"
+explanation = "La portance dépend de la masse volumique de l'air $\\rho$, de la vitesse $V$, de la surface alaire $S$ et du coefficient de portance $C_L$. La masse de l'avion n'y figure pas : c'est la portance qui doit l'équilibrer en palier. La poussée n'y figure pas non plus : elle équilibre la traînée."
+[questions.translations.en]
+title = "The terms of the lift equation"
+stem = "Which quantities appear in the lift equation $L = \\tfrac{1}{2}\\rho V^2 S C_L$?"
+explanation = "Lift depends on air density $\\rho$, speed $V$, wing area $S$ and the lift coefficient $C_L$. The aircraft's mass is not in it: lift must balance it in level flight. Thrust is not in it either: it balances drag."
+[[questions.choices]]
+correct = true
+text = { fr = "La masse volumique de l'air", en = "Air density" }
+[[questions.choices]]
+text = { fr = "La masse de l'avion", en = "The aircraft's mass" }
+[[questions.choices]]
+correct = true
+text = { fr = "La surface de l'aile", en = "Wing area" }
+[[questions.choices]]
+correct = true
+text = { fr = "La vitesse par rapport à l'air", en = "Speed relative to the air" }
+[[questions.choices]]
+text = { fr = "La poussée des moteurs", en = "Engine thrust" }
+
+[[questions]]
+slug = "aero-lift-direction"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Four Forces on an Airplane", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/four-forces-on-an-airplane/" }
+[questions.translations.fr]
+title = "La direction de la portance"
+stem = "Par définition, dans quelle direction s'exerce la portance ?"
+explanation = "La portance est la composante de la force aérodynamique **perpendiculaire au vent relatif**, l'écoulement qui arrive sur l'aile. Elle n'est verticale qu'en vol en palier rectiligne : en virage, elle s'incline avec l'avion."
+[questions.translations.en]
+title = "The direction of lift"
+stem = "By definition, in which direction does lift act?"
+explanation = "Lift is the component of the aerodynamic force **perpendicular to the relative wind**, the flow coming at the wing. It is vertical only in straight and level flight: in a turn it tilts with the aircraft."
+[[questions.choices]]
+text = { fr = "Toujours verticalement, vers le haut", en = "Always vertically, upward" }
+[[questions.choices]]
+text = { fr = "Le long de la corde de l'aile", en = "Along the wing's chord" }
+[[questions.choices]]
+text = { fr = "Dans le sens du déplacement", en = "In the direction of motion" }
+[[questions.choices]]
+correct = true
+text = { fr = "Perpendiculairement au vent relatif", en = "Perpendicular to the relative wind" }
+
+# --- Medium ---
+
+[[questions]]
+slug = "aero-lift-worked-example"
+topic = "aerodynamics"
+kind = "numeric"
+difficulty = 1200
+answer = 24010
+tolerance = 0.02
+unit = "N"
+source = { label = "NASA Glenn, The Lift Equation", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift-equation/" }
+[questions.translations.fr]
+title = "Calculer une portance"
+stem = "Un avion vole au niveau de la mer ($\\rho = 1{,}225$ kg/m³) à 70 m/s. Son aile de 16 m² travaille à $C_L = 0{,}5$. Quelle portance produit-elle, en newtons ?"
+explanation = "$L = \\tfrac{1}{2} \\times 1{,}225 \\times 70^2 \\times 16 \\times 0{,}5 = 24\\,010$ N, de quoi soutenir environ 2,4 tonnes."
+[questions.translations.en]
+title = "Computing lift"
+stem = "An aircraft flies at sea level ($\\rho = 1.225$ kg/m³) at 70 m/s. Its 16 m² wing works at $C_L = 0.5$. How much lift does it produce, in newtons?"
+explanation = "$L = \\tfrac{1}{2} \\times 1.225 \\times 70^2 \\times 16 \\times 0.5 = 24{,}010$ N, enough to hold up about 2.4 tonnes."
+
+[[questions]]
+slug = "aero-speed-of-sound-altitude"
+topic = "aerodynamics"
+kind = "numeric"
+difficulty = 1200
+answer = 295.1
+tolerance = 0.02
+unit = "m/s"
+source = { label = "NASA Glenn, Speed of Sound", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/speed-of-sound-interactive/" }
+[questions.translations.fr]
+title = "La vitesse du son à 11 km"
+stem = "À 11 km, l'atmosphère standard donne $T = 216{,}65$ K. Avec $a = \\sqrt{\\gamma R T}$, $\\gamma = 1{,}4$ et $R = 287$ J/(kg·K), que vaut la vitesse du son, en m/s ?"
+explanation = "$a = \\sqrt{1{,}4 \\times 287 \\times 216{,}65} \\approx 295$ m/s, contre 340 m/s au sol. À vitesse égale, un avion a donc un nombre de Mach plus élevé en altitude."
+[questions.translations.en]
+title = "The speed of sound at 11 km"
+stem = "At 11 km the standard atmosphere gives $T = 216.65$ K. With $a = \\sqrt{\\gamma R T}$, $\\gamma = 1.4$ and $R = 287$ J/(kg·K), what is the speed of sound, in m/s?"
+explanation = "$a = \\sqrt{1.4 \\times 287 \\times 216.65} \\approx 295$ m/s, against 340 m/s at sea level. At the same speed, an aircraft therefore flies at a higher Mach number up there."
+
+[[questions]]
+slug = "aero-hot-and-high"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25), ch. Aircraft Performance" }
+[questions.translations.fr]
+title = "Un aérodrome chaud et en altitude"
+stem = "Pourquoi un avion a-t-il besoin d'une piste plus longue pour décoller d'un aérodrome chaud et en altitude ?"
+explanation = "L'air chaud et en altitude est moins dense. Pour produire la même portance $\\tfrac{1}{2}\\rho V^2 S C_L$ avec un $\\rho$ plus faible, il faut une vitesse vraie plus grande, donc une course plus longue. Les moteurs, qui respirent cet air moins dense, poussent aussi moins."
+[questions.translations.en]
+title = "A hot and high airfield"
+stem = "Why does an aircraft need a longer runway to take off from a hot, high-altitude airfield?"
+explanation = "Hot, high air is less dense. To produce the same lift $\\tfrac{1}{2}\\rho V^2 S C_L$ with a lower $\\rho$, a higher true airspeed is needed, hence a longer run. The engines, breathing that thinner air, also push less."
+[[questions.choices]]
+correct = true
+text = { fr = "L'air y est moins dense : il faut aller plus vite pour obtenir la même portance", en = "The air is less dense: it takes more speed to get the same lift" }
+[[questions.choices]]
+text = { fr = "La gravité y est nettement plus faible", en = "Gravity is noticeably weaker there" }
+[[questions.choices]]
+text = { fr = "L'air chaud est plus visqueux et freine l'avion", en = "Hot air is more viscous and slows the aircraft down" }
+[[questions.choices]]
+text = { fr = "La vitesse du son y est plus faible", en = "The speed of sound is lower there" }
+
+[[questions]]
+slug = "aero-stall-cause"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25), ch. Aerodynamics of Flight" }
+[questions.translations.fr]
+title = "Le décrochage"
+stem = "Qu'est-ce qui provoque le décrochage d'une aile ?"
+explanation = "Le décrochage survient quand l'**angle d'attaque** dépasse l'angle critique (souvent autour de 15°) : l'écoulement décolle de l'extrados et la portance chute. Il peut se produire à n'importe quelle vitesse ; la « vitesse de décrochage » n'est que la vitesse à laquelle on atteint cet angle en vol à 1 g."
+[questions.translations.en]
+title = "The stall"
+stem = "What causes a wing to stall?"
+explanation = "A stall happens when the **angle of attack** exceeds the critical angle (often around 15°): the flow separates from the upper surface and lift collapses. It can happen at any speed; the \"stall speed\" is only the speed at which that angle is reached in 1 g flight."
+[[questions.choices]]
+text = { fr = "Une vitesse inférieure à une valeur fixe, quel que soit l'angle d'attaque", en = "A speed below a fixed value, whatever the angle of attack" }
+[[questions.choices]]
+text = { fr = "Un moteur qui s'arrête", en = "An engine stopping" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un angle d'attaque supérieur à l'angle critique, qui fait décoller l'écoulement", en = "An angle of attack beyond the critical angle, which makes the flow separate" }
+[[questions.choices]]
+text = { fr = "Une assiette à piquer trop prononcée", en = "Too steep a nose-down attitude" }
+
+[[questions]]
+slug = "aero-induced-drag"
+topic = "aerodynamics"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "NASA Glenn, Induced Drag Coefficient", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/induced-drag-coefficient/" }
+[questions.translations.fr]
+title = "Réduire la traînée induite"
+stem = "Lesquels de ces choix réduisent la traînée induite d'un avion ?"
+explanation = "La traînée induite naît des tourbillons marginaux. Son coefficient vaut $C_{Di} = C_L^2 / (\\pi e A)$ : une aile plus **allongée** ($A$ plus grand) et des **winglets**, qui affaiblissent les tourbillons, la réduisent. Augmenter l'angle d'attaque ou sortir les volets augmente $C_L$, donc la traînée induite."
+[questions.translations.en]
+title = "Reducing induced drag"
+stem = "Which of these choices reduce an aircraft's induced drag?"
+explanation = "Induced drag comes from wingtip vortices. Its coefficient is $C_{Di} = C_L^2 / (\\pi e A)$: a more **slender** wing (larger aspect ratio $A$) and **winglets**, which weaken the vortices, reduce it. Raising the angle of attack or lowering the flaps increases $C_L$, and so induced drag."
+[[questions.choices]]
+text = { fr = "Augmenter l'angle d'attaque", en = "Raising the angle of attack" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une aile plus allongée", en = "A wing with a higher aspect ratio" }
+[[questions.choices]]
+correct = true
+text = { fr = "Des winglets en bout d'aile", en = "Winglets at the wingtips" }
+[[questions.choices]]
+text = { fr = "Sortir les volets", en = "Lowering the flaps" }
+
+[[questions]]
+slug = "aero-isa-statements"
+topic = "aerodynamics"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "ISO 2533:1975, Standard Atmosphere ; NASA Glenn, Earth Atmosphere Model", url = "https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html" }
+[questions.translations.fr]
+title = "Le profil de l'atmosphère standard"
+stem = "Quelles affirmations sur l'atmosphère standard sont vraies ?"
+explanation = "Dans la troposphère, la température baisse de 6,5 K/km jusqu'à la tropopause, à 11 km. De 11 à 20 km, elle reste constante (216,65 K). La pression, elle, ne décroît pas linéairement mais à peu près exponentiellement : elle est divisée par deux vers 5 500 m, pas à 11 km."
+[questions.translations.en]
+title = "The profile of the standard atmosphere"
+stem = "Which statements about the standard atmosphere are true?"
+explanation = "In the troposphere, temperature falls by 6.5 K/km up to the tropopause at 11 km. From 11 to 20 km it stays constant (216.65 K). Pressure does not fall linearly but roughly exponentially: it is halved around 5,500 m, not at 11 km."
+[[questions.choices]]
+correct = true
+text = { fr = "La température baisse de 6,5 K par km dans la troposphère", en = "Temperature falls by 6.5 K per km in the troposphere" }
+[[questions.choices]]
+text = { fr = "La pression décroît linéairement avec l'altitude", en = "Pressure falls linearly with altitude" }
+[[questions.choices]]
+correct = true
+text = { fr = "La température est constante entre 11 et 20 km", en = "Temperature is constant between 11 and 20 km" }
+[[questions.choices]]
+text = { fr = "La pression est divisée par deux à 11 km", en = "Pressure is halved at 11 km" }
+
+# --- Hard ---
+
+[[questions]]
+slug = "aero-cruise-mach"
+topic = "aerodynamics"
+kind = "numeric"
+difficulty = 1400
+answer = 0.847
+tolerance = 0.02
+unit = "Mach"
+source = { label = "NASA Glenn, Mach Number", url = "https://www.grc.nasa.gov/www/k-12/airplane/mach.html" }
+[questions.translations.fr]
+title = "Le Mach de croisière"
+stem = "Un avion de ligne vole à 250 m/s à 11 km d'altitude, où la vitesse du son vaut 295 m/s. Quel est son nombre de Mach ?"
+explanation = "$M = 250 / 295 \\approx 0{,}85$. La même vitesse au niveau de la mer ne donnerait que $250 / 340 \\approx 0{,}74$ : le Mach dépend de la température de l'air traversé."
+[questions.translations.en]
+title = "Cruise Mach number"
+stem = "An airliner flies at 250 m/s at 11 km, where the speed of sound is 295 m/s. What is its Mach number?"
+explanation = "$M = 250 / 295 \\approx 0.85$. The same speed at sea level would give only $250 / 340 \\approx 0.74$: Mach depends on the temperature of the air flown through."
+
+[[questions]]
+slug = "aero-equal-transit-myth"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "NASA Glenn, Equal Transit Theory", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/foilw1/" }
+[questions.translations.fr]
+title = "La théorie des temps de parcours égaux"
+stem = "Que dit-on de juste sur la théorie selon laquelle l'air de l'extrados doit rejoindre au bord de fuite l'air de l'intrados parti en même temps ?"
+explanation = "Rien n'oblige les deux particules d'air à se retrouver. Les mesures et les simulations montrent que l'air de l'extrados va encore plus vite que ne le voudrait cette théorie et arrive au bord de fuite **avant** celui de l'intrados. La portance s'explique bien par la déviation de l'air vers le bas et la différence de pression qui l'accompagne."
+[questions.translations.en]
+title = "The equal transit time theory"
+stem = "What is true about the theory that air over the upper surface must meet, at the trailing edge, the lower-surface air it started with?"
+explanation = "Nothing forces the two parcels of air to meet. Measurements and simulations show that the upper-surface air travels even faster than that theory would require and reaches the trailing edge **before** the lower-surface air. Lift is well explained by the downward turning of the air and the pressure difference that goes with it."
+[[questions.choices]]
+text = { fr = "Elle est exacte et suffit à calculer la portance", en = "It is correct and enough to compute lift" }
+[[questions.choices]]
+correct = true
+text = { fr = "Elle est fausse : l'air de l'extrados arrive au bord de fuite avant celui de l'intrados", en = "It is wrong: the upper-surface air reaches the trailing edge before the lower-surface air" }
+[[questions.choices]]
+text = { fr = "Elle est fausse : l'air de l'extrados va moins vite que celui de l'intrados", en = "It is wrong: the upper-surface air is slower than the lower-surface air" }
+[[questions.choices]]
+text = { fr = "Elle n'est fausse que pour les profils symétriques", en = "It is wrong only for symmetrical airfoils" }
+
+[[questions]]
+slug = "aero-critical-mach"
+topic = "aerodynamics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "J. D. Anderson, Introduction to Flight, McGraw-Hill, ch. 5 (critical Mach number)" }
+[questions.translations.fr]
+title = "Des chocs avant Mach 1"
+stem = "Pourquoi une onde de choc peut-elle apparaître sur l'aile d'un avion qui vole à Mach 0,8 ?"
+explanation = "L'air accélère sur l'extrados : localement, il peut atteindre Mach 1 alors que l'avion vole plus lentement. Le Mach de vol où cela arrive est le **Mach critique**. Une onde de choc se forme et la traînée augmente brusquement ; la flèche et les profils supercritiques repoussent ce seuil."
+[questions.translations.en]
+title = "Shocks before Mach 1"
+stem = "Why can a shock wave appear on the wing of an aircraft flying at Mach 0.8?"
+explanation = "Air speeds up over the upper surface: locally it can reach Mach 1 while the aircraft flies slower. The flight Mach number at which this happens is the **critical Mach number**. A shock wave forms and drag rises sharply; sweep and supercritical airfoils push that threshold back."
+[[questions.choices]]
+text = { fr = "Parce que le moteur dépasse Mach 1", en = "Because the engine exceeds Mach 1" }
+[[questions.choices]]
+text = { fr = "Parce que la vitesse du son augmente avec l'altitude", en = "Because the speed of sound increases with altitude" }
+[[questions.choices]]
+text = { fr = "C'est impossible : il n'y a pas de choc sous Mach 1", en = "It is impossible: there is no shock below Mach 1" }
+[[questions.choices]]
+correct = true
+text = { fr = "Parce que l'air accélère sur l'extrados et y dépasse localement Mach 1", en = "Because the air speeds up over the upper surface and locally exceeds Mach 1" }
+
+[[questions]]
+slug = "aero-dynamic-pressure-cruise"
+topic = "aerodynamics"
+kind = "numeric"
+difficulty = 1400
+answer = 11372
+tolerance = 0.03
+unit = "Pa"
+source = { label = "NASA Glenn, Dynamic Pressure", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/dynamic-pressure/" }
+[questions.translations.fr]
+title = "La pression dynamique en croisière"
+stem = "À 11 km, la masse volumique de l'air vaut 0,364 kg/m³. Quelle est la pression dynamique $q = \\tfrac{1}{2}\\rho V^2$ pour un avion à 250 m/s, en pascals ?"
+explanation = "$q = 0{,}5 \\times 0{,}364 \\times 250^2 \\approx 11\\,400$ Pa. Au niveau de la mer, il suffirait de 136 m/s pour la même pression dynamique : c'est elle, et non la vitesse vraie, qui fixe les efforts aérodynamiques."
+[questions.translations.en]
+title = "Dynamic pressure in cruise"
+stem = "At 11 km, air density is 0.364 kg/m³. What is the dynamic pressure $q = \\tfrac{1}{2}\\rho V^2$ for an aircraft at 250 m/s, in pascals?"
+explanation = "$q = 0.5 \\times 0.364 \\times 250^2 \\approx 11{,}400$ Pa. At sea level, 136 m/s would give the same dynamic pressure: it is that pressure, not true airspeed, that sets the aerodynamic loads."

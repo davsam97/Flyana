@@ -1,0 +1,368 @@
+# Module 7: history and players. Dates checked against the agencies' own
+# pages where cited; see CONTENT_REVIEW.md for the ones to confirm.
+
+[[lessons]]
+slug = "history-milestones"
+topic = "history"
+position = 0
+title = { fr = "De l'aviation à l'espace : les grandes étapes", en = "From aviation to space: the milestones" }
+body = { fr = "lessons/01-milestones.fr.md", en = "lessons/01-milestones.en.md" }
+
+[[lessons]]
+slug = "history-players"
+topic = "history"
+position = 1
+title = { fr = "Agences, industriels et lanceurs", en = "Agencies, industry and launchers" }
+body = { fr = "lessons/02-players.fr.md", en = "lessons/02-players.en.md" }
+
+# --- Easy ---
+
+[[questions]]
+slug = "history-sputnik"
+topic = "history"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA History Office", url = "https://www.nasa.gov/history/" }
+[questions.translations.fr]
+title = "Le premier satellite"
+stem = "Quel fut le premier satellite artificiel, et quand fut-il lancé ?"
+explanation = "**Spoutnik 1** a été lancé par l'URSS le 4 octobre 1957. Ce succès soviétique a lancé la course à l'espace et conduit les États-Unis à créer la NASA l'année suivante."
+[questions.translations.en]
+title = "The first satellite"
+stem = "What was the first artificial satellite, and when was it launched?"
+explanation = "**Sputnik 1** was launched by the USSR on 4 October 1957. That Soviet success started the space race and led the United States to found NASA the following year."
+[[questions.choices]]
+text = { fr = "Explorer 1, en 1958", en = "Explorer 1, in 1958" }
+[[questions.choices]]
+correct = true
+text = { fr = "Spoutnik 1, en 1957", en = "Sputnik 1, in 1957" }
+[[questions.choices]]
+text = { fr = "Vostok 1, en 1961", en = "Vostok 1, in 1961" }
+[[questions.choices]]
+text = { fr = "Astérix, en 1965", en = "Astérix, in 1965" }
+
+[[questions]]
+slug = "history-first-human"
+topic = "history"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA History Office (Vostok 1, 12 April 1961)", url = "https://www.nasa.gov/history/" }
+[questions.translations.fr]
+title = "Le premier humain dans l'espace"
+stem = "Qui fut le premier humain dans l'espace ?"
+explanation = "Le cosmonaute soviétique **Youri Gagarine** a fait un tour de la Terre à bord de Vostok 1 le 12 avril 1961. Neil Armstrong sera le premier à marcher sur la Lune, en 1969."
+[questions.translations.en]
+title = "The first human in space"
+stem = "Who was the first human in space?"
+explanation = "Soviet cosmonaut **Yuri Gagarin** circled the Earth once aboard Vostok 1 on 12 April 1961. Neil Armstrong would be the first to walk on the Moon, in 1969."
+[[questions.choices]]
+text = { fr = "Neil Armstrong", en = "Neil Armstrong" }
+[[questions.choices]]
+text = { fr = "John Glenn", en = "John Glenn" }
+[[questions.choices]]
+correct = true
+text = { fr = "Youri Gagarine", en = "Yuri Gagarin" }
+[[questions.choices]]
+text = { fr = "Valentina Terechkova", en = "Valentina Tereshkova" }
+
+[[questions]]
+slug = "history-apollo-11"
+topic = "history"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA History Office", url = "https://www.nasa.gov/history/" }
+[questions.translations.fr]
+title = "Apollo 11"
+stem = "En quelle année les premiers humains ont-ils marché sur la Lune ?"
+explanation = "Le 20 juillet 1969, lors de la mission **Apollo 11**, Neil Armstrong puis Buzz Aldrin ont marché sur la Lune, pendant que Michael Collins restait en orbite lunaire."
+[questions.translations.en]
+title = "Apollo 11"
+stem = "In which year did the first humans walk on the Moon?"
+explanation = "On 20 July 1969, during the **Apollo 11** mission, Neil Armstrong then Buzz Aldrin walked on the Moon, while Michael Collins stayed in lunar orbit."
+[[questions.choices]]
+text = { fr = "1961", en = "1961" }
+[[questions.choices]]
+text = { fr = "1965", en = "1965" }
+[[questions.choices]]
+text = { fr = "1972", en = "1972" }
+[[questions.choices]]
+correct = true
+text = { fr = "1969", en = "1969" }
+
+[[questions]]
+slug = "history-cnes"
+topic = "history"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "CNES", url = "https://cnes.fr/" }
+[questions.translations.fr]
+title = "L'agence spatiale française"
+stem = "Comment s'appelle l'agence spatiale française ?"
+explanation = "Le **CNES**, Centre national d'études spatiales, a été créé en 1961. Il opère notamment le Centre spatial guyanais à Kourou. L'ESA, elle, est l'agence spatiale européenne, dont la France est membre."
+[questions.translations.en]
+title = "The French space agency"
+stem = "What is the name of the French space agency?"
+explanation = "**CNES**, the Centre national d'études spatiales, was founded in 1961. Among other things it runs the Guiana Space Centre in Kourou. ESA is the European Space Agency, of which France is a member."
+[[questions.choices]]
+correct = true
+text = { fr = "Le CNES", en = "CNES" }
+[[questions.choices]]
+text = { fr = "L'ONERA", en = "ONERA" }
+[[questions.choices]]
+text = { fr = "La DGAC", en = "DGAC" }
+[[questions.choices]]
+text = { fr = "Le CNRS", en = "CNRS" }
+
+[[questions]]
+slug = "history-european-launchers"
+topic = "history"
+kind = "multi_choice"
+difficulty = 1000
+source = { label = "ESA, Space Transportation: Ariane", url = "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane" }
+[questions.translations.fr]
+title = "Les lanceurs européens"
+stem = "Lesquels de ces lanceurs sont des lanceurs européens ?"
+explanation = "**Ariane 6** et **Vega-C** sont les lanceurs européens actuels, développés sous l'égide de l'ESA et tirés depuis Kourou. Falcon 9 est américain (SpaceX), Longue Marche chinois et Saturn V était le lanceur américain du programme Apollo."
+[questions.translations.en]
+title = "European launchers"
+stem = "Which of these launchers are European?"
+explanation = "**Ariane 6** and **Vega-C** are today's European launchers, developed under ESA and flown from Kourou. Falcon 9 is American (SpaceX), Long March Chinese, and Saturn V was the American launcher of the Apollo programme."
+[[questions.choices]]
+correct = true
+text = { fr = "Ariane 6", en = "Ariane 6" }
+[[questions.choices]]
+text = { fr = "Falcon 9", en = "Falcon 9" }
+[[questions.choices]]
+correct = true
+text = { fr = "Vega-C", en = "Vega-C" }
+[[questions.choices]]
+text = { fr = "Longue Marche 5", en = "Long March 5" }
+[[questions.choices]]
+text = { fr = "Saturn V", en = "Saturn V" }
+
+# --- Medium ---
+
+[[questions]]
+slug = "history-ariane6-architecture"
+topic = "history"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "CNES, Ariane 6", url = "https://cnes.fr/en/projects/ariane-6" }
+[questions.translations.fr]
+title = "L'architecture d'Ariane 6"
+stem = "Quelle description correspond à Ariane 6 ?"
+explanation = "Ariane 6 a un étage principal à moteur **Vulcain 2.1** (hydrogène et oxygène liquides), deux ou quatre propulseurs à poudre **P120C** (versions Ariane 62 et 64) et un étage supérieur à moteur **Vinci**, réallumable, lui aussi à hydrogène et oxygène."
+[questions.translations.en]
+title = "The architecture of Ariane 6"
+stem = "Which description matches Ariane 6?"
+explanation = "Ariane 6 has a core stage with a **Vulcain 2.1** engine (liquid hydrogen and oxygen), two or four **P120C** solid boosters (versions Ariane 62 and 64) and an upper stage with the re-ignitable **Vinci** engine, also hydrogen and oxygen."
+[[questions.choices]]
+text = { fr = "Un premier étage réutilisable à kérosène, qui revient se poser", en = "A reusable kerosene first stage that lands back" }
+[[questions.choices]]
+correct = true
+text = { fr = "Un étage principal Vulcain 2.1, deux ou quatre boosters P120C et un étage supérieur Vinci réallumable", en = "A Vulcain 2.1 core stage, two or four P120C boosters and a re-ignitable Vinci upper stage" }
+[[questions.choices]]
+text = { fr = "Trois étages à poudre, sans moteur à ergols liquides", en = "Three solid stages, with no liquid-propellant engine" }
+[[questions.choices]]
+text = { fr = "Un seul étage à hydrogène, sans propulseurs d'appoint", en = "A single hydrogen stage, with no boosters" }
+
+[[questions]]
+slug = "history-why-kourou"
+topic = "history"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "ESA, Europe's Spaceport", url = "https://www.esa.int/Enabling_Support/Space_Transportation/Europe_s_Spaceport" }
+[questions.translations.fr]
+title = "Pourquoi Kourou ?"
+stem = "Pourquoi l'Europe lance-t-elle ses fusées depuis Kourou, en Guyane française ?"
+explanation = "Kourou est à environ 5° de l'équateur : la rotation de la Terre y apporte près de 463 m/s vers l'est, et l'orbite géostationnaire demande peu de changement de plan. L'océan Atlantique, à l'est, permet de lancer sans survoler de zones habitées."
+[questions.translations.en]
+title = "Why Kourou?"
+stem = "Why does Europe launch its rockets from Kourou, in French Guiana?"
+explanation = "Kourou lies about 5° from the equator: the Earth's rotation gives nearly 463 m/s eastward there, and the geostationary orbit needs little plane change. The Atlantic Ocean to the east lets launches avoid flying over inhabited areas."
+[[questions.choices]]
+text = { fr = "Parce que la gravité y est nulle", en = "Because gravity is zero there" }
+[[questions.choices]]
+text = { fr = "Parce que c'est le point de la Terre le plus proche de la Lune", en = "Because it is the point on Earth closest to the Moon" }
+[[questions.choices]]
+correct = true
+text = { fr = "Pour sa proximité de l'équateur et l'océan à l'est", en = "For its closeness to the equator and the ocean to the east" }
+[[questions.choices]]
+text = { fr = "Parce que l'air y est plus dense", en = "Because the air is denser there" }
+
+[[questions]]
+slug = "history-wright-brothers"
+topic = "history"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "NASA Glenn, Beginner's Guide to Aeronautics (Wright brothers history)", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/" }
+[questions.translations.fr]
+title = "Le premier vol motorisé"
+stem = "Qu'ont réussi les frères Wright le 17 décembre 1903 ?"
+explanation = "À Kitty Hawk, Orville Wright a fait voler le *Flyer* pendant 12 secondes sur 37 mètres : le premier vol **motorisé, soutenu et contrôlé** d'un avion plus lourd que l'air. Le contrôle en roulis, par gauchissement des ailes, était leur innovation clé."
+[questions.translations.en]
+title = "The first powered flight"
+stem = "What did the Wright brothers achieve on 17 December 1903?"
+explanation = "At Kitty Hawk, Orville Wright flew the *Flyer* for 12 seconds over 37 metres: the first **powered, sustained and controlled** flight of a heavier-than-air aeroplane. Roll control, by wing warping, was their key innovation."
+[[questions.choices]]
+text = { fr = "La traversée de la Manche", en = "Crossing the English Channel" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le premier vol motorisé et contrôlé d'un avion", en = "The first powered, controlled aeroplane flight" }
+[[questions.choices]]
+text = { fr = "Le premier vol en ballon", en = "The first balloon flight" }
+[[questions.choices]]
+text = { fr = "Le premier vol supersonique", en = "The first supersonic flight" }
+
+[[questions]]
+slug = "history-iss-partners"
+topic = "history"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "ESA, International Space Station", url = "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station" }
+[questions.translations.fr]
+title = "Les partenaires de l'ISS"
+stem = "Quelles agences sont partenaires de la Station spatiale internationale ?"
+explanation = "L'ISS est construite et exploitée par cinq agences : la **NASA**, **Roscosmos**, l'**ESA**, la **JAXA** japonaise et l'agence spatiale canadienne. La Chine a sa propre station, Tiangong, et l'ISRO indienne n'est pas partenaire."
+[questions.translations.en]
+title = "ISS partners"
+stem = "Which agencies are partners in the International Space Station?"
+explanation = "The ISS is built and run by five agencies: **NASA**, **Roscosmos**, **ESA**, Japan's **JAXA** and the Canadian Space Agency. China has its own station, Tiangong, and India's ISRO is not a partner."
+[[questions.choices]]
+correct = true
+text = { fr = "La NASA", en = "NASA" }
+[[questions.choices]]
+correct = true
+text = { fr = "L'ESA", en = "ESA" }
+[[questions.choices]]
+text = { fr = "La CNSA (Chine)", en = "CNSA (China)" }
+[[questions.choices]]
+correct = true
+text = { fr = "Roscosmos", en = "Roscosmos" }
+[[questions.choices]]
+correct = true
+text = { fr = "La JAXA (Japon)", en = "JAXA (Japan)" }
+[[questions.choices]]
+text = { fr = "L'ISRO (Inde)", en = "ISRO (India)" }
+
+[[questions]]
+slug = "history-rosetta"
+topic = "history"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "ESA, Rosetta", url = "https://www.esa.int/Science_Exploration/Space_Science/Rosetta" }
+[questions.translations.fr]
+title = "Rosetta et Philae"
+stem = "Quel exploit la mission Rosetta de l'ESA a-t-elle réalisé en 2014 ?"
+explanation = "Le 12 novembre 2014, l'atterrisseur **Philae**, largué par la sonde Rosetta, s'est posé sur la **comète** 67P/Tchourioumov-Guérassimenko : une première. Rosetta a ensuite accompagné la comète jusqu'en 2016."
+[questions.translations.en]
+title = "Rosetta and Philae"
+stem = "What feat did ESA's Rosetta mission achieve in 2014?"
+explanation = "On 12 November 2014, the **Philae** lander, released by the Rosetta probe, touched down on **comet** 67P/Churyumov-Gerasimenko: a first. Rosetta then travelled with the comet until 2016."
+[[questions.choices]]
+text = { fr = "Le premier atterrissage sur Mars", en = "The first landing on Mars" }
+[[questions.choices]]
+text = { fr = "Le premier survol de Pluton", en = "The first flyby of Pluto" }
+[[questions.choices]]
+text = { fr = "Le retour d'échantillons lunaires", en = "Returning lunar samples" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le premier atterrissage sur une comète", en = "The first landing on a comet" }
+
+# --- Hard ---
+
+[[questions]]
+slug = "history-webb-launch"
+topic = "history"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "ESA, Space Transportation: Ariane", url = "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane" }
+[questions.translations.fr]
+title = "Le lancement du télescope James Webb"
+stem = "Quel lanceur a mis en orbite le télescope spatial James Webb, le 25 décembre 2021 ?"
+explanation = "Le télescope James Webb, mené par la NASA avec l'ESA et l'agence spatiale canadienne, a été lancé par une **Ariane 5** depuis Kourou. Ce lancement faisait partie de la contribution européenne à la mission, et sa précision a laissé au télescope un surplus d'ergols pour prolonger sa durée de vie."
+[questions.translations.en]
+title = "The launch of the James Webb telescope"
+stem = "Which launcher put the James Webb Space Telescope into orbit, on 25 December 2021?"
+explanation = "The James Webb telescope, led by NASA with ESA and the Canadian Space Agency, was launched by an **Ariane 5** from Kourou. That launch was part of Europe's contribution to the mission, and its accuracy left the telescope extra propellant to extend its life."
+[[questions.choices]]
+correct = true
+text = { fr = "Une Ariane 5, depuis Kourou", en = "An Ariane 5, from Kourou" }
+[[questions.choices]]
+text = { fr = "Une Falcon Heavy, depuis la Floride", en = "A Falcon Heavy, from Florida" }
+[[questions.choices]]
+text = { fr = "La navette spatiale américaine", en = "The US Space Shuttle" }
+[[questions.choices]]
+text = { fr = "Une Ariane 6, depuis Kourou", en = "An Ariane 6, from Kourou" }
+
+[[questions]]
+slug = "history-ariane6-first-flight"
+topic = "history"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "CNES, Ariane 6", url = "https://cnes.fr/en/projects/ariane-6" }
+[questions.translations.fr]
+title = "Le premier vol d'Ariane 6"
+stem = "Quand Ariane 6 a-t-elle volé pour la première fois ?"
+explanation = "Le vol inaugural d'Ariane 6, en version Ariane 62, a eu lieu le 9 juillet 2024 depuis Kourou, un an après le dernier vol d'Ariane 5, en juillet 2023."
+[questions.translations.en]
+title = "Ariane 6's first flight"
+stem = "When did Ariane 6 first fly?"
+explanation = "Ariane 6's maiden flight, in its Ariane 62 version, took place on 9 July 2024 from Kourou, a year after the last Ariane 5 flight in July 2023."
+[[questions.choices]]
+text = { fr = "En décembre 2021", en = "In December 2021" }
+[[questions.choices]]
+text = { fr = "En juillet 2023", en = "In July 2023" }
+[[questions.choices]]
+correct = true
+text = { fr = "En juillet 2024", en = "In July 2024" }
+[[questions.choices]]
+text = { fr = "En mars 2026", en = "In March 2026" }
+
+[[questions]]
+slug = "history-vinci-reignition"
+topic = "history"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "CNES, Ariane 6", url = "https://cnes.fr/en/projects/ariane-6" }
+[questions.translations.fr]
+title = "Le moteur Vinci"
+stem = "Qu'apporte le moteur réallumable Vinci de l'étage supérieur d'Ariane 6 ?"
+explanation = "Vinci peut s'éteindre et se rallumer plusieurs fois. Ariane 6 peut ainsi déposer des satellites sur **plusieurs orbites différentes** en un même vol, par exemple pour une constellation, puis effectuer une dernière poussée pour se désorbiter et ne pas laisser de débris."
+[questions.translations.en]
+title = "The Vinci engine"
+stem = "What does the re-ignitable Vinci engine of Ariane 6's upper stage bring?"
+explanation = "Vinci can shut down and restart several times. Ariane 6 can thus drop satellites on **several different orbits** in one flight, for a constellation for instance, then make a last burn to deorbit and leave no debris."
+[[questions.choices]]
+text = { fr = "Il permet à l'étage de revenir se poser sur Terre", en = "It lets the stage land back on Earth" }
+[[questions.choices]]
+correct = true
+text = { fr = "Il permet de viser plusieurs orbites en un vol, puis de désorbiter l'étage", en = "It allows several orbits to be reached in one flight, then the stage to deorbit" }
+[[questions.choices]]
+text = { fr = "Il fonctionne au kérosène pour réduire les coûts", en = "It burns kerosene to cut costs" }
+[[questions.choices]]
+text = { fr = "Il remplace les propulseurs d'appoint au décollage", en = "It replaces the boosters at lift-off" }
+
+[[questions]]
+slug = "history-chronology"
+topic = "history"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "NASA History Office", url = "https://www.nasa.gov/history/" }
+[questions.translations.fr]
+title = "Remettre l'histoire dans l'ordre"
+stem = "Quelle suite d'événements est dans l'ordre chronologique ?"
+explanation = "Spoutnik 1 (1957), Gagarine (1961), Apollo 11 (1969), premier vol d'Ariane 1 (1979). Concorde a volé pour la première fois en 1969 et l'ESA a été créée en 1975."
+[questions.translations.en]
+title = "Putting history in order"
+stem = "Which sequence of events is in chronological order?"
+explanation = "Sputnik 1 (1957), Gagarin (1961), Apollo 11 (1969), Ariane 1's first flight (1979). Concorde first flew in 1969 and ESA was founded in 1975."
+[[questions.choices]]
+text = { fr = "Gagarine, Spoutnik 1, Ariane 1, Apollo 11", en = "Gagarin, Sputnik 1, Ariane 1, Apollo 11" }
+[[questions.choices]]
+text = { fr = "Spoutnik 1, Apollo 11, Gagarine, création de l'ESA", en = "Sputnik 1, Apollo 11, Gagarin, ESA founded" }
+[[questions.choices]]
+correct = true
+text = { fr = "Spoutnik 1, Gagarine, Apollo 11, Ariane 1", en = "Sputnik 1, Gagarin, Apollo 11, Ariane 1" }
+[[questions.choices]]
+text = { fr = "Création de l'ESA, Concorde, Apollo 11, Ariane 1", en = "ESA founded, Concorde, Apollo 11, Ariane 1" }

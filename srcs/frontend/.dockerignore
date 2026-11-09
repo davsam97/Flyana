@@ -1,0 +1,7 @@
+node_modules
+.nuxt
+.output
+.pnpm-store
+.git
+Dockerfile
+.dockerignore

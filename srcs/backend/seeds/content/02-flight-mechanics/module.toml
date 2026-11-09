@@ -1,0 +1,342 @@
+# Module 2: flight mechanics. Numbers recomputed by `python -m seeds.check_numbers`.
+
+[[lessons]]
+slug = "flight-four-forces"
+topic = "flight-mechanics"
+position = 0
+title = { fr = "Les quatre forces et l'équilibre", en = "The four forces and equilibrium" }
+body = { fr = "lessons/01-four-forces.fr.md", en = "lessons/01-four-forces.en.md" }
+
+[[lessons]]
+slug = "flight-controls"
+topic = "flight-mechanics"
+position = 1
+title = { fr = "Les axes et les gouvernes", en = "Axes and control surfaces" }
+body = { fr = "lessons/02-controls.fr.md", en = "lessons/02-controls.en.md" }
+
+[[lessons]]
+slug = "flight-stability"
+topic = "flight-mechanics"
+position = 2
+title = { fr = "La stabilité", en = "Stability" }
+body = { fr = "lessons/03-stability.fr.md", en = "lessons/03-stability.en.md" }
+
+# --- Easy ---
+
+[[questions]]
+slug = "flight-level-balance"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Four Forces on an Airplane", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/four-forces-on-an-airplane/" }
+[questions.translations.fr]
+title = "L'équilibre en palier"
+stem = "En vol en palier rectiligne à vitesse constante, quelles égalités sont vérifiées ?"
+explanation = "Sans accélération, les forces s'annulent deux à deux : la portance équilibre le poids ($L = W$) et la poussée équilibre la traînée ($T = D$). La poussée est donc bien plus faible que le poids : environ $W$ divisé par la finesse."
+[questions.translations.en]
+title = "Balance in level flight"
+stem = "In straight and level flight at constant speed, which equalities hold?"
+explanation = "With no acceleration, the forces cancel in pairs: lift balances weight ($L = W$) and thrust balances drag ($T = D$). Thrust is thus far smaller than weight: about $W$ divided by the lift-to-drag ratio."
+[[questions.choices]]
+text = { fr = "Poussée = poids et portance = traînée", en = "Thrust = weight and lift = drag" }
+[[questions.choices]]
+correct = true
+text = { fr = "Portance = poids et poussée = traînée", en = "Lift = weight and thrust = drag" }
+[[questions.choices]]
+text = { fr = "Portance = poussée et poids = traînée", en = "Lift = thrust and weight = drag" }
+[[questions.choices]]
+text = { fr = "Les quatre forces sont égales", en = "All four forces are equal" }
+
+[[questions]]
+slug = "flight-elevator-pitch"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Aircraft Elevator", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/aircraft-elevator-interactive/" }
+[questions.translations.fr]
+title = "La gouverne de profondeur"
+stem = "Quel mouvement commande la gouverne de profondeur ?"
+explanation = "La gouverne de profondeur (*elevator*), sur l'empennage horizontal, change la portance de la queue : elle fait tourner l'avion autour de l'axe transversal, c'est le **tangage**. Les ailerons commandent le roulis, la gouverne de direction le lacet."
+[questions.translations.en]
+title = "The elevator"
+stem = "Which motion does the elevator control?"
+explanation = "The elevator, on the horizontal tail, changes the tail's lift: it rotates the aircraft about the lateral axis, which is **pitch**. Ailerons control roll, the rudder controls yaw."
+[[questions.choices]]
+text = { fr = "Le roulis", en = "Roll" }
+[[questions.choices]]
+text = { fr = "Le lacet", en = "Yaw" }
+[[questions.choices]]
+correct = true
+text = { fr = "Le tangage", en = "Pitch" }
+[[questions.choices]]
+text = { fr = "La poussée", en = "Thrust" }
+
+[[questions]]
+slug = "flight-controls-axes"
+topic = "flight-mechanics"
+kind = "multi_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Aircraft Rotations", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/aircraft-rotations/" }
+[questions.translations.fr]
+title = "Gouvernes et axes"
+stem = "Quelles associations entre une gouverne et le mouvement qu'elle commande sont justes ?"
+explanation = "Les **ailerons** font rouler l'avion (axe longitudinal) et la **gouverne de direction** le fait tourner en lacet (axe vertical). La profondeur commande le tangage, pas le lacet. Les volets augmentent la portance des deux ailes en même temps : ils ne font pas rouler l'avion."
+[questions.translations.en]
+title = "Control surfaces and axes"
+stem = "Which pairings of a control surface with the motion it controls are right?"
+explanation = "**Ailerons** roll the aircraft (longitudinal axis) and the **rudder** yaws it (vertical axis). The elevator controls pitch, not yaw. Flaps raise the lift of both wings at once: they do not roll the aircraft."
+[[questions.choices]]
+correct = true
+text = { fr = "Ailerons → roulis", en = "Ailerons → roll" }
+[[questions.choices]]
+text = { fr = "Profondeur → lacet", en = "Elevator → yaw" }
+[[questions.choices]]
+correct = true
+text = { fr = "Gouverne de direction → lacet", en = "Rudder → yaw" }
+[[questions.choices]]
+text = { fr = "Volets → roulis", en = "Flaps → roll" }
+
+[[questions]]
+slug = "flight-weight-direction"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, What is Weight?", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/what-is-weight/" }
+[questions.translations.fr]
+title = "Le poids"
+stem = "Où et dans quelle direction s'applique le poids d'un avion ?"
+explanation = "Le poids $W = m\\,g$ s'applique au **centre de gravité** et pointe toujours vers le centre de la Terre, quelle que soit l'attitude de l'avion. C'est la seule des quatre forces qui ne tourne pas avec l'avion."
+[questions.translations.en]
+title = "Weight"
+stem = "Where and in which direction does an aircraft's weight act?"
+explanation = "Weight $W = m\\,g$ acts at the **centre of gravity** and always points towards the Earth's centre, whatever the aircraft's attitude. It is the only one of the four forces that does not turn with the aircraft."
+[[questions.choices]]
+correct = true
+text = { fr = "Au centre de gravité, vers le centre de la Terre", en = "At the centre of gravity, towards the Earth's centre" }
+[[questions.choices]]
+text = { fr = "Au bout des ailes, perpendiculairement à l'aile", en = "At the wingtips, perpendicular to the wing" }
+[[questions.choices]]
+text = { fr = "Au nez de l'avion, vers l'arrière", en = "At the nose, backwards" }
+[[questions.choices]]
+text = { fr = "Au centre de gravité, perpendiculairement au fuselage", en = "At the centre of gravity, perpendicular to the fuselage" }
+
+[[questions]]
+slug = "flight-glider-motion"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1000
+source = { label = "NASA Glenn, Glide Angle", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/glide-angle/" }
+[questions.translations.fr]
+title = "Le vol plané"
+stem = "Un planeur n'a pas de moteur. Quelle force l'entraîne vers l'avant en vol plané ?"
+explanation = "En vol plané, la trajectoire descend légèrement : une **composante du poids**, le long de la trajectoire, équilibre la traînée. Le planeur échange de l'altitude contre de la distance, d'autant mieux que sa finesse $L/D$ est grande."
+[questions.translations.en]
+title = "Gliding"
+stem = "A glider has no engine. Which force drives it forward in a glide?"
+explanation = "In a glide the path slopes slightly down: a **component of the weight**, along the path, balances the drag. The glider trades altitude for distance, all the better as its lift-to-drag ratio $L/D$ is large."
+[[questions.choices]]
+text = { fr = "La portance, qui pousse vers l'avant", en = "Lift, which pushes forward" }
+[[questions.choices]]
+text = { fr = "La traînée, qui l'aspire", en = "Drag, which pulls it along" }
+[[questions.choices]]
+text = { fr = "Rien : il garde la vitesse du remorquage", en = "Nothing: it keeps the speed it was towed to" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une composante du poids le long de la trajectoire descendante", en = "A component of its weight along the descending path" }
+
+# --- Medium ---
+
+[[questions]]
+slug = "flight-load-factor-60"
+topic = "flight-mechanics"
+kind = "numeric"
+difficulty = 1200
+answer = 2
+tolerance = 0.02
+unit = "g"
+source = { label = "NASA Glenn, Banking Turns", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/banking-turns/" }
+[questions.translations.fr]
+title = "Le facteur de charge en virage"
+stem = "Un avion vire en palier, incliné à 60°. Quel est son facteur de charge $n = 1/\\cos\\varphi$ ?"
+explanation = "$n = 1 / \\cos 60° = 1 / 0{,}5 = 2$. L'aile doit produire deux fois le poids pour que la composante verticale de la portance équilibre encore le poids : tout à bord pèse deux fois plus lourd."
+[questions.translations.en]
+title = "Load factor in a turn"
+stem = "An aircraft turns in level flight at 60° of bank. What is its load factor $n = 1/\\cos\\varphi$?"
+explanation = "$n = 1 / \\cos 60° = 1 / 0.5 = 2$. The wing must produce twice the weight so that the vertical component of lift still balances the weight: everything on board feels twice as heavy."
+
+[[questions]]
+slug = "flight-glide-distance"
+topic = "flight-mechanics"
+kind = "numeric"
+difficulty = 1200
+answer = 15
+tolerance = 0.02
+unit = "km"
+source = { label = "NASA Glenn, Glide Angle", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/glide-angle/" }
+[questions.translations.fr]
+title = "Planer jusqu'à la piste"
+stem = "Un avion de finesse $L/D = 15$ perd son moteur à 1 000 m de hauteur. Quelle distance peut-il parcourir en plané par air calme, en km ?"
+explanation = "En plané, $\\tan\\gamma = D/L$ : on parcourt $L/D$ mètres pour chaque mètre perdu. $1\\,000 \\times 15 = 15\\,000$ m, soit 15 km. Le vent de face réduirait cette distance, le vent arrière l'allongerait."
+[questions.translations.en]
+title = "Gliding to the runway"
+stem = "An aircraft with $L/D = 15$ loses its engine at 1,000 m above the ground. How far can it glide in still air, in km?"
+explanation = "In a glide, $\\tan\\gamma = D/L$: the aircraft covers $L/D$ metres for each metre lost. $1{,}000 \\times 15 = 15{,}000$ m, i.e. 15 km. A headwind would shorten that distance, a tailwind stretch it."
+
+[[questions]]
+slug = "flight-turn-more-lift"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "NASA Glenn, Banking Turns", url = "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/banking-turns/" }
+[questions.translations.fr]
+title = "Pourquoi tirer en virage"
+stem = "Pourquoi le pilote doit-il augmenter l'angle d'attaque (tirer sur le manche) pour garder son altitude en virage ?"
+explanation = "En virage, la portance s'incline avec les ailes. Seule sa composante verticale $L\\cos\\varphi$ s'oppose au poids : il faut donc **plus** de portance totale qu'en ligne droite, ce qu'on obtient en augmentant l'angle d'attaque, donc $C_L$."
+[questions.translations.en]
+title = "Why pull in a turn"
+stem = "Why must the pilot increase the angle of attack (pull on the stick) to hold altitude in a turn?"
+explanation = "In a turn, lift tilts with the wings. Only its vertical component $L\\cos\\varphi$ opposes the weight: so **more** total lift is needed than in straight flight, which comes from raising the angle of attack, and so $C_L$."
+[[questions.choices]]
+text = { fr = "Pour réduire la traînée du virage", en = "To reduce the drag of the turn" }
+[[questions.choices]]
+correct = true
+text = { fr = "Parce que seule la composante verticale de la portance compense le poids", en = "Because only the vertical component of lift balances the weight" }
+[[questions.choices]]
+text = { fr = "Parce que le poids augmente en virage", en = "Because weight increases in a turn" }
+[[questions.choices]]
+text = { fr = "Pour ralentir avant le virage", en = "To slow down before the turn" }
+
+[[questions]]
+slug = "flight-aft-cg"
+topic = "flight-mechanics"
+kind = "multi_choice"
+difficulty = 1200
+source = { label = "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25), ch. Weight and Balance" }
+[questions.translations.fr]
+title = "Un centrage trop arrière"
+stem = "Quelles sont les conséquences d'un centre de gravité placé trop en arrière ?"
+explanation = "Quand le CG recule vers le point neutre, la marge statique diminue : l'avion devient **moins stable**, voire instable, et sortir d'un décrochage ou d'une vrille devient **difficile**. Les commandes lourdes et une vitesse de décrochage plus élevée sont au contraire les effets d'un centrage **avant**."
+[questions.translations.en]
+title = "A centre of gravity too far aft"
+stem = "What are the consequences of a centre of gravity placed too far aft?"
+explanation = "As the CG moves back towards the neutral point, the static margin shrinks: the aircraft becomes **less stable**, even unstable, and recovering from a stall or a spin becomes **hard**. Heavy controls and a higher stall speed are, on the contrary, the effects of a **forward** CG."
+[[questions.choices]]
+correct = true
+text = { fr = "Une stabilité longitudinale réduite", en = "Reduced longitudinal stability" }
+[[questions.choices]]
+text = { fr = "Des efforts plus lourds pour cabrer", en = "Heavier forces to raise the nose" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une sortie de décrochage plus difficile", en = "Harder stall recovery" }
+[[questions.choices]]
+text = { fr = "Une vitesse de décrochage plus élevée", en = "A higher stall speed" }
+
+[[questions]]
+slug = "flight-adverse-yaw"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1200
+source = { label = "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25), ch. Flight Controls" }
+[questions.translations.fr]
+title = "Le lacet inverse"
+stem = "Le pilote braque les ailerons pour virer à droite, sans toucher au palonnier. Que fait d'abord le nez de l'avion ?"
+explanation = "L'aileron gauche descend : l'aile gauche porte plus, mais sa traînée induite augmente aussi. Elle recule et le nez part d'abord vers la **gauche**, à l'opposé du virage. C'est le lacet inverse, que l'on corrige au palonnier."
+[questions.translations.en]
+title = "Adverse yaw"
+stem = "The pilot moves the ailerons to turn right, without touching the pedals. What does the aircraft's nose do first?"
+explanation = "The left aileron goes down: the left wing lifts more, but its induced drag rises too. It falls back and the nose first swings **left**, away from the turn. That is adverse yaw, corrected with the pedals."
+[[questions.choices]]
+text = { fr = "Il part à droite, dans le sens du virage", en = "It swings right, into the turn" }
+[[questions.choices]]
+text = { fr = "Il se lève", en = "It rises" }
+[[questions.choices]]
+correct = true
+text = { fr = "Il part à gauche, à l'opposé du virage", en = "It swings left, away from the turn" }
+[[questions.choices]]
+text = { fr = "Il ne bouge pas", en = "It does not move" }
+
+# --- Hard ---
+
+[[questions]]
+slug = "flight-stall-speed"
+topic = "flight-mechanics"
+kind = "numeric"
+difficulty = 1400
+answer = 25.25
+tolerance = 0.03
+unit = "m/s"
+source = { label = "J. D. Anderson, Introduction to Flight, McGraw-Hill, ch. 6 (stalling speed)" }
+[questions.translations.fr]
+title = "Calculer la vitesse de décrochage"
+stem = "Un avion pèse 10 000 N, son aile mesure 16 m² et son $C_{L\\,max}$ vaut 1,6. Au niveau de la mer ($\\rho = 1{,}225$ kg/m³), quelle est sa vitesse de décrochage $V_s = \\sqrt{2W / (\\rho S C_{L\\,max})}$, en m/s ?"
+explanation = "$V_s = \\sqrt{2 \\times 10\\,000 / (1{,}225 \\times 16 \\times 1{,}6)} = \\sqrt{637{,}8} \\approx 25{,}3$ m/s, soit environ 91 km/h. C'est la vitesse la plus faible à laquelle l'aile peut porter le poids, à l'angle d'attaque maximal."
+[questions.translations.en]
+title = "Computing stall speed"
+stem = "An aircraft weighs 10,000 N, its wing is 16 m² and its $C_{L\\,max}$ is 1.6. At sea level ($\\rho = 1.225$ kg/m³), what is its stall speed $V_s = \\sqrt{2W / (\\rho S C_{L\\,max})}$, in m/s?"
+explanation = "$V_s = \\sqrt{2 \\times 10{,}000 / (1.225 \\times 16 \\times 1.6)} = \\sqrt{637.8} \\approx 25.3$ m/s, about 91 km/h. It is the lowest speed at which the wing can carry the weight, at the maximum angle of attack."
+
+[[questions]]
+slug = "flight-stall-speed-in-turn"
+topic = "flight-mechanics"
+kind = "numeric"
+difficulty = 1400
+answer = 35.7
+tolerance = 0.03
+unit = "m/s"
+source = { label = "FAA, Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25), ch. Aerodynamics of Flight (load factor and stall speed)" }
+[questions.translations.fr]
+title = "Décrocher en virage"
+stem = "Le même avion décroche à 25,3 m/s en ligne droite. Quelle est sa vitesse de décrochage en virage en palier incliné à 60°, en m/s ?"
+explanation = "La vitesse de décrochage croît comme $\\sqrt{n}$. À 60°, $n = 2$ : $25{,}3 \\times \\sqrt{2} \\approx 35{,}7$ m/s. Un virage serré près du sol, à basse vitesse, peut donc faire décrocher un avion qui volait pourtant bien au-dessus de sa vitesse de décrochage habituelle."
+[questions.translations.en]
+title = "Stalling in a turn"
+stem = "The same aircraft stalls at 25.3 m/s in straight flight. What is its stall speed in a level turn at 60° of bank, in m/s?"
+explanation = "Stall speed grows as $\\sqrt{n}$. At 60°, $n = 2$: $25.3 \\times \\sqrt{2} \\approx 35.7$ m/s. A steep turn near the ground at low speed can thus stall an aircraft that was flying well above its usual stall speed."
+
+[[questions]]
+slug = "flight-dihedral"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "J. D. Anderson, Introduction to Flight, McGraw-Hill, ch. 7 (lateral stability)" }
+[questions.translations.fr]
+title = "Le rôle du dièdre"
+stem = "Comment le dièdre (des ailes relevées en V) stabilise-t-il un avion en roulis ?"
+explanation = "Quand l'avion s'incline, il glisse vers l'aile basse. Avec du dièdre, cette aile voit l'air arriver sous un **angle d'attaque plus grand** : elle porte davantage et redresse l'avion. Le dièdre agit donc par le dérapage, pas par un déplacement du centre de gravité."
+[questions.translations.en]
+title = "What dihedral does"
+stem = "How does dihedral (wings tilted up in a V) stabilise an aircraft in roll?"
+explanation = "When the aircraft banks, it slips towards the low wing. With dihedral, that wing meets the air at a **larger angle of attack**: it lifts more and rights the aircraft. Dihedral thus works through the sideslip, not by moving the centre of gravity."
+[[questions.choices]]
+text = { fr = "Il abaisse le centre de gravité sous les ailes", en = "It lowers the centre of gravity below the wings" }
+[[questions.choices]]
+correct = true
+text = { fr = "En glissade, l'aile basse voit un angle d'attaque plus grand et porte davantage", en = "In a sideslip, the low wing sees a larger angle of attack and lifts more" }
+[[questions.choices]]
+text = { fr = "Il réduit la traînée de l'aile haute", en = "It reduces the drag of the high wing" }
+[[questions.choices]]
+text = { fr = "Il augmente la portance des deux ailes de la même façon", en = "It raises the lift of both wings equally" }
+
+[[questions]]
+slug = "flight-phugoid"
+topic = "flight-mechanics"
+kind = "single_choice"
+difficulty = 1400
+source = { label = "J. D. Anderson, Introduction to Flight, McGraw-Hill, ch. 7 (dynamic stability)" }
+[questions.translations.fr]
+title = "La phugoïde"
+stem = "Qu'est-ce que la phugoïde ?"
+explanation = "La phugoïde est un mode longitudinal lent (une à deux minutes pour un avion de ligne) : l'avion monte en ralentissant, puis redescend en accélérant, à angle d'attaque presque constant. Il échange énergie cinétique et énergie potentielle. Le mode rapide, de quelques secondes, est l'oscillation d'incidence."
+[questions.translations.en]
+title = "The phugoid"
+stem = "What is the phugoid?"
+explanation = "The phugoid is a slow longitudinal mode (one to two minutes for an airliner): the aircraft climbs as it slows, then descends as it speeds up, at an almost constant angle of attack. It trades kinetic and potential energy. The fast mode, a few seconds long, is the short-period oscillation."
+[[questions.choices]]
+text = { fr = "Une oscillation rapide de l'angle d'attaque, de quelques secondes", en = "A fast angle-of-attack oscillation, a few seconds long" }
+[[questions.choices]]
+text = { fr = "Un mélange de roulis et de lacet", en = "A mix of roll and yaw" }
+[[questions.choices]]
+correct = true
+text = { fr = "Une oscillation lente où l'avion échange vitesse et altitude", en = "A slow oscillation in which the aircraft trades speed for altitude" }
+[[questions.choices]]
+text = { fr = "La vibration des ailes à grande vitesse", en = "Wing vibration at high speed" }

@@ -1,0 +1,55 @@
+# `make dev`: same single origin as production, nginx proxies / to the Nuxt
+# dev server (HMR) and /api to the API, so CORS and Secure cookies behave the same
+
+volumes:
+  web_node_modules:
+  web_nuxt:
+  pnpm_store:
+
+services:
+  api:
+    build:
+      context: ./backend
+      args:
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      UVICORN_RELOAD: "true"
+      SQL_ECHO: "true"
+      SEED_DEMO_DATA: "true"
+    volumes:
+      # `:z` relabels for SELinux (Fedora/RHEL run it enforcing); harmless elsewhere
+      - ./backend/app:/app/app:z
+      - ./backend/migrations:/app/migrations:z
+      - ./backend/tests:/app/tests:z
+      - ./backend/seeds:/app/seeds:z
+    healthcheck:
+      interval: 30s
+
+  web:
+    build:
+      target: runtime-dev
+    depends_on: [api, web-dev]
+
+  web-dev:
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+      target: dev
+      args:
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
+    user: "${UID:-1000}:${GID:-1000}"
+    restart: unless-stopped
+    depends_on: [api]
+    # no published port: all traffic goes through https://localhost
+    volumes:
+      - ./frontend:/app:z
+      # named volumes: `make clean` removes them, and the store stays warm between builds (otherwise pnpm re-downloads the 780 packages on every startup)
+      - web_node_modules:/app/node_modules
+      - web_nuxt:/app/.nuxt
+      - pnpm_store:/app/.pnpm-store
+    networks: [frontend]
+    logging:
+      driver: json-file
